@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -18,8 +19,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ssafy.vue.model.BoardParameterDto;
+import com.ssafy.vue.model.BusDto;
+import com.ssafy.vue.model.service.BoardService;
+import com.ssafy.vue.model.service.BusService;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 @RestController
 @RequestMapping("/traffic")
@@ -28,8 +35,8 @@ public class TrafficController {
 
 	private final Logger logger = LoggerFactory.getLogger(TrafficController.class);
 
-	//@Autowired
-	// private HouseMapService haHouseMapService;
+	@Autowired
+	private BusService busService;
 
 	////////////////////////////// 카카오 모빌리티 길찾기 api
 	@ApiOperation(value = "카카오 모빌리티 길찾기 api", notes = "출발지와 목적지를 기준으로 현재 교통상황을 알려준다.", response = List.class)
@@ -67,6 +74,17 @@ public class TrafficController {
 		// String jsonStr = json.toString();
 
 		return new ResponseEntity<String>(sb.toString(), HttpStatus.OK);
+	}
+	
+	@ApiOperation(value = "버스정류소 목록", notes = "모든 버스정류소의 정보를 반환한다.", response = List.class)
+	@GetMapping(value = "/getbusstop", produces = "application/json;charset=utf-8")
+	public ResponseEntity<List<BusDto>> listBusStop() throws Exception {
+		logger.info("listBusStop - 호출");
+		List<BusDto> list = new LinkedList<BusDto>();
+		list = busService.listBusStop();
+		
+		System.out.println(list.size());
+		return new ResponseEntity<List<BusDto>>(busService.listBusStop(), HttpStatus.OK);
 	}
 
 }
