@@ -6,8 +6,11 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.ssafy.vue.model.BoardDto;
 import com.ssafy.vue.model.MemberDto;
+import com.ssafy.vue.model.mapper.BoardMapper;
 import com.ssafy.vue.model.mapper.MemberMapper;
 
 @Service
@@ -48,5 +51,24 @@ public class MemberServiceImpl implements MemberService {
 		map.put("token", null);
 		sqlSession.getMapper(MemberMapper.class).deleteRefreshToken(map);
 	}
+	
+	@Override
+	public boolean regist(MemberDto memberDto) throws Exception {
+		if(memberDto.getUserid() == null || memberDto.getUsername() == null || memberDto.getUserpwd()==null || memberDto.getEmail()==null) {
+			throw new Exception();
+		}
+		return sqlSession.getMapper(MemberMapper.class).regist(memberDto) == 1;
+	}
 
+	@Override
+	@Transactional
+	public boolean modify(MemberDto memberDto) throws Exception {
+		return sqlSession.getMapper(MemberMapper.class).modify(memberDto) == 1;
+	}
+	
+	@Override
+	@Transactional
+	public boolean delete(String userid) throws Exception {
+		return sqlSession.getMapper(MemberMapper.class).delete(userid) == 1;
+	}
 }

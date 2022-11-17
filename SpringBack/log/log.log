@@ -665,3 +665,459 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 [2m2022-11-17 14:17:51.370[0;39m [32mDEBUG[0;39m [35m13200[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjYyMjcxMzY2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjIzMDEsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.FgB7dmMoRHeIAHoDfJV-RTzFxbbX2zHEQCqtkDlg3l4
 [2m2022-11-17 14:17:51.378[0;39m [32m INFO[0;39m [35m13200[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
 [2m2022-11-17 14:17:52.147[0;39m [32m INFO[0;39m [35m13200[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 14:47:27.262[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-11-17 14:47:27.324[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 696 ms
+[2m2022-11-17 14:47:27.792[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-11-17 14:48:31.797[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2022-11-17 14:48:31.798[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 0 ms
+[2m2022-11-17 14:48:31.817[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.s.vue.controller.HouseMapController   [0;39m [2m:[0;39m sido - 호출
+[2m2022-11-17 14:48:36.034[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 14:48:41.097[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 14:48:42.031[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 14:48:42.774[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 14:48:44.283[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 14:48:44.898[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 14:48:47.652[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 14:48:48.670[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 14:48:56.563[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY0MTM2NTQ0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjQxNDYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.qy6DZUoDhUX2I8RsiHv3thso2mPoQEeVzqDoySTtYYQ
+[2m2022-11-17 14:48:56.564[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY0MTM2NTU3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjQxNjYsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.MvOTPlkbv6hSIwmrjI5obpoTaA73t9e05jMrHMARJUw
+[2m2022-11-17 14:48:56.585[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 14:48:58.659[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 15:01:25.220[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY0ODg1MjE0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjQ4OTUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.jO_d8_PsTgzcyrNYNLwoonG6MiGCOAiEubrCN2XfuwE
+[2m2022-11-17 15:01:25.220[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY0ODg1MjE0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjQ5MTUsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.tyPUii5VYM1Ot0CXX9m9CB1Gk38mfyQuOM2n8hHlhvk
+[2m2022-11-17 15:01:25.229[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 15:03:05.209[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY0OTg1MjA2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjQ5OTUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.hIMbxxB2FQyNAUP4XL1g5opiilCGSj8fDLfzDomXdgc
+[2m2022-11-17 15:03:05.209[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY0OTg1MjA2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjUwMTUsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.YzF7s_FYx5qiEncGA2Gsh1_zaPOKKDguYuja05xpfUk
+[2m2022-11-17 15:03:05.218[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 15:21:29.116[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY2MDg5MTExLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjYwOTksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.SVawy4z4k-ZNn78_LK6WaQ1u4GOJ-CHf73vMpAUHHpk
+[2m2022-11-17 15:21:29.116[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY2MDg5MTExLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjYxMTksInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.GNVKD83BULFyG4wc_le7WFEu4cUlflTJmHdZYAYzjho
+[2m2022-11-17 15:21:29.129[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 15:24:29.401[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY2MjY5Mzk4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjYyNzksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.np2vIoMJol01mcF21Kpf0uTwrqeJapq7L3qwrnVm_Cw
+[2m2022-11-17 15:24:29.402[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY2MjY5Mzk4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjYyOTksInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.3zYHp6zKiYqWj_m2ggHpJ43oyKbshLLdelRRYl7-wlY
+[2m2022-11-17 15:24:29.409[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 15:32:54.972[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY2Nzc0OTY5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjY3ODQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.4fvXbmYfbZ0LFqEt9dQOVxG4cVjiuS7aKHLrw9w3Hpo
+[2m2022-11-17 15:32:54.972[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY2Nzc0OTY5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjY4MDQsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.qNA5dbgPraENfoqc0ml5nt4SlywexBUyyrSBrxYkzBc
+[2m2022-11-17 15:32:54.980[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 15:34:20.967[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 15:34:40.405[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY2ODgwNDAwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjY4OTAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.2FG1zA_j0ghC59pXmxo0bPyMAwnATpzzcq3s4zI-Q-Q
+[2m2022-11-17 15:34:40.405[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY2ODgwNDAwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjY5MTAsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.v_xHV2-0MwWFiv64AYP7ptuXdFDQTXokuZwE9rIQWeU
+[2m2022-11-17 15:34:40.414[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 15:35:04.294[0;39m [31mERROR[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.s.vue.model.service.JwtServiceImpl    [0;39m [2m:[0;39m JWT expired at 2022-11-17T15:34:50Z. Current time: 2022-11-17T15:35:04Z, a difference of 14293 milliseconds.  Allowed clock skew: 0 milliseconds.
+[2m2022-11-17 15:35:04.294[0;39m [31mERROR[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 불가능 토큰!!!
+[2m2022-11-17 15:35:04.304[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY2ODgwNDAwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjY5MTAsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.v_xHV2-0MwWFiv64AYP7ptuXdFDQTXokuZwE9rIQWeU, memberDto : com.ssafy.vue.model.MemberDto@7b8ec1d3
+[2m2022-11-17 15:35:04.307[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY2OTA0MzA3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjY5MTQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.fKsZU1d8btJ1rIR_uVqyzrwSJ7_lGBLuDbAMJBQg8Uw
+[2m2022-11-17 15:35:04.307[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 정상적으로 액세스토큰 재발급!!!
+[2m2022-11-17 15:51:48.753[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 15:51:50.284[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 15:56:02.981[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY4MTYyOTc2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjgxNzIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.HOlRiNMBy5ikuhReeX0PA8rSC0eoC17fKfxVAnwJea4
+[2m2022-11-17 15:56:02.981[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY4MTYyOTc2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjgxOTIsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.pdbiYz-Qkcnig60--0vKZY446dRmCXeuBCg6R6lkiME
+[2m2022-11-17 15:56:02.989[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 15:56:17.382[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY4MTc3Mzc2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjgxODcsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.Fhxtap7Ftvq3PLxmzgJ6ejRC-mx2w_Z3jGbjrqwzh04
+[2m2022-11-17 15:56:17.382[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjY4MTc3Mzc2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NjgyMDcsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.YNDv71mFTQE-vWvRFnITLyhM-vqXIPzhmunbIzAYzdg
+[2m2022-11-17 15:56:17.393[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 16:36:58.920[0;39m [33m WARN[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for OPTIONS /vue/regist
+[2m2022-11-17 16:37:43.656[0;39m [33m WARN[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for OPTIONS /vue/regist
+[2m2022-11-17 16:37:46.514[0;39m [33m WARN[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for OPTIONS /vue/regist
+[2m2022-11-17 16:37:58.619[0;39m [33m WARN[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for OPTIONS /vue/regist
+[2m2022-11-17 16:38:43.085[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcwNzIzMDc5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzA3MzMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.WQUwjIo9biQXaar0WVi9CCQXUaqxyw8lt0DuKpVSeww
+[2m2022-11-17 16:38:43.086[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcwNzIzMDc5LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzA3NTMsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.KkDIOYbcp3Y3-VK452PuS9f3LBo4Gsqbyrysb2Wytuc
+[2m2022-11-17 16:38:43.100[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 16:39:32.829[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcwNzcyODI0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzA3ODIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.8DkH5Ofvo6TKiHnD-3XhU6O2tnqsyytVjTGIM0fweaY
+[2m2022-11-17 16:39:32.829[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcwNzcyODI0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzA4MDIsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.w9MXzHN7ynVE01jeHCoFskjSEAMpMnaQTHM4bCTNaYg
+[2m2022-11-17 16:39:32.836[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 16:39:43.978[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcwNzgzOTc1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzA3OTMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImFkbWluIn0.d4Om1RLa_haGczVFG7QJf8NJUuOhD6arYcukEJk6O_g
+[2m2022-11-17 16:39:43.978[0;39m [32mDEBUG[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcwNzgzOTc2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzA4MTMsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJhZG1pbiJ9.ETUDiHDcwodSmcytLiInHlTU5J9ZDRaIsHcxEdn_ZHA
+[2m2022-11-17 16:39:43.992[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 16:41:57.471[0;39m [33m WARN[0;39m [35m7332[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for OPTIONS /vue/regist
+[2m2022-11-17 16:52:37.877[0;39m [32m INFO[0;39m [35m7332[0;39m [2m---[0;39m [2m[(134)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2022-11-17 16:52:37.945[0;39m [33m WARN[0;39m [35m7332[0;39m [2m---[0;39m [2m[(134)-127.0.0.1][0;39m [36mo.a.c.loader.WebappClassLoaderBase      [0;39m [2m:[0;39m The web application [vue] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+[2m2022-11-17 16:52:51.520[0;39m [32m INFO[0;39m [35m3432[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-11-17 16:52:51.588[0;39m [32m INFO[0;39m [35m3432[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 726 ms
+[2m2022-11-17 16:52:52.060[0;39m [32m INFO[0;39m [35m3432[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-11-17 16:53:00.568[0;39m [32m INFO[0;39m [35m3432[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2022-11-17 16:53:00.569[0;39m [32m INFO[0;39m [35m3432[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2022-11-17 16:53:00.577[0;39m [33m WARN[0;39m [35m3432[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for OPTIONS /vue/regist
+[2m2022-11-17 16:53:08.546[0;39m [32mDEBUG[0;39m [35m3432[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxNTg4NTIyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE1OTgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.H_ri0HvzQ_ST-iyr3gPkzHD5jEO6tfrZYKFLc2KUMhY
+[2m2022-11-17 16:53:08.547[0;39m [32mDEBUG[0;39m [35m3432[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxNTg4NTQwLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE2MTgsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiJzc2FmeSJ9.8qp9Ox8rq_zBnZHVHP6immXdFUT9MRFv4T8WZmhZVBI
+[2m2022-11-17 16:53:08.573[0;39m [32m INFO[0;39m [35m3432[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 16:53:19.994[0;39m [33m WARN[0;39m [35m3432[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for OPTIONS /vue/regist
+[2m2022-11-17 16:53:54.476[0;39m [33m WARN[0;39m [35m3432[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for OPTIONS /vue/regist
+[2m2022-11-17 16:53:59.893[0;39m [32m INFO[0;39m [35m3432[0;39m [2m---[0;39m [2m[on(9)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2022-11-17 16:53:59.962[0;39m [33m WARN[0;39m [35m3432[0;39m [2m---[0;39m [2m[on(9)-127.0.0.1][0;39m [36mo.a.c.loader.WebappClassLoaderBase      [0;39m [2m:[0;39m The web application [vue] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+[2m2022-11-17 16:54:03.881[0;39m [32m INFO[0;39m [35m7380[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-11-17 16:54:03.947[0;39m [32m INFO[0;39m [35m7380[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 704 ms
+[2m2022-11-17 16:54:04.428[0;39m [32m INFO[0;39m [35m7380[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-11-17 16:54:17.690[0;39m [32m INFO[0;39m [35m7380[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2022-11-17 16:54:17.691[0;39m [32m INFO[0;39m [35m7380[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2022-11-17 16:54:17.698[0;39m [33m WARN[0;39m [35m7380[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for OPTIONS /vue/regist
+[2m2022-11-17 16:55:20.079[0;39m [32m INFO[0;39m [35m7380[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m writeArticle - 호출
+[2m2022-11-17 16:55:20.280[0;39m [31mERROR[0;39m [35m7380[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet]     [0;39m [2m:[0;39m Servlet.service() for servlet [dispatcherServlet] in context with path [/vue] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+### The error may exist in file [C:\SSAFY\workspace\final1117-2\pjt_daejeon_8th_class5_final_team05\SpringBack\target\classes\mappers\member.xml]
+### The error may involve com.ssafy.vue.model.mapper.MemberMapper.regist-Inline
+### The error occurred while setting parameters
+### SQL: insert into board (userid, username, userpwd, email, joindate, token)   values (?,?, ?, ?, now(), null)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'] with root cause
+
+java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:194)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy78.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy102.regist(Unknown Source)
+	at com.ssafy.vue.model.service.MemberServiceImpl.regist(MemberServiceImpl.java:59)
+	at com.ssafy.vue.controller.MemberController.writeArticle(MemberController.java:151)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+[2m2022-11-17 16:56:02.557[0;39m [32m INFO[0;39m [35m7380[0;39m [2m---[0;39m [2m[n(11)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2022-11-17 16:56:02.631[0;39m [33m WARN[0;39m [35m7380[0;39m [2m---[0;39m [2m[n(11)-127.0.0.1][0;39m [36mo.a.c.loader.WebappClassLoaderBase      [0;39m [2m:[0;39m The web application [vue] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+[2m2022-11-17 16:56:06.213[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-11-17 16:56:06.274[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 709 ms
+[2m2022-11-17 16:56:06.748[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-11-17 16:56:13.620[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2022-11-17 16:56:13.621[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 0 ms
+[2m2022-11-17 16:56:13.660[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m regist - 호출
+[2m2022-11-17 16:56:24.120[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxNzg0MDk2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE3OTQsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjIyMiJ9.sx4zh_vs7qIIfjjdMsLfQ9xKoCiyCrNx7z0iuElMAms
+[2m2022-11-17 16:56:24.121[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxNzg0MTE1LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE4MTQsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiIyMjIifQ.xy1D9f_R05qzJz3UY_SRZlVlfHkhGp5GV1DIKLw8jxQ
+[2m2022-11-17 16:56:24.148[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 16:56:42.795[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m regist - 호출
+[2m2022-11-17 16:57:05.090[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxODI1MDg2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE4MzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjMzMyJ9.OQV7yMEGG00af0TSIyoVo3c-da1TiqzKUnBjMkyr-oQ
+[2m2022-11-17 16:57:05.090[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxODI1MDg3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE4NTUsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiIzMzMifQ.59mtICu53xlj4HtVEIIc-mlqcFZceZcdY5-ljslfPik
+[2m2022-11-17 16:57:05.101[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 16:57:28.785[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m regist - 호출
+[2m2022-11-17 16:57:37.984[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxODU3OTgyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE4NjcsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjQ0NCJ9.zo7kQ2v3B6KhdI5PxKfnkw0VXJLE0qaHdtc23YwVeoM
+[2m2022-11-17 16:57:37.984[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxODU3OTgyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE4ODcsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiI0NDQifQ.xLaZXrDwYI3ntyb5SaJM3KovwaigFAM3ImOwdzMTQ5s
+[2m2022-11-17 16:57:37.994[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 16:57:48.986[0;39m [31mERROR[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.s.vue.model.service.JwtServiceImpl    [0;39m [2m:[0;39m JWT expired at 2022-11-17T16:57:47Z. Current time: 2022-11-17T16:57:48Z, a difference of 1985 milliseconds.  Allowed clock skew: 0 milliseconds.
+[2m2022-11-17 16:57:48.986[0;39m [31mERROR[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 불가능 토큰!!!
+[2m2022-11-17 16:57:48.994[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxODU3OTgyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE4ODcsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiI0NDQifQ.xLaZXrDwYI3ntyb5SaJM3KovwaigFAM3ImOwdzMTQ5s, memberDto : com.ssafy.vue.model.MemberDto@4882866
+[2m2022-11-17 16:57:48.998[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxODY4OTk4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE4NzgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjQ0NCJ9.9xWDfy7iYGaCiQyWAslwtSeKogHpl5XhiU-3onxwokU
+[2m2022-11-17 16:57:48.998[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 정상적으로 액세스토큰 재발급!!!
+[2m2022-11-17 17:07:42.280[0;39m [31mERROR[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.s.vue.model.service.JwtServiceImpl    [0;39m [2m:[0;39m JWT expired at 2022-11-17T16:57:58Z. Current time: 2022-11-17T17:07:42Z, a difference of 584280 milliseconds.  Allowed clock skew: 0 milliseconds.
+[2m2022-11-17 17:07:42.280[0;39m [31mERROR[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 불가능 토큰!!!
+[2m2022-11-17 17:07:42.287[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjcxODU3OTgyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzE4ODcsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiI0NDQifQ.xLaZXrDwYI3ntyb5SaJM3KovwaigFAM3ImOwdzMTQ5s, memberDto : com.ssafy.vue.model.MemberDto@58e5af5a
+[2m2022-11-17 17:07:42.287[0;39m [31mERROR[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.s.vue.model.service.JwtServiceImpl    [0;39m [2m:[0;39m JWT expired at 2022-11-17T16:58:07Z. Current time: 2022-11-17T17:07:42Z, a difference of 575287 milliseconds.  Allowed clock skew: 0 milliseconds.
+[2m2022-11-17 17:07:42.287[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 리프레쉬토큰도 사용불!!!!!!!
+[2m2022-11-17 17:07:50.564[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-17 17:24:57.161[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjczNDk3MTU2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzM1MDcsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjQ0NCJ9.TxZf_bdVkxTKDjBulVEAbwBM0tG-aUKSBRfbJGGdTxM
+[2m2022-11-17 17:24:57.161[0;39m [32mDEBUG[0;39m [35m16896[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjczNDk3MTU3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzM1MjcsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiI0NDQifQ.aP9HnnczP5t-DSQ0StHw8Ju5Elj7d1jHxXY8Gf95h1w
+[2m2022-11-17 17:24:57.170[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 17:24:58.614[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 17:27:50.655[0;39m [33m WARN[0;39m [35m16896[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for GET /vue/delete/444
+[2m2022-11-17 17:28:07.505[0;39m [32m INFO[0;39m [35m16896[0;39m [2m---[0;39m [2m[n(41)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2022-11-17 17:28:07.570[0;39m [33m WARN[0;39m [35m16896[0;39m [2m---[0;39m [2m[n(41)-127.0.0.1][0;39m [36mo.a.c.loader.WebappClassLoaderBase      [0;39m [2m:[0;39m The web application [vue] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+[2m2022-11-17 17:28:11.345[0;39m [32m INFO[0;39m [35m17652[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-11-17 17:28:11.409[0;39m [32m INFO[0;39m [35m17652[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 722 ms
+[2m2022-11-17 17:28:11.902[0;39m [32m INFO[0;39m [35m17652[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-11-17 17:28:14.414[0;39m [32m INFO[0;39m [35m17652[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2022-11-17 17:28:14.415[0;39m [32m INFO[0;39m [35m17652[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2022-11-17 17:28:14.423[0;39m [33m WARN[0;39m [35m17652[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.PageNotFound            [0;39m [2m:[0;39m No mapping for GET /vue/delete/444
+[2m2022-11-17 17:28:33.549[0;39m [33m WARN[0;39m [35m17652[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36m.w.s.m.s.DefaultHandlerExceptionResolver[0;39m [2m:[0;39m Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+[2m2022-11-17 17:29:06.790[0;39m [32m INFO[0;39m [35m17652[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m delete - 호출
+[2m2022-11-17 17:29:06.966[0;39m [31mERROR[0;39m [35m17652[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet]     [0;39m [2m:[0;39m Servlet.service() for servlet [dispatcherServlet] in context with path [/vue] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.type.TypeException: Could not set parameters for mapping: ParameterMapping{property='userid', mode=IN, javaType=class java.lang.Integer, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}. Cause: org.apache.ibatis.type.TypeException: Error setting non null for parameter #1 with JdbcType null . Try setting a different JdbcType for this parameter or a different configuration property. Cause: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer] with root cause
+
+java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+	at org.apache.ibatis.type.IntegerTypeHandler.setNonNullParameter(IntegerTypeHandler.java:26)
+	at org.apache.ibatis.type.BaseTypeHandler.setParameter(BaseTypeHandler.java:73)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:87)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:94)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:88)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:194)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.delete(DefaultSqlSession.java:209)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy78.delete(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.delete(SqlSessionTemplate.java:304)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:72)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy102.delete(Unknown Source)
+	at com.ssafy.vue.model.service.MemberServiceImpl.delete(MemberServiceImpl.java:72)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$FastClassBySpringCGLIB$$8039aeee.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$EnhancerBySpringCGLIB$$1914b948.delete(<generated>)
+	at com.ssafy.vue.controller.MemberController.deleteArticle(MemberController.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:702)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+[2m2022-11-17 17:30:08.863[0;39m [32m INFO[0;39m [35m17652[0;39m [2m---[0;39m [2m[n(11)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2022-11-17 17:30:08.932[0;39m [33m WARN[0;39m [35m17652[0;39m [2m---[0;39m [2m[n(11)-127.0.0.1][0;39m [36mo.a.c.loader.WebappClassLoaderBase      [0;39m [2m:[0;39m The web application [vue] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+[2m2022-11-17 17:30:15.967[0;39m [32m INFO[0;39m [35m13984[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-11-17 17:30:16.032[0;39m [32m INFO[0;39m [35m13984[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 731 ms
+[2m2022-11-17 17:30:16.526[0;39m [32m INFO[0;39m [35m13984[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-11-17 17:30:25.656[0;39m [32m INFO[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2022-11-17 17:30:25.656[0;39m [32m INFO[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 0 ms
+[2m2022-11-17 17:30:25.709[0;39m [31mERROR[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.s.vue.model.service.JwtServiceImpl    [0;39m [2m:[0;39m JWT expired at 2022-11-17T17:25:07Z. Current time: 2022-11-17T17:30:25Z, a difference of 318708 milliseconds.  Allowed clock skew: 0 milliseconds.
+[2m2022-11-17 17:30:25.709[0;39m [31mERROR[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 불가능 토큰!!!
+[2m2022-11-17 17:30:25.753[0;39m [32mDEBUG[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m token : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjczNDk3MTU3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzM1MjcsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiI0NDQifQ.aP9HnnczP5t-DSQ0StHw8Ju5Elj7d1jHxXY8Gf95h1w, memberDto : com.ssafy.vue.model.MemberDto@29146c1c
+[2m2022-11-17 17:30:25.755[0;39m [31mERROR[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.s.vue.model.service.JwtServiceImpl    [0;39m [2m:[0;39m JWT expired at 2022-11-17T17:25:27Z. Current time: 2022-11-17T17:30:25Z, a difference of 298755 milliseconds.  Allowed clock skew: 0 milliseconds.
+[2m2022-11-17 17:30:25.755[0;39m [32mDEBUG[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 리프레쉬토큰도 사용불!!!!!!!
+[2m2022-11-17 17:30:30.378[0;39m [32mDEBUG[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 accessToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjczODMwMzY2LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzM4NDAsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6IjQ0NCJ9.RPU2prXMygxOTMqlbH5vODx8dCBmM_2-jHihdF1twCQ
+[2m2022-11-17 17:30:30.378[0;39m [32mDEBUG[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 refreshToken 정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjY4NjczODMwMzcxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2Njg2NzM4NjAsInN1YiI6InJlZnJlc2gtdG9rZW4iLCJ1c2VyaWQiOiI0NDQifQ.RBopGPYUxUJlHomuIvY2ygFRWnNuF_01PSu1ergn2Qc
+[2m2022-11-17 17:30:30.387[0;39m [32m INFO[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 17:30:31.415[0;39m [32m INFO[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2022-11-17 17:30:32.718[0;39m [32m INFO[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m delete - 호출
+[2m2022-11-17 17:30:32.772[0;39m [31mERROR[0;39m [35m13984[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet]     [0;39m [2m:[0;39m Servlet.service() for servlet [dispatcherServlet] in context with path [/vue] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where userid = '444'' at line 2
+### The error may exist in file [C:\SSAFY\workspace\final1117-2\pjt_daejeon_8th_class5_final_team05\SpringBack\target\classes\mappers\member.xml]
+### The error may involve com.ssafy.vue.model.mapper.MemberMapper.delete-Inline
+### The error occurred while setting parameters
+### SQL: delete ssafy_member   where userid = ?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where userid = '444'' at line 2
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where userid = '444'' at line 2] with root cause
+
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where userid = '444'' at line 2
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:194)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.delete(DefaultSqlSession.java:209)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy78.delete(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.delete(SqlSessionTemplate.java:304)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:72)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy103.delete(Unknown Source)
+	at com.ssafy.vue.model.service.MemberServiceImpl.delete(MemberServiceImpl.java:72)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$FastClassBySpringCGLIB$$8039aeee.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$EnhancerBySpringCGLIB$$b07babb.delete(<generated>)
+	at com.ssafy.vue.controller.MemberController.deleteArticle(MemberController.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:702)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+[2m2022-11-17 17:33:47.849[0;39m [32m INFO[0;39m [35m13984[0;39m [2m---[0;39m [2m[n(12)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2022-11-17 17:33:47.905[0;39m [33m WARN[0;39m [35m13984[0;39m [2m---[0;39m [2m[n(12)-127.0.0.1][0;39m [36mo.a.c.loader.WebappClassLoaderBase      [0;39m [2m:[0;39m The web application [vue] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)

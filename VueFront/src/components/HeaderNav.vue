@@ -1,5 +1,36 @@
 <template>
   <div class="header">
+    <!--
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow py-lg-0 justify-content-center">
+      <a href="index.jsp" class="navbar-brand d-block d-lg-none">
+        <h1 class="text-primary fw-bold m-0">대방</h1>
+      </a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse py-4 py-lg-0 justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav py-0 justify-content-center">
+          <router-link to="/" class="navbar-brand bg-light py-3 px-4 mx-3 d-none d-lg-block">
+            <h1 class="text-primary fw-bold m-0">대방</h1>
+          </router-link>
+          <router-link to="/search" class="nav-item nav-link px-4">매매검색</router-link>
+          <router-link to="/traffic" class="nav-item nav-link px-4">교통정보</router-link>
+          <router-link to="/about" class="nav-item nav-link px-4">서비스</router-link>
+        </div>
+
+        <div class="navbar-nav py-0" v-if="userInfo">
+          <router-link :to="{ name: 'mypage' }" class="nav-item nav-link px-4">마이페이지</router-link>
+          <a class="nav-item nav-link px-4" @click.prevent="onClickLogout">로그아웃</a>
+        </div>
+
+        <div class="navbar-nav me-auto py-0" v-else>
+          <router-link :to="{ name: 'join' }" class="nav-item nav-link px-4">회원가입</router-link>
+          <router-link :to="{ name: 'login' }" class="nav-item nav-link px-4">로그인</router-link>
+        </div>
+      </div>
+    </nav>
+    <nav>{{ userInfo.username }}({{ userInfo.userid }})님 환영합니다.</nav> -->
+
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow py-lg-0 px-4 px-lg-5 justify-content-center">
       <a href="index.jsp" class="navbar-brand d-block d-lg-none">
         <h1 class="text-primary fw-bold m-0">구해줘홈즈</h1>
@@ -14,18 +45,16 @@
           <router-link to="/about" class="nav-item nav-link px-4">서비스</router-link>
         </div>
         <router-link to="/" class="navbar-brand bg-light py-3 px-4 mx-3 d-none d-lg-block">
-          <h1 class="text-primary fw-bold m-0">Homes</h1>
+          <h1 class="text-primary fw-bold m-0">H<i class="bi bi-house-heart-fill fs-3"></i>mes</h1>
         </router-link>
 
-        <!-- after login -->
         <div class="navbar-nav me-auto py-0" v-if="userInfo">
           <!-- <router-link to="/about" class="nav-item nav-link px-4">회원가입/로그인</router-link> -->
-          <router-link :to="{ name: 'mypage' }" class="nav-item nav-link px-4">내정보보기</router-link>
+          <router-link :to="{ name: 'mypage' }" class="nav-item nav-link px-4">마이페이지</router-link>
           <a class="nav-item nav-link px-4" @click.prevent="onClickLogout">로그아웃</a>
-          {{ userInfo.username }}({{ userInfo.userid }})님 환영합니다.
+          <nav>{{ userInfo.username }}({{ userInfo.userid }})님 환영합니다.</nav>
         </div>
 
-        <!-- before login -->
         <div class="navbar-nav me-auto py-0" v-else>
           <router-link :to="{ name: 'join' }" class="nav-item nav-link px-4">회원가입</router-link>
           <router-link :to="{ name: 'login' }" class="nav-item nav-link px-4">로그인</router-link>
