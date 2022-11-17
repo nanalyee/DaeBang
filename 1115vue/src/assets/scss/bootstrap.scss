@@ -1,0 +1,33 @@
+/******* Customized Bootstrap ********/
+
+$primary: #6244c5;
+$secondary: #ffc448;
+$light: #fafafb;
+$dark: #12141d;
+
+$font-family-base: "Open Sans", sans-serif;
+
+$body-color: #5a5a5a;
+
+$headings-color: $dark;
+
+$headings-font-weight: 600;
+
+$display-font-weight: 700;
+
+$enable-responsive-font-sizes: true;
+
+$border-radius: 10px;
+
+$border-radius-sm: $border-radius;
+
+$border-radius-lg: $border-radius;
+
+$link-decoration: none;
+
+$enable-negative-margins: true;
+
+@import "bootstrap/scss/bootstrap";
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-vue/src/index.scss";
