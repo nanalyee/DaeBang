@@ -23,6 +23,7 @@ export default new Vuex.Store({
     avgspeed: null,
     avgstate: null,
     timetaken: null,
+    businfo: null,
   },
   getters: {
     // 평균 속도와 교통상태를 가공해보자,,,,,,,,,,,,,,,

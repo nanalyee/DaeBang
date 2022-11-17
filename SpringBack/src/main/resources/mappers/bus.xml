@@ -3,11 +3,10 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
 <mapper namespace="com.ssafy.vue.model.mapper.BusMapper">
-	<select id="listBusStop" parameterType="map" resultType="BusDto">
+	<select id="listBusStop" parameterType="map" resultType="busDto">
 		select stop_id,stop_name
 		from busstop_info
-		where stop_id = #{stop_id}
-		order by stop_name desc
+		order by stop_name asc
 	</select>
 </mapper>
 
