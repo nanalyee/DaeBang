@@ -62,7 +62,7 @@
                 <tbody>
                   <tr>
                     <th>도로 길이</th>
-                    <td>{{ $store.state.trafficinfo.summary.distance }}m</td>
+                    <td>{{ $store.state.trafficinfo.summary.distance / 1000 }}km</td>
                   </tr>
                   <tr>
                     <th>소요 시간</th>
@@ -82,7 +82,9 @@
                 교통 상황 서비스 !<br />
                 노은역에서 SSAFY 대전캠퍼스까지의 경로에 대한 상세 정보를 제공합니다.
               </p>
-              <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO MOBILITY</p>
+              <p class="mb-3">
+                <i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO MOBILITY
+              </p>
             </div>
           </div>
           <div class="portfolio-btn">
@@ -91,7 +93,15 @@
         </div>
       </div>
     </div>
-    <b-sidebar id="sidebar-right" title="실시간 한마디" right shadow backdrop backdrop-variant="dark" width="620px">
+    <b-sidebar
+      id="sidebar-right"
+      title="실시간 한마디"
+      right
+      shadow
+      backdrop
+      backdrop-variant="dark"
+      width="620px"
+    >
       <template>
         <div>
           <b-collapse id="collapse-4" v-model="visible" class="mt-2">
@@ -113,7 +123,12 @@
               <b-button type="submit" variant="primary" class="m-1" v-else
                 ><i class="bi bi-send-fill white fs-4"></i
               ></b-button>
-              <b-form-group id="userid-group" label="작성자:" label-for="userid" description="작성자를 입력하세요.">
+              <b-form-group
+                id="userid-group"
+                label="작성자:"
+                label-for="userid"
+                description="작성자를 입력하세요."
+              >
                 <b-form-input
                   id="userid"
                   :disabled="isUserid"
@@ -124,7 +139,12 @@
                 ></b-form-input>
               </b-form-group>
 
-              <b-form-group id="subject-group" label="제목:" label-for="subject" description="제목을 입력하세요.">
+              <b-form-group
+                id="subject-group"
+                label="제목:"
+                label-for="subject"
+                description="제목을 입력하세요."
+              >
                 <b-form-input
                   id="subject"
                   v-model="article.subject"
@@ -195,7 +215,11 @@
                       <span class="fs-6 font-weight-bold">{{ item.subject }}</span>
                     </div>
 
-                    <div class="collapse border-top pt-2 mt-2" :id="'toggle' + i" data-parent="#accordion">
+                    <div
+                      class="collapse border-top pt-2 mt-2"
+                      :id="'toggle' + i"
+                      data-parent="#accordion"
+                    >
                       <div class="row mb-3 justify-content-between">
                         <div class="col-auto">
                           <div style="color: #6b799e">조회수 {{ item.hit }}</div>
@@ -312,9 +336,14 @@ export default {
 
       let err = true;
       let msg = "";
-      !this.article.userid && ((msg = "작성자 입력해주세요"), (err = false), this.$refs.userid.focus());
-      err && !this.article.subject && ((msg = "제목 입력해주세요"), (err = false), this.$refs.subject.focus());
-      err && !this.article.content && ((msg = "내용 입력해주세요"), (err = false), this.$refs.content.focus());
+      !this.article.userid &&
+        ((msg = "작성자 입력해주세요"), (err = false), this.$refs.userid.focus());
+      err &&
+        !this.article.subject &&
+        ((msg = "제목 입력해주세요"), (err = false), this.$refs.subject.focus());
+      err &&
+        !this.article.content &&
+        ((msg = "내용 입력해주세요"), (err = false), this.$refs.content.focus());
 
       if (!err) alert(msg);
       else {
