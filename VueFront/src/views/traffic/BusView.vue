@@ -1,7 +1,7 @@
 <template>
   <!-- 버스 서비스 시작 -->
 
-  <div class="container-fluid bg-light my-5 py-6" id="service">
+  <div class="container-fluid bg-light my-5 py-6" id="bus">
     <div class="container">
       <div class="row g-5 mb-4">
         <div class="col-lg-6">

@@ -1,19 +1,80 @@
 <template>
   <!-- 지하철 서비스 시작 -->
-  <div class="container-xxl py-6" id="about">
+  <div class="container-xxl py-6" id="train">
     <div class="container">
-      <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="row g-6 mb-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="col-lg-6">
           <h1 class="display-5 mb-0">지하철</h1>
           <br />
-          <h5 class="text-warning fw-bold mb-3">대전광역시 22개 역사를 소개합니다.</h5>
+          <h5 class="text-success fw-bold mb-4">
+            2021년 기준 하루 평균 <span class="text-danger">74,920</span>명이 이용하는
+            <br />
+            대전 도시철도 22개 역사를 소개합니다.
+          </h5>
         </div>
       </div>
-      <div class="row g-5">
-        <div class="col-lg-7 wow fadeInUp">
-          <img src="@/assets/img/sindorim.png" alt="" />
+
+      <!-- 지하철 캐러셀 시작   -->
+      <div id="carouselTrain" class="carousel carousel-dark slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li id="indicator" data-target="#carouselTrain" data-slide-to="0" class="active"></li>
+          <li
+            id="indicator"
+            v-for="(item, i) in 21"
+            :key="i"
+            data-target="#carouselTrain"
+            data-slide-to="item+1"
+          ></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div id="carousel_train_speed" class="carousel-item active rounded">
+            <div class="row g-4">
+              <img
+                id="daejeon_subway"
+                class="img-fluid rounded"
+                src="@/assets/img/daejeon_subway_1.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div v-for="(item, i) in 21" :key="i" id="carousel_train_speed" class="carousel-item">
+            <div class="row g-4">
+              <img
+                id="daejeon_subway"
+                class="img-fluid rounded"
+                :src="require(`@/assets/img/daejeon_subway_${item + 1}.png`)"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
+
+        <button
+          id="carousel-control-prev"
+          class="carousel-control-prev"
+          type="button"
+          data-target="#carouselTrain"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button
+          id="carousel-control-next"
+          class="carousel-control-next"
+          type="button"
+          data-target="#carouselTrain"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+        <br />
+        <br />
       </div>
+      <!-- 지하철 캐러셀 끝   -->
+      <br />
       <div class="row g-5">
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
           <!-- <div class="d-flex align-items-center mb-5">
@@ -71,4 +132,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#daejeon_subway {
+  width: 900px;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+}
+
+#carousel_train_speed {
+  transition: 0.3s !important;
+}
+
+#indicator.active {
+  background-color: #541cbd;
+}
+</style>
