@@ -9,6 +9,8 @@ import java.net.URLEncoder;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.json.JSONObject;
+import org.json.XML;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,5 +88,42 @@ public class TrafficController {
 		System.out.println(list.size());
 		return new ResponseEntity<List<BusDto>>(busService.listBusStop(), HttpStatus.OK);
 	}
+	
+	// 버스 상세 정보 ///////////////////////////////////////////////
+		@ApiOperation(value = "버스 상세 정보", notes = "정류소 ID를 기준으로 버스 상세정보를 반환한다.", response = List.class)
+		@GetMapping(value = "/getbusinfo/{stop_id}", produces = "application/json;charset=utf-8")
+		public ResponseEntity<String> getbusinfo(@PathVariable("stop_id") String stopid) throws IOException {
+			String serviceKey = "U3x%2FhookUVc%2BS%2FYDXR0orCt70jponbqHM%2BfioZ%2BHxGIqJV3t4Na4cnAKAEZp6%2Fa%2FE01V9A5lx35maqZDKxcccw%3D%3D";
+			StringBuilder urlBuilder = new StringBuilder(
+					"http://openapitraffic.daejeon.go.kr/api/rest/arrive/getArrInfoByStopID"); /*
+																																 */
+			urlBuilder.append(
+					"?" + URLEncoder.encode("busStopID", "UTF-8") + "=" + URLEncoder.encode(stopid, "UTF-8")); /* 지역코드 */
+			urlBuilder.append("&" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + serviceKey);
+			URL url = new URL(urlBuilder.toString());
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Content-type", "application/json");
+			System.out.println("Response code: " + conn.getResponseCode());
+			BufferedReader rd;
+			if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+				rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			} else {
+				rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+			}
+			StringBuilder sb = new StringBuilder();
+			String line;
+			while ((line = rd.readLine()) != null) {
+				sb.append(line);
+			}
+			rd.close();
+			conn.disconnect();
+			//System.out.println(sb.toString());
+
+			JSONObject json = XML.toJSONObject(sb.toString());
+			String jsonStr = json.toString();
+
+			return new ResponseEntity<String>(jsonStr, HttpStatus.OK);
+		}
 
 }

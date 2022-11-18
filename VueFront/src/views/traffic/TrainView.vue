@@ -5,9 +5,13 @@
       <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="col-lg-6">
           <h1 class="display-5 mb-0">지하철</h1>
+          <br />
+          <h5 class="text-warning fw-bold mb-3">대전광역시 22개 역사를 소개합니다.</h5>
         </div>
-        <div class="col-lg-6 text-lg-end">
-          <a class="btn btn-primary py-3 px-5" href="https://www.data.go.kr/">공공데이터 포털</a>
+      </div>
+      <div class="row g-5">
+        <div class="col-lg-7 wow fadeInUp">
+          <img src="@/assets/img/sindorim.png" alt="" />
         </div>
       </div>
       <div class="row g-5">
@@ -48,7 +52,9 @@
             지하철지하철지하철<br />
             지하철지하철지하철
           </p>
-          <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>지하철지하철지하철</p>
+          <p class="mb-3">
+            <i class="bi bi-check-circle-fill text-primary me-3"></i>지하철지하철지하철
+          </p>
         </div>
       </div>
     </div>
