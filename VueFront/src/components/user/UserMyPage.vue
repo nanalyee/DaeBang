@@ -43,7 +43,8 @@
           </b-container>
           <hr class="my-4" />
 
-          <b-button variant="primary" href="#" class="mr-1">정보수정</b-button>
+          <router-link :to="{ name: 'modify' }" class="btn btn-primary mr-1">정보수정</router-link>
+          <!-- <b-button variant="primary" href="#" class="mr-1">정보수정</b-button> -->
           <b-button variant="danger" href="#" @click="deleteMember">회원탈퇴</b-button>
         </b-jumbotron>
       </b-col>

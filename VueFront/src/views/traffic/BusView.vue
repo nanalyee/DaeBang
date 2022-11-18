@@ -3,14 +3,14 @@
 
   <div class="container-fluid bg-light my-5 py-6" id="service">
     <div class="container">
-      <div class="row g-5 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="row g-5 mb-4">
         <div class="col-lg-6">
           <h1 class="display-5 mb-0">
             버스 <img src="@/assets/img/busgif.gif" alt="" id="busgif" />
           </h1>
         </div>
       </div>
-      <div class="row align-items-center wow fadeInUp" data-wow-delay="0.1s">
+      <div class="row align-items-center">
         <h5 class="text-primary fw-bold mb-3">
           대전광역시 3072개의 정류소 정보를 제공합니다. (* 정렬기준: 가나다순)
         </h5>
@@ -33,13 +33,14 @@
             :data-slide-to="i"
           ></li>
         </ol> -->
+
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active rounded">
             <!-- 캐러셀 아이템 시작 -->
             <div class="row g-4">
-              <div class="col-lg-6 wow fadeInUp portfolio-item first">
+              <div class="col-lg-6 portfolio-item first pl-5">
                 <div
-                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5 portfolio-img"
                 >
                   <div class="bg-icon flex-shrink-0 mb-3">
                     <img class="img-fluid rounded" src="@/assets/img/busstop.png" alt="" />
@@ -51,14 +52,16 @@
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
-                </div>
-                <div class="portfolio-btn">
-                  <b-button v-b-toggle.sidebar-bus><i class="bi bi-info-square"></i></b-button>
+                  <div class="portfolio-btn rounded justify-content-end">
+                    <b-button v-b-toggle.sidebar-bus
+                      ><i class="bi bi-info-square-fill"></i
+                    ></b-button>
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-6 wow fadeInUp portfolio-item first">
+              <div class="col-lg-6 portfolio-item first pr-5">
                 <div
-                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5 portfolio-img"
                 >
                   <div class="bg-icon flex-shrink-0 mb-3">
                     <img class="img-fluid rounded" src="@/assets/img/busstop2.png" alt="" />
@@ -69,14 +72,16 @@
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
-                </div>
-                <div class="portfolio-btn">
-                  <b-button v-b-toggle.sidebar-bus><i class="bi bi-info-square"></i></b-button>
+                  <div class="portfolio-btn rounded m-6">
+                    <b-button v-b-toggle.sidebar-bus
+                      ><i class="bi bi-info-square-fill"></i
+                    ></b-button>
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-6 wow fadeInUp portfolio-item first">
+              <div class="col-lg-6 portfolio-item first pl-5">
                 <div
-                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5 portfolio-img"
                 >
                   <div class="bg-icon flex-shrink-0 mb-3">
                     <img class="img-fluid rounded" src="@/assets/img/busstop3.png" alt="" />
@@ -87,14 +92,16 @@
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
-                </div>
-                <div class="portfolio-btn">
-                  <b-button v-b-toggle.sidebar-bus><i class="bi bi-info-square"></i></b-button>
+                  <div class="portfolio-btn rounded m-6 justify-content-end">
+                    <b-button v-b-toggle.sidebar-bus
+                      ><i class="bi bi-info-square-fill"></i
+                    ></b-button>
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-6 wow fadeInUp portfolio-item first">
+              <div class="col-lg-6 portfolio-item first pr-5">
                 <div
-                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5 portfolio-img"
                 >
                   <div class="bg-icon flex-shrink-0 mb-3">
                     <img class="img-fluid rounded" src="@/assets/img/busstop4.png" alt="" />
@@ -105,9 +112,11 @@
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
-                </div>
-                <div class="portfolio-btn">
-                  <b-button v-b-toggle.sidebar-bus><i class="bi bi-info-square"></i></b-button>
+                  <div class="portfolio-btn rounded m-6">
+                    <b-button v-b-toggle.sidebar-bus
+                      ><i class="bi bi-info-square-fill"></i
+                    ></b-button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -116,9 +125,9 @@
           <div class="carousel-item" v-for="(item, i) in printbuslist()" :key="i">
             <!-- 캐러셀 아이템 시작 -->
             <div class="row g-4">
-              <div class="col-lg-6 wow fadeInUp portfolio-item first" data-wow-delay="0.1s">
+              <div class="col-lg-6 portfolio-item first pl-5">
                 <div
-                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5 portfolio-img"
                 >
                   <div class="bg-icon flex-shrink-0 mb-3">
                     <img class="img-fluid rounded" src="@/assets/img/busstop.png" alt="" />
@@ -131,14 +140,16 @@
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
-                </div>
-                <div class="portfolio-btn">
-                  <b-button v-b-toggle.sidebar-bus><i class="bi bi-info-square"></i></b-button>
+                  <div class="portfolio-btn rounded m-6 justify-content-end">
+                    <b-button v-b-toggle.sidebar-bus
+                      ><i class="bi bi-info-square-fill"></i
+                    ></b-button>
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-6 wow fadeInUp portfolio-item first" data-wow-delay="0.3s">
+              <div class="col-lg-6 portfolio-item first pr-5">
                 <div
-                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5 portfolio-img"
                 >
                   <div class="bg-icon flex-shrink-0 mb-3">
                     <img class="img-fluid rounded" src="@/assets/img/busstop2.png" alt="" />
@@ -150,14 +161,16 @@
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
-                </div>
-                <div class="portfolio-btn">
-                  <b-button v-b-toggle.sidebar-bus><i class="bi bi-info-square"></i></b-button>
+                  <div class="portfolio-btn rounded m-6">
+                    <b-button v-b-toggle.sidebar-bus
+                      ><i class="bi bi-info-square-fill"></i
+                    ></b-button>
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-6 wow fadeInUp portfolio-item first" data-wow-delay="0.1s">
+              <div class="col-lg-6 portfolio-item first pl-5">
                 <div
-                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5 portfolio-img"
                 >
                   <div class="bg-icon flex-shrink-0 mb-3">
                     <img class="img-fluid rounded" src="@/assets/img/busstop3.png" alt="" />
@@ -169,14 +182,16 @@
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
-                </div>
-                <div class="portfolio-btn">
-                  <b-button v-b-toggle.sidebar-bus><i class="bi bi-info-square"></i></b-button>
+                  <div class="portfolio-btn rounded m-6 justify-content-end">
+                    <b-button v-b-toggle.sidebar-bus
+                      ><i class="bi bi-info-square-fill"></i
+                    ></b-button>
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-6 wow fadeInUp portfolio-item first" data-wow-delay="0.3s">
+              <div class="col-lg-6 portfolio-item first pr-5">
                 <div
-                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+                  class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5 portfolio-img"
                 >
                   <div class="bg-icon flex-shrink-0 mb-3">
                     <img class="img-fluid rounded" src="@/assets/img/busstop4.png" alt="" />
@@ -188,17 +203,18 @@
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
-                </div>
-                <div class="portfolio-btn">
-                  <b-button v-b-toggle.sidebar-bus><i class="bi bi-info-square"></i></b-button>
+                  <div class="portfolio-btn rounded m-6">
+                    <b-button v-b-toggle.sidebar-bus
+                      ><i class="bi bi-info-square-fill"></i
+                    ></b-button>
+                  </div>
                 </div>
               </div>
             </div>
             <!-- 캐러셀 아이템 끝 -->
           </div>
         </div>
-        <br />
-        <br />
+
         <button
           id="carousel-control-prev"
           class="carousel-control-prev"
@@ -288,19 +304,32 @@ export default {
   background-color: black;
 }
 
-#indicator.active {
+/* #indicator.active {
   background-color: #541cbd;
-}
+} */
 
-#carousel-control-prev {
+/* #carousel-control-prev {
   margin-bottom: 50px;
 }
 
 #carousel-control-next {
   margin-bottom: 50px;
-}
+} */
 
 #busgif {
   width: 10%;
+}
+
+.carousel-control-prev {
+  margin-left: -100px;
+}
+
+.carousel-control-next {
+  margin-right: -100px;
+}
+
+.carousel-item {
+  float: none;
+  transition: 0.1s !important;
 }
 </style>
