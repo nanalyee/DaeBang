@@ -7,9 +7,9 @@
           <h1 class="display-5 mb-0">지하철</h1>
           <br />
           <h5 class="text-success fw-bold mb-4">
-            2021년 기준 하루 평균 <span class="text-danger">74,920</span>명이 이용하는
+            대전 도시철도 1호선은
             <br />
-            대전 도시철도 22개 역사를 소개합니다.
+            2021년 기준 하루 평균 <span class="text-danger">74,920</span>명이 이용합니다.
           </h5>
         </div>
       </div>
@@ -23,7 +23,7 @@
             v-for="(item, i) in 21"
             :key="i"
             data-target="#carouselTrain"
-            data-slide-to="item+1"
+            :data-slide-to="item"
           ></li>
         </ol>
 
@@ -51,24 +51,26 @@
         </div>
 
         <button
-          id="carousel-control-prev"
+          id="carousel-subway-prev"
           class="carousel-control-prev"
           type="button"
           data-target="#carouselTrain"
           data-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+          <img id="subway_array_icon" src="@/assets/img/subway_prev.png" alt="" />
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          <!-- <span class="sr-only">Previous</span> -->
         </button>
         <button
-          id="carousel-control-next"
+          id="carousel-subway-next"
           class="carousel-control-next"
           type="button"
           data-target="#carouselTrain"
           data-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+          <img id="subway_array_icon" src="@/assets/img/subway_next.png" alt="" />
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span> -->
         </button>
         <br />
         <br />
@@ -144,6 +146,18 @@ export default {
   transition: 0.3s !important;
 }
 
+#subway_array_icon {
+  width: 20%;
+  margin-bottom: 40px;
+}
+
+#carousel-subway-prev {
+  margin-left: 0px;
+}
+
+#carousel-subway-next {
+  margin-right: 20px;
+}
 #indicator.active {
   background-color: #541cbd;
 }
