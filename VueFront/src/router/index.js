@@ -22,7 +22,6 @@ import OfficeListView from "@/views/house/OfficeListView.vue";
 import MansionListView from "@/views/house/MansionListView.vue";
 
 import KakaoMapView from "@/components/detail/KakaoMapView.vue";
-import NearListView from "@/components/detail/NearListView.vue";
 
 import store from "@/store";
 
@@ -60,6 +59,7 @@ const routes = [
     path: "/search",
     name: "search",
     component: SearchView,
+    props: true,
     children: [
       {
         path: "apt",
@@ -87,16 +87,12 @@ const routes = [
     path: "/detail",
     name: "detail",
     component: DetailView,
+    props: true,
     children: [
       {
         path: "kakaoMap",
         name: "kakaoMap",
         component: KakaoMapView,
-      },
-      {
-        path: "nearList",
-        name: "nearList",
-        component: NearListView,
       },
     ],
   },

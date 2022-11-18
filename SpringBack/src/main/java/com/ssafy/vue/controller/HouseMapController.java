@@ -224,50 +224,87 @@ public class HouseMapController {
 	}
 	
 	// 카카오 이미지 api  ///////////////////////////////////////////////
-		// http://openapi.molit.go.kr/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcOffiRent?LAWD_CD=11110&DEAL_YMD=201512&serviceKey=서비스키
-		@ApiOperation(value = "카카오 이미지 검색", notes = "제목을 기준으로 카카오 이미지 검색을 한다.", response = List.class)
-		@GetMapping(value = "/searchimg/{title}", produces = "application/json;charset=utf-8")
-		public ResponseEntity<String> searchimg(@PathVariable("title") String title) throws IOException {
-			System.out.println(title);
-			String serviceKey = "7843aee4e80223a8f32fe3c8242e1036";
-			StringBuilder urlBuilder = new StringBuilder(
-					"https://dapi.kakao.com/v2/search/image"); 
-			urlBuilder.append(
-					"?" + URLEncoder.encode("query", "UTF-8") + "=" + URLEncoder.encode(title, "UTF-8")); /* 검색어 */
-			URL url = new URL(urlBuilder.toString());
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestProperty("Authorization", "KakaoAK "+ serviceKey);
-			conn.setRequestMethod("GET");
-			conn.setRequestProperty("Content-type", "application/json");
-			System.out.println("Response code: " + conn.getResponseCode());
-			BufferedReader rd;
-			if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
-				rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			} else {
-				rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
-			}
-			StringBuilder sb = new StringBuilder();
-			String line;
-			while ((line = rd.readLine()) != null) {
-				sb.append(line);
-			}
-			rd.close();
-			conn.disconnect();
-			//System.out.println(sb.toString());
-
-			//JSONObject json = XML.toJSONObject(sb.toString());
-			//String jsonStr = json.toString();
-
-			return new ResponseEntity<String>(sb.toString(), HttpStatus.OK);
+	// http://openapi.molit.go.kr/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcOffiRent?LAWD_CD=11110&DEAL_YMD=201512&serviceKey=서비스키
+	@ApiOperation(value = "카카오 이미지 검색", notes = "제목을 기준으로 카카오 이미지 검색을 한다.", response = List.class)
+	@GetMapping(value = "/searchimg/{title}", produces = "application/json;charset=utf-8")
+	public ResponseEntity<String> searchimg(@PathVariable("title") String title) throws IOException {
+		System.out.println(title);
+		String serviceKey = "7843aee4e80223a8f32fe3c8242e1036";
+		StringBuilder urlBuilder = new StringBuilder(
+				"https://dapi.kakao.com/v2/search/image"); 
+		urlBuilder.append(
+				"?" + URLEncoder.encode("query", "UTF-8") + "=" + URLEncoder.encode(title, "UTF-8")); /* 검색어 */
+		URL url = new URL(urlBuilder.toString());
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		conn.setRequestProperty("Authorization", "KakaoAK "+ serviceKey);
+		conn.setRequestMethod("GET");
+		conn.setRequestProperty("Content-type", "application/json");
+		System.out.println("Response code: " + conn.getResponseCode());
+		BufferedReader rd;
+		if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+			rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+		} else {
+			rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
 		}
-//	@GetMapping("/dong")
-//	public ResponseEntity<List<HouseInfoDto>> dong(@RequestParam("gugun") String gugun) throws Exception {
-//		return new ResponseEntity<List<HouseInfoDto>>(haHouseMapService.getDongInGugun(gugun), HttpStatus.OK);
-//	}
-//	
-//	@GetMapping("/apt")
-//	public ResponseEntity<List<HouseInfoDto>> apt(@RequestParam("dong") String dong) throws Exception {
-//		return new ResponseEntity<List<HouseInfoDto>>(haHouseMapService.getAptInDong(dong), HttpStatus.OK);
-//	}
+		StringBuilder sb = new StringBuilder();
+		String line;
+		while ((line = rd.readLine()) != null) {
+			sb.append(line);
+		}
+		rd.close();
+		conn.disconnect();
+		//System.out.println(sb.toString());
+
+		//JSONObject json = XML.toJSONObject(sb.toString());
+		//String jsonStr = json.toString();
+
+		return new ResponseEntity<String>(sb.toString(), HttpStatus.OK);
+	}
+	
+	
+	// 상권 정보 api  ///////////////////////////////////////////////
+	@ApiOperation(value = "상권 목록", notes = "위도,경도,대분류코드를 이용하여 상권 목록을 반환한다.", response = List.class)
+    @GetMapping(value = "/store/{cx}/{cy}/{indsLclsCd}", produces = "application/json;charset=utf-8")
+    public ResponseEntity<String> store(@PathVariable("cx") String cx,
+            @PathVariable("cy") String cy, @PathVariable("indsLclsCd") String indsLclsCd) throws IOException {
+        String serviceKey = "U3x%2FhookUVc%2BS%2FYDXR0orCt70jponbqHM%2BfioZ%2BHxGIqJV3t4Na4cnAKAEZp6%2Fa%2FE01V9A5lx35maqZDKxcccw%3D%3D";
+        StringBuilder urlBuilder = new StringBuilder(
+                "http://apis.data.go.kr/B553077/api/open/sdsc2/storeListInRadius");
+         urlBuilder.append("?" + URLEncoder.encode("radius","UTF-8") + "=" + URLEncoder.encode("1000", "UTF-8"));
+            //경도
+            urlBuilder.append("&" + URLEncoder.encode("cx","UTF-8") + "=" + URLEncoder.encode(cx, "UTF-8")); 
+            //위도
+            urlBuilder.append("&" + URLEncoder.encode("cy","UTF-8") + "=" + URLEncoder.encode(cy, "UTF-8")); 
+            //상권업종대분류코드
+            urlBuilder.append("&" + URLEncoder.encode("indsLclsCd","UTF-8") + "=" + URLEncoder.encode(indsLclsCd, "UTF-8"));
+            //페이지당건수
+            urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("100", "UTF-8"));
+        urlBuilder.append("&" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + serviceKey);
+
+        URL url = new URL(urlBuilder.toString());
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("Content-type", "application/json");
+        System.out.println("Response code: " + conn.getResponseCode());
+        BufferedReader rd;
+        if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+            rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        } else {
+            rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+        }
+        StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = rd.readLine()) != null) {
+            sb.append(line);
+        }
+        rd.close();
+        conn.disconnect();
+        //System.out.println(sb.toString());
+
+        JSONObject json = XML.toJSONObject(sb.toString());
+        String jsonStr = json.toString();
+
+        return new ResponseEntity<String>(jsonStr, HttpStatus.OK);
+    }
 
 }
