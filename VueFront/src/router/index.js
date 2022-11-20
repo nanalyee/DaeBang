@@ -177,6 +177,7 @@ const routes = [
   {
     path: "/wish",
     name: "wish",
+    props: true,
     component: () => import("@/views/WishView"),
     children: [
       {

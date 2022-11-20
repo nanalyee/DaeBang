@@ -18,7 +18,7 @@
             <div class="d-flex align-items-center pt-5">
               <a href="" class="btn btn-primary py-3 px-4 me-5">Sign In</a>
               <!-- <button @click="modalShow = !modalShow">Open Modal</b-button> -->
-              <b-button @click="show" type="button" class="btn-play">
+              <b-button type="button" class="btn-play">
                 <span></span>
               </b-button>
               <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
