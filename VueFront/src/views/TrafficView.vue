@@ -123,6 +123,8 @@
     <bus-view></bus-view>
     <train-view></train-view>
     <bicycle-view></bicycle-view>
+    <tourist-destination></tourist-destination>
+    <fav-weather></fav-weather>
   </div>
 </template>
 
@@ -131,6 +133,8 @@ import LiveView from "@/views/traffic/LiveView";
 import BusView from "@/views/traffic/BusView";
 import TrainView from "@/views/traffic/TrainView";
 import BicycleView from "@/views/traffic/BicycleView";
+import TouristDestination from "@/components/fav/TouristDestination";
+import FavWeather from "@/components/fav/FavWeather";
 export default {
   name: "AppMain",
   components: {
@@ -138,6 +142,8 @@ export default {
     BusView,
     TrainView,
     BicycleView,
+    TouristDestination,
+    FavWeather,
   },
   data() {
     return {

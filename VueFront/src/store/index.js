@@ -10,6 +10,17 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    // commercial district : 상권
+    cd: {
+      market: "",
+      convenience: "",
+      subway: "",
+      bank: "",
+      food: "",
+      hospital: "",
+      cafe: "",
+      pharmacy: "",
+    },
     guguns: [{ value: null, text: "선택하세요" }],
     houses: [],
     house: null,
@@ -195,8 +206,8 @@ export default new Vuex.Store({
       http
         .get(`/traffic/searchroad/${params.ORIGIN}/${params.DESTINATION}`)
         .then(({ data }) => {
-          console.log(commit, data);
-          console.log(data.routes[0].summary.distance);
+          //console.log(commit, data);
+          //console.log(data.routes[0].summary.distance);
           commit("SET_TRAFFIC_INFO", data.routes[0]);
           commit("SET_TIME_TAKEN", data.routes[0].summary.duration);
         })

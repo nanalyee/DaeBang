@@ -76,9 +76,12 @@ export default {
   components: {
     TashuMap,
   },
+  created() {},
   data() {
     return {};
   },
+
+  methods: {},
 };
 </script>
 

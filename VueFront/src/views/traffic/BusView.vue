@@ -418,15 +418,15 @@ export default {
       return list;
     },
     getBusInfo(name, id, idx) {
-      console.log(name);
+      //console.log(name);
       this.busstop_info.stopname = name;
       this.busstop_info.stopid = id;
       this.busstop_info.stopindex = idx;
 
       http.get(`/traffic/getbusinfo/${id}`).then(({ data }) => {
-        console.log(data.ServiceResult.msgBody);
+        //console.log(data.ServiceResult.msgBody);
         this.busstop_info_list = data.ServiceResult.msgBody.itemList;
-        console.log(this.busstop_info_list);
+        //console.log(this.busstop_info_list);
       });
     },
   },
