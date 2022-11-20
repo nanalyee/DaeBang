@@ -23,8 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.vue.model.BoardParameterDto;
 import com.ssafy.vue.model.BusDto;
+import com.ssafy.vue.model.SubwayDto;
 import com.ssafy.vue.model.service.BoardService;
 import com.ssafy.vue.model.service.BusService;
+import com.ssafy.vue.model.service.SubwayService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -39,6 +41,9 @@ public class TrafficController {
 
 	@Autowired
 	private BusService busService;
+	
+	@Autowired
+	private SubwayService subwayService;
 
 	////////////////////////////// 카카오 모빌리티 길찾기 api
 	@ApiOperation(value = "카카오 모빌리티 길찾기 api", notes = "출발지와 목적지를 기준으로 현재 교통상황을 알려준다.", response = List.class)
@@ -89,7 +94,7 @@ public class TrafficController {
 		return new ResponseEntity<List<BusDto>>(busService.listBusStop(), HttpStatus.OK);
 	}
 	
-	// 버스 상세 정보 ///////////////////////////////////////////////
+	    // 버스 상세 정보 ///////////////////////////////////////////////
 		@ApiOperation(value = "버스 상세 정보", notes = "정류소 ID를 기준으로 버스 상세정보를 반환한다.", response = List.class)
 		@GetMapping(value = "/getbusinfo/{stop_id}", produces = "application/json;charset=utf-8")
 		public ResponseEntity<String> getbusinfo(@PathVariable("stop_id") String stopid) throws IOException {
@@ -126,4 +131,14 @@ public class TrafficController {
 			return new ResponseEntity<String>(jsonStr, HttpStatus.OK);
 		}
 
+		@ApiOperation(value = "지하철정보 목록", notes = "대전광역시 모든 지하철의 정보를 반환한다.", response = List.class)
+		@GetMapping(value = "/getsubway", produces = "application/json;charset=utf-8")
+		public ResponseEntity<List<SubwayDto>> getsubway() throws Exception {
+			logger.info("listSubway - 호출");
+			List<SubwayDto> list = new LinkedList<SubwayDto>();
+			list = subwayService.listSubwayInfo();
+			
+			System.out.println(list.size());
+			return new ResponseEntity<List<SubwayDto>>(subwayService.listSubwayInfo(), HttpStatus.OK);
+		}
 }

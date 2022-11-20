@@ -4,13 +4,11 @@
     <div class="container">
       <div class="row g-6 mb-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="col-lg-6">
-          <h1 class="display-5 mb-0">지하철</h1>
+          <h1 class="display-5 mb-0">
+            지하철<img src="@/assets/img/traingif.gif" alt="" id="traingif" />
+          </h1>
           <br />
-          <h5 class="text-success fw-bold mb-4">
-            2021년 기준 하루 평균 <span class="text-danger">74,920</span>명이 이용하는
-            <br />
-            대전 도시철도 22개 역사를 소개합니다.
-          </h5>
+          <h5 class="text-success fw-bold mb-4">클릭 시 역 상세 정보를 보여줍니다.</h5>
         </div>
       </div>
 
@@ -23,7 +21,7 @@
             v-for="(item, i) in 21"
             :key="i"
             data-target="#carouselTrain"
-            data-slide-to="item+1"
+            :data-slide-to="item"
           ></li>
         </ol>
 
@@ -35,6 +33,7 @@
                 class="img-fluid rounded"
                 src="@/assets/img/daejeon_subway_1.png"
                 alt=""
+                @click="showSubwayInfo(0)"
               />
             </div>
           </div>
@@ -45,30 +44,33 @@
                 class="img-fluid rounded"
                 :src="require(`@/assets/img/daejeon_subway_${item + 1}.png`)"
                 alt=""
+                @click="showSubwayInfo(item)"
               />
             </div>
           </div>
         </div>
 
         <button
-          id="carousel-control-prev"
+          id="carousel-subway-prev"
           class="carousel-control-prev"
           type="button"
           data-target="#carouselTrain"
           data-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+          <img id="subway_array_icon" src="@/assets/img/subway_prev.png" alt="" />
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          <!-- <span class="sr-only">Previous</span> -->
         </button>
         <button
-          id="carousel-control-next"
+          id="carousel-subway-next"
           class="carousel-control-next"
           type="button"
           data-target="#carouselTrain"
           data-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+          <img id="subway_array_icon" src="@/assets/img/subway_next.png" alt="" />
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span> -->
         </button>
         <br />
         <br />
@@ -77,74 +79,205 @@
       <br />
       <div class="row g-5">
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-          <!-- <div class="d-flex align-items-center mb-5">
-                        <div class="years flex-shrink-0 text-center me-4">
-                            <h1 class="display-1 mb-0">5</h1>
-                            <h5 class="mb-0">Years</h5>
-                        </div>
-                        <h3 class="lh-base mb-0">2015~2020년간<br> 전국 아파트 실거래 <br> 공공데이터 사용</h3>
-                    </div>
-                    <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>국토교통부</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>High Quality Product</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>On Time Project Delivery</p>
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a> -->
-          <div class="d-flex align-items-center mb-3">
-            <h3 class="border-end pe-3 me-3 mb-0">지하철 정보 넣을거야@@@@@@</h3>
-            <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">23124124</h2>
-          </div>
-          <p class="mb-4">지하철지하철지하철</p>
-          <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>train~</p>
+          <!-- <div class="d-flex align-items-center mb-3">
+            <h3 class="border-end pe-3 me-3 ml-2 mb-0">역 시간표</h3>
+            <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">상행</h2>
+          </div> -->
+          <img id="daejeon_subway_all" src="@/assets/img/subwayall.png" alt="" />
+          <!-- <p class="ml-2 mb-4">지하철지하철지하철</p>
+          <p class="ml-2 mb-3">
+            <i class="bi bi-check-circle-fill text-primary me-3"></i>언제일까용?
+          </p> -->
         </div>
-        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-          <!-- <div class="row g-3 mb-4">
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="${root}/img/about-1.jpg" alt="">
-                        </div>
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="${root}/img/about-2.jpg" alt="">
-                        </div>
-                    </div> -->
-          <div class="d-flex align-items-center mb-3">
-            <h3 class="border-end pe-3 me-3 mb-0">지하철 정보 넣을거야@@@@@@</h3>
-            <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1000</h2>
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="d-flex align-items-center mt-5 mb-3">
+            <h3 class="border-end pe-3 me-3 mb-0">지하철 일 평균 이용 승객 수</h3>
+            <h2 class="text-danger fw-bold mb-0" data-toggle="counter-up">74,920</h2>
           </div>
-          <p class="mb-4">
-            지하철지하철지하철<br />
-            지하철지하철지하철
-          </p>
-          <p class="mb-3">
-            <i class="bi bi-check-circle-fill text-primary me-3"></i>지하철지하철지하철
-          </p>
+          <p class="mb-4">2021년 기준</p>
+          <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>대전의 통계</p>
         </div>
       </div>
     </div>
+
+    <!-- Video Modal Start -->
+    <b-modal v-model="subwaymodalShow" hide-footer title="대전 지하철 역 상세정보">
+      <div class="col-lg-12 text-center">
+        <h3 class="text-success display-7 my-4 mb-10">{{ subwayInfo.stationName }} 역</h3>
+      </div>
+      <h5 class="display-7 mb-4">역 정보</h5>
+      <table class="table caption-top">
+        <tbody>
+          <tr>
+            <th>주소</th>
+            <td>{{ subwayInfo.stationAddr }}</td>
+          </tr>
+          <tr>
+            <th>번호</th>
+            <td>{{ subwayInfo.stationTel }}</td>
+          </tr>
+          <tr>
+            <th>구조</th>
+            <td>{{ subwayInfo.stationStruct }}</td>
+          </tr>
+          <tr>
+            <th>면적</th>
+            <td>{{ subwayInfo.stationArea }}</td>
+          </tr>
+          <tr>
+            <th>승강시설</th>
+            <td>{{ subwayInfo.elevatorFac }}</td>
+          </tr>
+          <tr>
+            <th>출입구</th>
+            <td>{{ subwayInfo.stationExit }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 class="display-7 mb-4 mt-5">편의 시설 유무</h5>
+      <table class="table caption-top">
+        <tbody>
+          <tr>
+            <th>자전거보관소</th>
+            <td>{{ subwayInfo.bikeStorageYn }}</td>
+          </tr>
+          <tr>
+            <th>E/V 유무</th>
+            <td>{{ subwayInfo.elevatorYn }}</td>
+          </tr>
+          <tr>
+            <th>물품보관실</th>
+            <td>{{ subwayInfo.supplyRoomYn }}</td>
+          </tr>
+          <tr>
+            <th>유실물센터</th>
+            <td>{{ subwayInfo.lostPropertyCenterYn }}</td>
+          </tr>
+          <tr>
+            <th>수유실</th>
+            <td>{{ subwayInfo.lactationRoomYn }}</td>
+          </tr>
+          <tr>
+            <th>휠체어 충전</th>
+            <td>{{ subwayInfo.wheelchairChargingYn }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </b-modal>
+    <!-- Video Modal End -->
   </div>
   <!-- 지하철 서비스 끝 -->
 </template>
 
 <script>
+import http from "@/util/http"; // 지하철 역 정보 불러오기용
+
 export default {
   name: "TrainView",
+
+  created() {
+    // spring에서 비동기로 지하철 불러오기
+    http.get(`/traffic/getsubway`).then(({ data }) => {
+      this.subwayListInfo = data;
+      //console.log(this.subwayListInfo);
+    });
+  },
   data() {
-    return {};
+    return {
+      subwaymodalShow: false,
+      subwayListInfo: [],
+      // 버스 불러오기 테스트용
+      subwayInfo: {
+        stationCode: "",
+        stationName: "",
+        elevatorFac: "",
+        stationAddr: "",
+        stationExit: "",
+        stationStruct: "",
+        stationTel: "",
+        stationArea: "",
+        bikeStorageYn: "",
+        elevatorYn: "",
+        lactationRoomYn: "",
+        lostPropertyCenterYn: "",
+        wheelchairChargingYn: "",
+        supplyRoomYn: "",
+      },
+    };
+  },
+
+  methods: {
+    showSubwayInfo(idx) {
+      //console.log(idx);
+      this.subwayInfo.stationName = this.subwayListInfo[idx].stationName;
+      this.subwayInfo.elevatorFac = this.subwayListInfo[idx].elevatorFac;
+      this.subwayInfo.stationAddr = this.subwayListInfo[idx].stationAddr;
+      this.subwayInfo.stationExit = this.subwayListInfo[idx].stationExit;
+      this.subwayInfo.stationStruct = this.subwayListInfo[idx].stationStruct;
+      this.subwayInfo.stationTel = this.subwayListInfo[idx].stationTel;
+      this.subwayInfo.stationArea = this.subwayListInfo[idx].stationArea;
+      this.subwayInfo.bikeStorageYn = this.subwayListInfo[idx].bikeStorageYn;
+      this.subwayInfo.elevatorYn = this.subwayListInfo[idx].elevatorYn;
+      this.subwayInfo.lactationRoomYn = this.subwayListInfo[idx].lactationRoomYn;
+      this.subwayInfo.lostPropertyCenterYn = this.subwayListInfo[idx].lostPropertyCenterYn;
+      this.subwayInfo.wheelchairChargingYn = this.subwayListInfo[idx].wheelchairChargingYn;
+      this.subwayInfo.supplyRoomYn = this.subwayListInfo[idx].supplyRoomYn;
+      this.subwayInfo.stationCode = this.subwayListInfo[idx].stationCode;
+      this.subwaymodalShow = !this.subwaymodalShow;
+    },
+    printbuslist() {
+      var list = [];
+      for (var i = 4; i < this.busstops.length; i += 4) list.push(i);
+      return list;
+    },
+    getBusInfo(name, id, idx) {
+      //console.log(name);
+      this.busstop_info.stopname = name;
+      this.busstop_info.stopid = id;
+      this.busstop_info.stopindex = idx;
+
+      http.get(`/traffic/getbusinfo/${id}`).then(({ data }) => {
+        console.log(data.ServiceResult.msgBody);
+        this.busstop_info_list = data.ServiceResult.msgBody.itemList;
+        //console.log(this.busstop_info_list);
+      });
+    },
   },
 };
 </script>
 
 <style>
 #daejeon_subway {
-  width: 900px;
+  width: 800px;
   margin: auto;
   margin-top: 30px;
-  text-align: center;
 }
 
 #carousel_train_speed {
   transition: 0.3s !important;
 }
 
+#subway_array_icon {
+  width: 20%;
+  margin-bottom: 40px;
+}
+
+#carousel-subway-prev {
+  margin-left: 0px;
+}
+
+#carousel-subway-next {
+  margin-right: 20px;
+}
 #indicator.active {
-  background-color: #541cbd;
+  background-color: #ca0c0c;
+}
+
+#traingif {
+  width: 15%;
+}
+
+#daejeon_subway_all {
+  width: 100%;
 }
 </style>

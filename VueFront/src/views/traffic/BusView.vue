@@ -418,7 +418,6 @@ export default {
       return list;
     },
     getBusInfo(name, id, idx) {
-      console.log("호ㅓ호호");
       console.log(name);
       this.busstop_info.stopname = name;
       this.busstop_info.stopid = id;
@@ -431,6 +430,7 @@ export default {
       });
     },
   },
+
   created() {
     // spring에서 비동기로 버스 불러오기
     http.get(`/traffic/getbusstop`).then(({ data }) => {
