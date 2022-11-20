@@ -174,6 +174,28 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/wish",
+    name: "wish",
+    component: () => import("@/views/WishView"),
+    children: [
+      {
+        path: "rank",
+        name: "rank",
+        component: () => import("@/components/wish/WishRank"),
+      },
+      {
+        path: "tour",
+        name: "tour",
+        component: () => import("@/components/wish/WishTour"),
+      },
+      {
+        path: "weather",
+        name: "weather",
+        component: () => import("@/components/wish/WishWeather"),
+      },
+    ],
+  },
 ];
 
 const router = new VueRouter({

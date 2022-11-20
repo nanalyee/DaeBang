@@ -1,5 +1,34 @@
 <template>
   <div class="search">
+    <!-- Header Start -->
+    <div class="container-fluid bg-light my-6 mt-0" id="home">
+      <div class="container">
+        <div class="row g-5 pt-5 align-items-center">
+          <div class="col-lg-6">
+            <img class="img-fluid text-center" src="@/assets/img/marker/home.png" alt="" />
+          </div>
+          <div class="col-lg-6 py-6 pb-0 pt-lg-0">
+            <h4 class="text-primary mb-3">내가 원하는 방</h4>
+            <h1 class="display-3 mb-3">검색하는</h1>
+            <h2 class="typed-text-output d-inline"></h2>
+            <div class="typed-text">
+              검색하는<br />
+              검색하는
+            </div>
+            <div class="d-flex align-items-center pt-5">
+              <a href="" class="btn btn-primary py-3 px-4 me-5">Sign In</a>
+              <!-- <button @click="modalShow = !modalShow">Open Modal</b-button> -->
+              <!-- <b-button @click="show" type="button" class="btn-play"> -->
+              <b-button type="button" class="btn-play">
+                <span></span>
+              </b-button>
+              <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
     <div class="container py-5">
       <div class="row">
         <div class="col-3">

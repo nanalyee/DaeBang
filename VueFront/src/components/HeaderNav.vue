@@ -59,7 +59,7 @@
 
         <div class="navbar-nav me-auto py-0" v-if="userInfo">
           <!-- <router-link to="/about" class="nav-item nav-link px-4">회원가입/로그인</router-link> -->
-          <router-link to="/about" class="nav-item nav-link px-4">관심지역</router-link>
+          <router-link to="/wish" class="nav-item nav-link px-4">관심지역</router-link>
           <router-link :to="{ name: 'mypage' }" class="nav-item nav-link px-4"
             >마이페이지</router-link
           >
@@ -114,7 +114,7 @@ export default {
 
 <style>
 .userinfo {
-  top: 28px;
+  top: 18px;
   right: 50px;
 }
 </style>

@@ -16,12 +16,6 @@
     >
       <div class="col align-self-center">
         <div class="">
-          <a v-if="check(i) == true && userInfo" class="fs-4 pe-3 like" @click="like(i)"
-            ><i :id="'heart' + i" class="bi bi-heart"></i
-          ></a>
-          <a v-else-if="userInfo" class="fs-4 pe-3 like" @click="like(i)"
-            ><i :id="'heart' + i" class="bi bi-heart-fill"></i
-          ></a>
           <span class="fs-4 pe-3" v-html="item.아파트"></span>
           <span class="" style="color: gray">아파트</span>
         </div>
@@ -80,8 +74,9 @@
 </template>
 
 <script>
-const memberStore = "memberStore";
-import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
+//const memberStore = "memberStore";
+import { mapState, mapActions, mapMutations } from "vuex";
+//import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
 
 export default {
   name: "AppSearch",
@@ -114,8 +109,8 @@ export default {
   },
   computed: {
     ...mapState(["houses"]),
-    ...mapState(memberStore, ["isLogin", "userInfo"]),
-    ...mapGetters(["checkUserInfo"]),
+    // ...mapState(memberStore, ["isLogin", "userInfo"]),
+    // ...mapGetters(["checkUserInfo"]),
   },
   methods: {
     ...mapActions(["getTitleImg"]),
@@ -168,56 +163,59 @@ export default {
           _this.$router.push({
             // 파라미터로 위도 경도를 보냅니다.
             name: "detail",
-            params: { lat: lat, lng: lng },
+            params: {
+              wishname: _this.houses[index].아파트,
+              wishtype: "아파트",
+              gugunname: _this.gugun,
+              dongname: _this.houses[index].법정동,
+              lat: lat,
+              lng: lng,
+            },
           });
         } else console.log("해당 주소로 검색할 수 없음");
       }
     },
 
-    like(index) {
-      var keywords =
-        "대전시 " +
-        this.gugun +
-        " " +
-        this.houses[index].법정동 +
-        " " +
-        this.houses[index].아파트 +
-        " 아파트";
-      console.log("검색할 주소 : " + keywords);
+    // like(index) {
+    //   var keywords =
+    //     "대전시 " +
+    //     this.gugun +
+    //     " " +
+    //     this.houses[index].법정동 +
+    //     " " +
+    //     this.houses[index].아파트 +
+    //     " 아파트";
+    //   console.log("검색할 주소 : " + keywords);
 
-      // 장소 검색 객체를 생성합니다
-      var ps = new kakao.maps.services.Places();
-      ps.keywordSearch(keywords, placesSearchCB);
-      function placesSearchCB(data, status) {
-        if (status === kakao.maps.services.Status.OK) {
-          let lat = data[0].y;
-          let lng = data[0].x;
+    //   // 장소 검색 객체를 생성합니다
+    //   var ps = new kakao.maps.services.Places();
+    //   ps.keywordSearch(keywords, placesSearchCB);
+    //   function placesSearchCB(data, status) {
+    //     if (status === kakao.maps.services.Status.OK) {
+    //       let lat = data[0].y;
+    //       let lng = data[0].x;
 
-          let heart = document.getElementById("heart" + index);
-          let status = heart.getAttribute("class");
-          if (status == "bi bi-heart") {
-            document.getElementById("heart" + index).setAttribute("class", "bi bi-heart-fill");
-            console.log("관심지역에 해당 " + lat + ", " + lng + " 좌표로 추가합니다.");
-          } else {
-            document.getElementById("heart" + index).setAttribute("class", "bi bi-heart");
-            console.log("관심지역에 해당 " + lat + ", " + lng + " 좌표로 삭제합니다.");
-          }
-        } else {
-          console.log("검색 결과가 없기 때문에 종료합니다.");
-        }
-      }
-    },
+    //       let heart = document.getElementById("heart" + index);
+    //       let status = heart.getAttribute("class");
+    //       if (status == "bi bi-heart") {
+    //         document.getElementById("heart" + index).setAttribute("class", "bi bi-heart-fill");
+    //         console.log("관심지역에 해당 " + lat + ", " + lng + " 좌표로 추가합니다.");
+    //       } else {
+    //         document.getElementById("heart" + index).setAttribute("class", "bi bi-heart");
+    //         console.log("관심지역에 해당 " + lat + ", " + lng + " 좌표로 삭제합니다.");
+    //       }
+    //     } else {
+    //       console.log("검색 결과가 없기 때문에 종료합니다.");
+    //     }
+    //   }
+    // },
 
-    check(index) {
-      console.log(this.houses[index].아파트 + "가 관심지역에 포함되어있으면 true를 반환합니다.");
-      return true;
-    },
+    // check(index) {
+    //   console.log(this.houses[index].아파트 + "가 관심지역에 포함되어있으면 true를 반환합니다.");
+    //   return true;
+    // },
   },
 };
 </script>
 
-<style>
-.like:hover {
-  color: pink;
-}
-</style>
+<style></style>

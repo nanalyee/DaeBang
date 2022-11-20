@@ -5,14 +5,6 @@
       <div class="container bg-white border px-0">
         <div id="map" style="width: 100%; height: 600px"></div>
       </div>
-      <div class="border rounded p-2 m-2 row justify-content-between bg-white">
-        <div class="col-auto">this.nearList[index].bizesNm +</div>
-        <div class="col-auto text-end">
-          <a href="https://map.kakao.com/link/map/11394059" class="d-inline">
-            <i class="bi bi-chevron-compact-right"></i>
-          </a>
-        </div>
-      </div>
     </div>
 
     <div class="col-6">
