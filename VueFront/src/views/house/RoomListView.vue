@@ -1,7 +1,5 @@
 <template>
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <h3>원룸 컴포넌트</h3>
-
     <div
       v-for="(item, i) in houses"
       :key="i"
@@ -55,10 +53,14 @@
       <div class="col-3 collapse" :id="'toggle' + i" data-parent="#accordion">
         <img class="img-fluid img-thumbnail rounded" :src="$store.state.houseimg" alt="" />
       </div>
-      <div class="col-1 text-right align-self-center collapse" :id="'toggle' + i" data-parent="#accordion">
-        <a href="#" class="golink" v-on:click="goDetail">
+      <div
+        class="col-1 text-right align-self-center collapse"
+        :id="'toggle' + i"
+        data-parent="#accordion"
+      >
+        <!-- <a href="#" class="golink" v-on:click="goDetail">
           <i class="bi bi-chevron-compact-right fs-1"></i>
-        </a>
+        </a> -->
       </div>
     </div>
     <!-- button end -->
