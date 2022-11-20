@@ -210,4 +210,43 @@ public class TrafficController {
 		conn.disconnect();
 		return new ResponseEntity<String>(sb.toString(), HttpStatus.OK);
 	}
+	
+	// 날씨 상세 정보 API
+	//https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=U3x%2FhookUVc%2BS%2FYDXR0orCt70jponbqHM%2BfioZ%2BHxGIqJV3t4Na4cnAKAEZp6%2Fa%2FE01V9A5lx35maqZDKxcccw%3D%3D&pageNo=1&numOfRows=200&dataType=XML&base_date=20221120&base_time=1700&nx=55&ny=127
+		@ApiOperation(value = "날씨 상세 정보", notes = "날씨 상세 정보를 반환한다.", response = List.class)
+		@GetMapping(value = "/getweather/{basedate}/{basetime}/{nx}/{ny}", produces = "application/json;charset=utf-8")
+		public ResponseEntity<String> getweather(@PathVariable("basedate") String basedate, @PathVariable("basetime") String basetime, @PathVariable("nx") String nx, @PathVariable("ny") String ny) throws IOException {
+			String serviceKey = "U3x%2FhookUVc%2BS%2FYDXR0orCt70jponbqHM%2BfioZ%2BHxGIqJV3t4Na4cnAKAEZp6%2Fa%2FE01V9A5lx35maqZDKxcccw%3D%3D";
+			StringBuilder urlBuilder = new StringBuilder(
+					"https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"); /*
+																														 */
+			urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + serviceKey); /* 지역코드 */
+			urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8"));
+			urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("200", "UTF-8"));
+			urlBuilder.append("&" + URLEncoder.encode("base_date", "UTF-8") + "=" + URLEncoder.encode(basedate, "UTF-8"));
+			urlBuilder.append("&" + URLEncoder.encode("base_time", "UTF-8") + "=" + URLEncoder.encode(basetime, "UTF-8"));
+			urlBuilder.append("&" + URLEncoder.encode("nx", "UTF-8") + "=" + URLEncoder.encode(nx, "UTF-8"));
+			urlBuilder.append("&" + URLEncoder.encode("ny", "UTF-8") + "=" + URLEncoder.encode(ny, "UTF-8"));
+			URL url = new URL(urlBuilder.toString());
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Content-type", "application/json");
+			System.out.println("Response code: " + conn.getResponseCode());
+			BufferedReader rd;
+			if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+				rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			} else {
+				rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+			}
+			StringBuilder sb = new StringBuilder();
+			String line;
+			while ((line = rd.readLine()) != null) {
+				sb.append(line);
+			}
+			rd.close();
+			conn.disconnect();
+			JSONObject json = XML.toJSONObject(sb.toString());
+			String jsonStr = json.toString();
+			return new ResponseEntity<String>(jsonStr, HttpStatus.OK);
+		}
 }
