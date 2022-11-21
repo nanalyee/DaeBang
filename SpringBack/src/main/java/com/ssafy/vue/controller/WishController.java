@@ -85,23 +85,24 @@ public class WishController {
 		System.out.println(list.size());
 		return new ResponseEntity<List<WishDto>>(wishService.listWishId(userid), HttpStatus.OK);
 	}
-	
+
 	@ApiOperation(value = "이미 등록된 지역인지 체크", notes = "이미 등록된 지역인지 체크하는 정보를 반환한다.", response = List.class)
 	@GetMapping(value = "/chkexistwish/{wishname}/{userid}", produces = "application/json;charset=utf-8")
-	public ResponseEntity<String> chkExistWish(@PathVariable("wishname") String wishname, @PathVariable("userid") String userid) throws Exception {
+	public ResponseEntity<String> chkExistWish(@PathVariable("wishname") String wishname,
+			@PathVariable("userid") String userid) throws Exception {
 		logger.info("chkExistWish - 호출");
 		List<WishDto> list = new LinkedList<WishDto>();
-		list = wishService.chkExistWish(wishname,userid);
+		list = wishService.chkExistWish(wishname, userid);
 
 		System.out.println(list.size());
-		if(list.size() >=1) {
+		if (list.size() >= 1) {
 			// 중복값 있으면 SUCCESS 반환
 			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
-		}else {
+		} else {
 			return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 		}
 	}
-	
+
 	@ApiOperation(value = "관심지역 삭제", notes = "유저 아이디와 지역 제목이 같은 데이터를 삭제한다. 그리고 DB삭제 성공여부에 따라 'success' 또는 'fail' 문자열을 반환한다.", response = String.class)
 	@DeleteMapping("/{wishname}/{userid}")
 	public ResponseEntity<String> deleteWishList(
@@ -243,6 +244,49 @@ public class WishController {
 		JSONObject json = XML.toJSONObject(sb.toString());
 		String jsonStr = json.toString();
 		return new ResponseEntity<String>(jsonStr, HttpStatus.OK);
+	}
+
+	// 카카오 카테고리로 장소 검색하기   api "https://developers.kakao.com/docs/latest/ko/local/dev-guide"
+	@ApiOperation(value = "카카오 카테고리로 장소 검색하기 api", notes = "위도,경도,반지름, 카테고리를 기준으로 해당 카테고리가 있는지 검색한다.", response = List.class)
+	@GetMapping(value = "/searchcategory/{x}/{y}/{category}/{radius}", produces = "application/json;charset=utf-8")
+	public ResponseEntity<String> searchimg(@PathVariable("x") String x,
+			@PathVariable("y") String y,@PathVariable("category") String category ,@PathVariable("radius") String radius) throws IOException {
+		String serviceKey = "7843aee4e80223a8f32fe3c8242e1036";
+		StringBuilder urlBuilder = new StringBuilder("https://dapi.kakao.com/v2/local/search/category.json");
+		urlBuilder.append(
+				"?" + URLEncoder.encode("x", "UTF-8") + "=" + URLEncoder.encode(x, "UTF-8")); 
+		urlBuilder.append("&" + URLEncoder.encode("y", "UTF-8") + "="
+				+ URLEncoder.encode(y, "UTF-8")); 
+		urlBuilder.append("&" + URLEncoder.encode("category_group_code", "UTF-8") + "="
+				+ URLEncoder.encode(category, "UTF-8")); 
+		urlBuilder.append("&" + URLEncoder.encode("radius", "UTF-8") + "="
+				+ URLEncoder.encode(radius, "UTF-8")); 
+
+		URL url = new URL(urlBuilder.toString());
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		conn.setRequestProperty("Authorization", "KakaoAK " + serviceKey);
+		conn.setRequestMethod("GET");
+		conn.setRequestProperty("Content-type", "application/json");
+		System.out.println("Response code: " + conn.getResponseCode());
+		BufferedReader rd;
+		if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+			rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+		} else {
+			rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+		}
+		StringBuilder sb = new StringBuilder();
+		String line;
+		while ((line = rd.readLine()) != null) {
+			sb.append(line);
+		}
+		rd.close();
+		conn.disconnect();
+		System.out.println(sb.toString());
+		
+		// JSONObject json = XML.toJSONObject(sb.toString());
+		// String jsonStr = json.toString();
+
+		return new ResponseEntity<String>(sb.toString(), HttpStatus.OK);
 	}
 
 }

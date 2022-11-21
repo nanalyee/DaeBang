@@ -11,9 +11,9 @@
             <h1 class="display-7 ml-5 my-4 mb-10">
               <br />
               <img id="thermometer" src="@/assets/img/weather/thermometer.png" alt="" />
-              <span class="ml-5"></span> "_________아파트"
+              <span class="ml-5"> "_________아파트"</span>
               <br />
-              {{ this.hours }}시 현재 기온
+              <span class="text fw-bold">{{ this.hours }} 시 현재 기온</span>
               <span v-if="weathertable[this.startdata].fcstValue" class="text-danger fw-bold">
                 {{ weathertable[this.startdata].fcstValue }} °C
               </span>
@@ -70,7 +70,9 @@
             </tr>
             <tr>
               <td>풍속</td>
-              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 4].fcstValue }} m/s</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                {{ weathertable[item + 4].fcstValue }} m/s
+              </td>
             </tr>
             <tr>
               <td>하늘상태</td>
@@ -134,15 +136,21 @@
             </tr>
             <tr>
               <td>강수확률</td>
-              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 7].fcstValue }} %</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                {{ weathertable[item + 7].fcstValue }} %
+              </td>
             </tr>
             <tr>
               <td>1시간 강수량(mm)</td>
-              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 9].fcstValue }}</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                {{ weathertable[item + 9].fcstValue }}
+              </td>
             </tr>
             <tr>
               <td>습도</td>
-              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 10].fcstValue }} %</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                {{ weathertable[item + 10].fcstValue }} %
+              </td>
             </tr>
             <tr>
               <td>1시간 적설량(mm)</td>
@@ -262,7 +270,10 @@ export default {
       //console.log(data.response.body.items.item[temp].fcstValue);
       //console.log(temp);
       //console.log(this.weathertable);
-      if (this.weathertable[this.temp].category == "TMX" || this.weathertable[this.temp].category == "TMN") {
+      if (
+        this.weathertable[this.temp].category == "TMX" ||
+        this.weathertable[this.temp].category == "TMN"
+      ) {
         this.startdata = temp + 1;
       } else {
         this.startdata = temp;
@@ -275,7 +286,7 @@ export default {
         } else if (this.weathertable[this.startdata + 5].fcstValue == "4") {
           this.bgimage = "cloud.gif";
         } else if (this.weathertable[this.startdata + 5].fcstValue == "1") {
-          if (this.hours <= 18 || this.hours >= 6) {
+          if (this.hours <= 18 && this.hours >= 6) {
             this.bgimage = "sunny.gif";
           } else {
             this.bgimage = "night.gif";
@@ -348,9 +359,8 @@ export default {
 }
 
 #weather-container {
+  /* background-color: rgba(255, 255, 255, 0.3); */
   background-size: cover;
-  /* background-image: url(@/assets/img/weather/rain.gif); */
-  /* background-color: rgb(207, 243, 248); */
 }
 
 #weatherhomepage {

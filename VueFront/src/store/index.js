@@ -11,15 +11,15 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     // commercial district : 상권
-    cd: {
-      market: "",
-      convenience: "",
-      subway: "",
-      bank: "",
-      food: "",
-      hospital: "",
-      cafe: "",
-      pharmacy: "",
+    cd_score: {
+      market: 1,
+      convenience: 1,
+      subway: 1,
+      bank: 1,
+      food: 1,
+      hospital: 1,
+      cafe: 1,
+      pharmacy: 1,
     },
     guguns: [{ value: null, text: "선택하세요" }],
     houses: [],
@@ -151,6 +151,18 @@ export default new Vuex.Store({
       state.house = house;
     },
     /////////////////////////////// House end /////////////////////////////////////
+
+    ///////관심지역 상권 우선순위 설정값 저장///////
+    SET_CD_SCORE(state, cdscore) {
+      state.cd_score["market"] = cdscore["market"];
+      state.cd_score["convenience"] = cdscore["convenience"];
+      state.cd_score["subway"] = cdscore["subway"];
+      state.cd_score["food"] = cdscore["food"];
+      state.cd_score["cafe"] = cdscore["cafe"];
+      state.cd_score["hospital"] = cdscore["hospital"];
+      state.cd_score["pharmacy"] = cdscore["pharmacy"];
+      state.cd_score["bank"] = cdscore["bank"];
+    },
   },
   actions: {
     /////////////////////////////// House start /////////////////////////////////////

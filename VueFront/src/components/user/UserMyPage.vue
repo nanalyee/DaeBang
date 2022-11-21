@@ -41,14 +41,22 @@
               <b-col cols="2"></b-col>
             </b-row>
 
-            <router-link :to="{ name: 'modify' }" class="btn btn-primary mr-1">정보수정</router-link>
+            <router-link :to="{ name: 'modify' }" class="btn btn-primary mr-1"
+              >정보수정</router-link
+            >
             <!-- <b-button variant="primary" href="#" class="mr-1">정보수정</b-button> -->
             <b-button variant="danger" href="#" @click="deleteMember">회원탈퇴</b-button>
             <b-row>
-              대형마트: {{ score.market }}, 편의점: {{ score.market }}, 지하철역: {{ score.market }}, 음식점:
-              {{ score.market }}, 카페: {{ score.market }}, 병원: {{ score.market }}, 약국: {{ score.market }}, 은행:
-              {{ score.market }}
-              <b-button type="reset" variant="danger" class="m-1" @click="isWishModify">관심지수 재설정</b-button>
+              대형마트: {{ $store.state.cd_score["market"] }}, 편의점:
+              {{ $store.state.cd_score["convenience"] }}, 지하철역:
+              {{ $store.state.cd_score["subway"] }}, 음식점: {{ $store.state.cd_score["food"] }},
+              카페: {{ $store.state.cd_score["cafe"] }}, 병원:
+              {{ $store.state.cd_score["hospital"] }}, 약국:
+              {{ $store.state.cd_score["pharmacy"] }}, 은행:
+              {{ $store.state.cd_score["bank"] }}
+              <b-button type="reset" variant="danger" class="m-1" @click="isWishModify"
+                >관심지수 재설정</b-button
+              >
             </b-row>
           </b-container>
           <hr class="my-4" />
@@ -62,35 +70,91 @@
               ></b-button>
 
               <b-form-group id="market-group" label="대형마트:" label-for="market">
-                <b-form-input id="market" v-model="score.market" type="text" required></b-form-input>
+                <b-form-input
+                  id="market"
+                  v-model="score.market"
+                  type="number"
+                  min="1"
+                  max="5"
+                  required
+                ></b-form-input>
               </b-form-group>
 
               <b-form-group id="convenience-group" label="편의점:" label-for="convenience">
-                <b-form-input id="convenience" v-model="score.convenience" type="text" required></b-form-input>
+                <b-form-input
+                  id="convenience"
+                  v-model="score.convenience"
+                  type="number"
+                  min="1"
+                  max="5"
+                  required
+                ></b-form-input>
               </b-form-group>
 
               <b-form-group id="subway-group" label="지하철:" label-for="subway">
-                <b-form-input id="subway" v-model="score.subway" type="text" required></b-form-input>
+                <b-form-input
+                  id="subway"
+                  v-model="score.subway"
+                  type="number"
+                  min="1"
+                  max="5"
+                  required
+                ></b-form-input>
               </b-form-group>
 
               <b-form-group id="food-group" label="음식점:" label-for="food">
-                <b-form-input id="food" v-model="score.food" type="text" required></b-form-input>
+                <b-form-input
+                  id="food"
+                  v-model="score.food"
+                  type="number"
+                  min="1"
+                  max="5"
+                  required
+                ></b-form-input>
               </b-form-group>
 
               <b-form-group id="cafe-group" label="카페:" label-for="cafe">
-                <b-form-input id="cafe" v-model="score.cafe" type="text" required></b-form-input>
+                <b-form-input
+                  id="cafe"
+                  v-model="score.cafe"
+                  type="number"
+                  min="1"
+                  max="5"
+                  required
+                ></b-form-input>
               </b-form-group>
 
               <b-form-group id="hospital-group" label="병원:" label-for="hospital">
-                <b-form-input id="hospital" v-model="score.hospital" type="text" required></b-form-input>
+                <b-form-input
+                  id="hospital"
+                  v-model="score.hospital"
+                  type="number"
+                  min="1"
+                  max="5"
+                  required
+                ></b-form-input>
               </b-form-group>
 
               <b-form-group id="pharmacy-group" label="약국:" label-for="pharmacy">
-                <b-form-input id="pharmacy" v-model="score.pharmacy" type="text" required></b-form-input>
+                <b-form-input
+                  id="pharmacy"
+                  v-model="score.pharmacy"
+                  type="number"
+                  min="1"
+                  max="5"
+                  required
+                ></b-form-input>
               </b-form-group>
 
               <b-form-group id="bank-group" label="은행:" label-for="bank">
-                <b-form-input id="bank" v-model="score.bank" type="text" required></b-form-input>
+                <b-form-input
+                  id="bank"
+                  v-model="score.bank"
+                  type="number"
+                  min="1"
+                  max="5"
+                  required
+                ></b-form-input>
               </b-form-group>
             </b-form>
           </b-container>
@@ -103,7 +167,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 import http from "@/util/http"; // 게시판 테스트용
 
 const memberStore = "memberStore";
@@ -115,14 +179,14 @@ export default {
     return {
       showWishModify: true, // 관심 지수 수정 창 끄고 켜기
       score: {
-        market: 1,
-        convenience: 1,
-        subway: 1,
-        food: 1,
-        cafe: 1,
-        hospital: 1,
-        pharmacy: 1,
-        bank: 1,
+        market: this.$store.state.cd_score["market"],
+        convenience: this.$store.state.cd_score["convenience"],
+        subway: this.$store.state.cd_score["subway"],
+        food: this.$store.state.cd_score["food"],
+        cafe: this.$store.state.cd_score["cafe"],
+        hospital: this.$store.state.cd_score["hospital"],
+        pharmacy: this.$store.state.cd_score["pharmacy"],
+        bank: this.$store.state.cd_score["bank"],
       },
     };
   },
@@ -135,6 +199,8 @@ export default {
     ...mapState(memberStore, ["userInfo"]),
   },
   methods: {
+    ...mapMutations(["SET_CD_SCORE"]),
+
     deleteMember() {
       const userid = this.userInfo.userid;
       http.delete(`user/delete/${userid}`).then(({ data }) => {
@@ -157,13 +223,16 @@ export default {
     onSubmit(event) {
       console.log("입력버튼");
       event.preventDefault();
+      console.log(event);
+      this.SET_CD_SCORE(this.score);
 
+      alert("변경되었습니다");
       let err = true;
       let msg = "";
       if (!err) alert(msg);
-      else {
-        this.modifyScore();
-      }
+      // else {
+      //   this.modifyScore();
+      // }
     },
     modifyScore() {
       // http
