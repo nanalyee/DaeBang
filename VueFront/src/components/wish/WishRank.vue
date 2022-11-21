@@ -213,21 +213,29 @@ export default {
               console.log(data.documents.length);
               if (data.documents.length >= 1) {
                 if (this.category[j] == "MT1") {
-                  sumscore += this.$store.state.cd_score["market"];
+                  sumscore += parseInt(this.$store.state.cd_score["market"]) * 10;
+                  sumscore += data.documents.length;
                 } else if (this.category[j] == "CS2") {
-                  sumscore += parseInt(this.$store.state.cd_score["convenience"]);
+                  sumscore += parseInt(this.$store.state.cd_score["convenience"]) * 10;
+                  sumscore += data.documents.length;
                 } else if (this.category[j] == "SW8") {
-                  sumscore += parseInt(this.$store.state.cd_score["subway"]);
+                  sumscore += parseInt(this.$store.state.cd_score["subway"]) * 10;
+                  sumscore += data.documents.length;
                 } else if (this.category[j] == "FD6") {
-                  sumscore += parseInt(this.$store.state.cd_score["food"]);
+                  sumscore += parseInt(this.$store.state.cd_score["food"]) * 10;
+                  sumscore += data.documents.length;
                 } else if (this.category[j] == "CE7") {
-                  sumscore += parseInt(this.$store.state.cd_score["cafe"]);
+                  sumscore += parseInt(this.$store.state.cd_score["cafe"]) * 10;
+                  sumscore += data.documents.length;
                 } else if (this.category[j] == "HP8") {
-                  sumscore += parseInt(this.$store.state.cd_score["hospital"]);
+                  sumscore += parseInt(this.$store.state.cd_score["hospital"]) * 10;
+                  sumscore += data.documents.length;
                 } else if (this.category[j] == "PM9") {
-                  sumscore += parseInt(this.$store.state.cd_score["pharmacy"]);
+                  sumscore += parseInt(this.$store.state.cd_score["pharmacy"]) * 10;
+                  sumscore += data.documents.length;
                 } else if (this.category[j] == "BK9") {
-                  sumscore += parseInt(this.$store.state.cd_score["bank"]);
+                  sumscore += parseInt(this.$store.state.cd_score["bank"]) * 10;
+                  sumscore += data.documents.length;
                 }
               }
             });

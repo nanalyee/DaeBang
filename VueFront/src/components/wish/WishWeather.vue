@@ -282,9 +282,9 @@ export default {
 
       if (this.weathertable[this.startdata + 6].fcstValue == "0") {
         if (this.weathertable[this.startdata + 5].fcstValue == "3") {
-          this.bgimage = "cloud.gif";
+          this.bgimage = "sunny.gif";
         } else if (this.weathertable[this.startdata + 5].fcstValue == "4") {
-          this.bgimage = "cloud.gif";
+          this.bgimage = "sunny.gif";
         } else if (this.weathertable[this.startdata + 5].fcstValue == "1") {
           if (this.hours <= 18 && this.hours >= 6) {
             this.bgimage = "sunny.gif";
