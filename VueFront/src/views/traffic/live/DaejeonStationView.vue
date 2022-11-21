@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <div class="container mt-3">
     <div class="row g-4">
       <div class="col-lg-12 portfolio-item first">
         <div class="border portfolio-img rounded overflow-hidden">
           <div class="col-lg-12 text-center">
-            <h1 class="display-7 my-4 mb-10">삼성화재 유성연수원 ↔ 대전역</h1>
+            <h1 class="display-7 m-4 mb-10">삼성화재 유성연수원 ↔ 대전역</h1>
           </div>
           <br />
           <div class="row g-5">

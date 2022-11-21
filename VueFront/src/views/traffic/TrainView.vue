@@ -2,7 +2,7 @@
   <!-- 지하철 서비스 시작 -->
   <div class="container-xxl py-6" id="train">
     <div class="container">
-      <div class="row g-6 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="row g-6 mb-2 wow fadeInUp" data-wow-delay="0.1s">
         <div class="col-lg-6">
           <h1 class="display-5 mb-0">
             지하철<img src="@/assets/img/traingif.gif" alt="" id="traingif" />
@@ -15,14 +15,26 @@
       <!-- 지하철 캐러셀 시작   -->
       <div id="carouselTrain" class="carousel carousel-dark slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li id="indicator" data-target="#carouselTrain" data-slide-to="0" class="active"></li>
           <li
             id="indicator"
+            data-target="#carouselTrain"
+            data-slide-to="0"
+            class="active text-center"
+          >
+            <div class=""><div class=""></div></div>
+            {{ subwayListInfo[0].stationName }}
+          </li>
+          <li
             v-for="(item, i) in 21"
+            id="indicator"
             :key="i"
             data-target="#carouselTrain"
             :data-slide-to="item"
-          ></li>
+            class="text-center"
+          >
+            <div class=""><div class=""></div></div>
+            {{ subwayListInfo[i].stationName }}
+          </li>
         </ol>
 
         <div class="carousel-inner">
@@ -72,24 +84,32 @@
           <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span> -->
         </button>
-        <br />
-        <br />
       </div>
       <!-- 지하철 캐러셀 끝   -->
-      <br />
-      <div class="row g-5">
-        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="row" id="test">
+        <div class="col-lg-6 align-self-end text-center" style="height: 400px">
           <!-- <div class="d-flex align-items-center mb-3">
             <h3 class="border-end pe-3 me-3 ml-2 mb-0">역 시간표</h3>
             <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">상행</h2>
           </div> -->
-          <img id="daejeon_subway_all" src="@/assets/img/subwayall.png" alt="" />
+          <div class="row" style="height: 140px; overflow: auto">
+            <div class="col align-self-end text-center"></div>
+          </div>
+          <img
+            id="daejeon_subway_all"
+            class="img img-fluid display-block"
+            src="@/assets/img/subwayall.png"
+            alt=""
+          />
           <!-- <p class="ml-2 mb-4">지하철지하철지하철</p>
           <p class="ml-2 mb-3">
             <i class="bi bi-check-circle-fill text-primary me-3"></i>언제일까용?
           </p> -->
         </div>
-        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="col-lg-6 wow fadeInUp" style="height: 300px">
+          <div class="row" style="height: 140px; overflow: auto">
+            <div class="col align-self-end text-center"></div>
+          </div>
           <div class="d-flex align-items-center mt-5 mb-3">
             <h3 class="border-end pe-3 me-3 mb-0">지하철 일 평균 이용 승객 수</h3>
             <h2 class="text-danger fw-bold mb-0" data-toggle="counter-up">74,920</h2>
@@ -279,5 +299,33 @@ export default {
 
 #daejeon_subway_all {
   width: 100%;
+}
+
+#carouselTrain ol li {
+  background-color: #ffffff !important;
+  width: 22px;
+  height: 22px;
+  margin: 12px;
+  letter-spacing: 0.5px !important;
+}
+
+#carouselTrain ol li div {
+  width: 20px;
+  height: 20px;
+  background-color: #007448 !important;
+  border-radius: 20px 20px 20px 20px !important;
+  padding-top: 3px;
+}
+
+#carouselTrain ol li div div {
+  width: 14px;
+  height: 14px;
+  background-color: #ffffff !important;
+  border-radius: 15px 15px 15px 15px !important;
+  margin-left: 3px;
+}
+
+#carouselTrain .carousel-indicators {
+  margin-bottom: -4em !important;
 }
 </style>
