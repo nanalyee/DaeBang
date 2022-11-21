@@ -3,147 +3,151 @@
   <div>
     <b-container>
       <div class="row g-4">
-        <div class="border portfolio-img rounded overflow-hidden">
-          <div id="weather-container">
-            <div class="col-lg-12">
-              <h1 class="display-7 my-4 mb-10">
-                <br />
-                <img id="thermometer" src="@/assets/img/weather/thermometer.png" alt="" />
-                {{ this.hours }}시 현재 기온
-                <span class="text-danger fw-bold"> {{ weathertable[this.startdata].fcstValue }} °C </span>
+        <div
+          id="weather-container"
+          :style="{ backgroundImage: `url(${require('@/assets/img/weather/' + this.bgimage)})` }"
+        >
+          <div class="col-lg-6">
+            <h1 class="display-7 ml-5 my-4 mb-10">
+              <br />
+              <img id="thermometer" src="@/assets/img/weather/thermometer.png" alt="" />
+              <span class="ml-5"></span> "_________아파트"
+              <br />
+              {{ this.hours }}시 현재 기온
+              <span class="text-danger fw-bold"> {{ weathertable[this.startdata].fcstValue }} °C </span>
+              <img
+                v-if="weathertable[this.startdata + 5].fcstValue == '4'"
+                class="img-fluid"
+                src="@/assets/img/weather/cloudfog.png"
+                id="title_weather"
+              />
+              <img
+                v-if="weathertable[this.startdata + 5].fcstValue == '3'"
+                class="img-fluid"
+                src="@/assets/img/weather/cloud.png"
+                id="title_weather"
+              />
+              <img
+                v-if="weathertable[this.startdata + 5].fcstValue == '1'"
+                class="img-fluid"
+                src="@/assets/img/weather/sun.png"
+                id="title_weather"
+              />
+            </h1>
+          </div>
+
+          <div class="col-lg-6 ml-5">
+            <h4 class="display-7 my-4 mb-10">강수확률 {{ weathertable[this.startdata + 7].fcstValue }}%</h4>
+            <h4 class="display-7 my-4 mb-10">습도 {{ weathertable[this.startdata + 10].fcstValue }}%</h4>
+          </div>
+          <br />
+        </div>
+        <table class="table table-bordered text-center" style="table-layout: fixed">
+          <thead>
+            <tr>
+              <th>시각</th>
+              <th v-for="(item, i) in hourslist()" :key="i">{{ item + 1 }} 시</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>기온</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                <span class="text-danger fw-bold"> {{ weathertable[item].fcstValue }} °C</span>
+              </td>
+            </tr>
+            <tr>
+              <td>풍향</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                {{ weathertable[item + 3].fcstValue }}
+              </td>
+            </tr>
+            <tr>
+              <td>풍속</td>
+              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 4].fcstValue }} m/s</td>
+            </tr>
+            <tr>
+              <td>하늘상태</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
                 <img
-                  v-if="weathertable[this.startdata + 5].fcstValue == '4'"
+                  v-if="weathertable[item + 5].fcstValue == '4'"
                   class="img-fluid"
                   src="@/assets/img/weather/cloudfog.png"
-                  id="title_weather"
+                  id="weather_img"
                 />
                 <img
-                  v-if="weathertable[this.startdata + 5].fcstValue == '3'"
+                  v-if="weathertable[item + 5].fcstValue == '3'"
                   class="img-fluid"
                   src="@/assets/img/weather/cloud.png"
-                  id="title_weather"
+                  id="weather_img"
                 />
                 <img
-                  v-if="weathertable[this.startdata + 5].fcstValue == '1'"
+                  v-if="weathertable[item + 5].fcstValue == '1'"
                   class="img-fluid"
                   src="@/assets/img/weather/sun.png"
-                  id="title_weather"
+                  id="weather_img"
                 />
-              </h1>
-            </div>
-            <div class="col-lg-6 ml-5">
-              <h4 class="display-7 my-4 mb-10">강수확률 {{ weathertable[this.startdata + 7].fcstValue }}%</h4>
-              <h4 class="display-7 my-4 mb-10">습도 {{ weathertable[this.startdata + 10].fcstValue }}%</h4>
-            </div>
-            <br />
-          </div>
-          <table class="table table-bordered text-center" style="table-layout: fixed">
-            <thead>
-              <tr>
-                <th>시각</th>
-                <th v-for="(item, i) in hourslist()" :key="i">{{ item + 1 }} 시</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>기온</td>
-                <td v-for="(item, i) in tempnum()" :key="i">
-                  <span class="text-danger fw-bold"> {{ weathertable[item].fcstValue }} °C</span>
-                </td>
-              </tr>
-              <tr>
-                <td>풍향</td>
-                <td v-for="(item, i) in tempnum()" :key="i">
-                  {{ weathertable[item + 3].fcstValue }}
-                </td>
-              </tr>
-              <tr>
-                <td>풍속</td>
-                <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 4].fcstValue }} m/s</td>
-              </tr>
-              <tr>
-                <td>하늘상태</td>
-                <td v-for="(item, i) in tempnum()" :key="i">
-                  <img
-                    v-if="weathertable[item + 5].fcstValue == '4'"
-                    class="img-fluid"
-                    src="@/assets/img/weather/cloudfog.png"
-                    id="weather_img"
-                  />
-                  <img
-                    v-if="weathertable[item + 5].fcstValue == '3'"
-                    class="img-fluid"
-                    src="@/assets/img/weather/cloud.png"
-                    id="weather_img"
-                  />
-                  <img
-                    v-if="weathertable[item + 5].fcstValue == '1'"
-                    class="img-fluid"
-                    src="@/assets/img/weather/sun.png"
-                    id="weather_img"
-                  />
-                  <!-- {{ weathertable[item + 5].fcstValue }} -->
-                </td>
-              </tr>
-              <tr>
-                <td>강수형태</td>
-                <td v-for="(item, i) in tempnum()" :key="i">
-                  <img
-                    v-if="weathertable[item + 6].fcstValue == '0'"
-                    class="img-fluid"
-                    src="@/assets/img/weather/cloudx.png"
-                    id="weather_img"
-                  />
-                  <img
-                    v-if="weathertable[item + 6].fcstValue == '1'"
-                    class="img-fluid"
-                    src="@/assets/img/weather/rain.png"
-                    id="weather_img"
-                  />
-                  <img
-                    v-if="weathertable[item + 6].fcstValue == '2'"
-                    class="img-fluid"
-                    src="@/assets/img/weather/snowing.png"
-                    id="weather_img"
-                  />
-                  <img
-                    v-if="weathertable[item + 6].fcstValue == '3'"
-                    class="img-fluid"
-                    src="@/assets/img/weather/snow.png"
-                    id="weather_img"
-                  />
-                  <img
-                    v-if="weathertable[item + 6].fcstValue == '4'"
-                    class="img-fluid"
-                    src="@/assets/img/weather/rainshower.png"
-                    id="weather_img"
-                  />
-                  <!-- {{ weathertable[item + 6].fcstValue }} -->
-                </td>
-              </tr>
-              <tr>
-                <td>강수확률</td>
-                <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 7].fcstValue }} %</td>
-              </tr>
-              <tr>
-                <td>1시간 강수량(mm)</td>
-                <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 9].fcstValue }}</td>
-              </tr>
-              <tr>
-                <td>습도</td>
-                <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 10].fcstValue }} %</td>
-              </tr>
-              <tr>
-                <td>1시간 적설량(mm)</td>
-                <td v-for="(item, i) in tempnum()" :key="i">
-                  {{ weathertable[item + 11].fcstValue }}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="portfolio-btn">
-            <b-button v-b-toggle.sidebar-right><i class="bi bi-chat-right-dots-fill"></i></b-button>
-          </div>
+                <!-- {{ weathertable[item + 5].fcstValue }} -->
+              </td>
+            </tr>
+            <tr>
+              <td>강수형태</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                <img
+                  v-if="weathertable[item + 6].fcstValue == '0'"
+                  class="img-fluid"
+                  src="@/assets/img/weather/cloudx.png"
+                  id="weather_img"
+                />
+                <img
+                  v-if="weathertable[item + 6].fcstValue == '1'"
+                  class="img-fluid"
+                  src="@/assets/img/weather/rain.png"
+                  id="weather_img"
+                />
+                <img
+                  v-if="weathertable[item + 6].fcstValue == '2'"
+                  class="img-fluid"
+                  src="@/assets/img/weather/snowing.png"
+                  id="weather_img"
+                />
+                <img
+                  v-if="weathertable[item + 6].fcstValue == '3'"
+                  class="img-fluid"
+                  src="@/assets/img/weather/snow.png"
+                  id="weather_img"
+                />
+                <img
+                  v-if="weathertable[item + 6].fcstValue == '4'"
+                  class="img-fluid"
+                  src="@/assets/img/weather/rainshower.png"
+                  id="weather_img"
+                />
+                <!-- {{ weathertable[item + 6].fcstValue }} -->
+              </td>
+            </tr>
+            <tr>
+              <td>강수확률</td>
+              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 7].fcstValue }} %</td>
+            </tr>
+            <tr>
+              <td>1시간 강수량(mm)</td>
+              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 9].fcstValue }}</td>
+            </tr>
+            <tr>
+              <td>습도</td>
+              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 10].fcstValue }} %</td>
+            </tr>
+            <tr>
+              <td>1시간 적설량(mm)</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                {{ weathertable[item + 11].fcstValue }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="portfolio-btn">
+          <b-button v-b-toggle.sidebar-right><i class="bi bi-chat-right-dots-fill"></i></b-button>
         </div>
       </div>
     </b-container>
@@ -163,6 +167,7 @@ export default {
       weathertable: [],
       temp: "",
       startdata: "",
+      bgimage: "",
     };
   },
   created() {
@@ -259,6 +264,29 @@ export default {
       } else {
         this.startdata = temp;
       }
+      console.log(this.weathertable[this.startdata + 6].fcstValue);
+
+      if (this.weathertable[this.startdata + 6].fcstValue == "0") {
+        if (this.weathertable[this.startdata + 5].fcstValue == "3") {
+          this.bgimage = "cloud.gif";
+        } else if (this.weathertable[this.startdata + 5].fcstValue == "4") {
+          this.bgimage = "cloud.gif";
+        } else if (this.weathertable[this.startdata + 5].fcstValue == "1") {
+          if (this.hours <= 18 || this.hours >= 6) {
+            this.bgimage = "sunny.gif";
+          } else {
+            this.bgimage = "night.gif";
+          }
+        }
+      } else if (this.weathertable[this.startdata + 6].fcstValue == "1") {
+        this.bgimage = "rain.gif";
+      } else if (this.weathertable[this.startdata + 6].fcstValue == "2") {
+        this.bgimage = "rain.gif";
+      } else if (this.weathertable[this.startdata + 6].fcstValue == "3") {
+        this.bgimage = "snow.gif";
+      } else if (this.weathertable[this.startdata + 6].fcstValue == "4") {
+        this.bgimage = "rain.gif";
+      }
     });
     //console.log(this.weathertable);
   },
@@ -317,7 +345,9 @@ export default {
 }
 
 #weather-container {
-  background-color: rgb(207, 243, 248);
+  background-size: cover;
+  /* background-image: url(@/assets/img/weather/rain.gif); */
+  /* background-color: rgb(207, 243, 248); */
 }
 
 #weatherhomepage {
