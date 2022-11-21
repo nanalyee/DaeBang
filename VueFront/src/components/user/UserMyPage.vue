@@ -40,12 +40,61 @@
               ><b-col cols="4" align-self="start">{{ userInfo.joindate }}</b-col>
               <b-col cols="2"></b-col>
             </b-row>
+
+            <router-link :to="{ name: 'modify' }" class="btn btn-primary mr-1">정보수정</router-link>
+            <!-- <b-button variant="primary" href="#" class="mr-1">정보수정</b-button> -->
+            <b-button variant="danger" href="#" @click="deleteMember">회원탈퇴</b-button>
+            <b-row>
+              대형마트: {{ score.market }}, 편의점: {{ score.market }}, 지하철역: {{ score.market }}, 음식점:
+              {{ score.market }}, 카페: {{ score.market }}, 병원: {{ score.market }}, 약국: {{ score.market }}, 은행:
+              {{ score.market }}
+              <b-button type="reset" variant="danger" class="m-1" @click="isWishModify">관심지수 재설정</b-button>
+            </b-row>
           </b-container>
           <hr class="my-4" />
 
-          <router-link :to="{ name: 'modify' }" class="btn btn-primary mr-1">정보수정</router-link>
-          <!-- <b-button variant="primary" href="#" class="mr-1">정보수정</b-button> -->
-          <b-button variant="danger" href="#" @click="deleteMember">회원탈퇴</b-button>
+          <b-container class="mt-4" v-show="!showWishModify">
+            <h3>관심 지수</h3>
+            <p>1~5점 사이의 점수로 입력해주세요. 관심지역 랭킹 시스템에 반영됩니다.</p>
+            <b-form @submit="onSubmit">
+              <b-button type="submit" variant="primary" class="m-1"
+                ><i class="bi bi-send-fill white fs-4"></i
+              ></b-button>
+
+              <b-form-group id="market-group" label="대형마트:" label-for="market">
+                <b-form-input id="market" v-model="score.market" type="text" required></b-form-input>
+              </b-form-group>
+
+              <b-form-group id="convenience-group" label="편의점:" label-for="convenience">
+                <b-form-input id="convenience" v-model="score.convenience" type="text" required></b-form-input>
+              </b-form-group>
+
+              <b-form-group id="subway-group" label="지하철:" label-for="subway">
+                <b-form-input id="subway" v-model="score.subway" type="text" required></b-form-input>
+              </b-form-group>
+
+              <b-form-group id="food-group" label="음식점:" label-for="food">
+                <b-form-input id="food" v-model="score.food" type="text" required></b-form-input>
+              </b-form-group>
+
+              <b-form-group id="cafe-group" label="카페:" label-for="cafe">
+                <b-form-input id="cafe" v-model="score.cafe" type="text" required></b-form-input>
+              </b-form-group>
+
+              <b-form-group id="hospital-group" label="병원:" label-for="hospital">
+                <b-form-input id="hospital" v-model="score.hospital" type="text" required></b-form-input>
+              </b-form-group>
+
+              <b-form-group id="pharmacy-group" label="약국:" label-for="pharmacy">
+                <b-form-input id="pharmacy" v-model="score.pharmacy" type="text" required></b-form-input>
+              </b-form-group>
+
+              <b-form-group id="bank-group" label="은행:" label-for="bank">
+                <b-form-input id="bank" v-model="score.bank" type="text" required></b-form-input>
+              </b-form-group>
+            </b-form>
+          </b-container>
+          <hr class="my-4" />
         </b-jumbotron>
       </b-col>
       <b-col></b-col>
@@ -62,6 +111,26 @@ const memberStore = "memberStore";
 export default {
   name: "UserMyPage",
   components: {},
+  data() {
+    return {
+      showWishModify: true, // 관심 지수 수정 창 끄고 켜기
+      score: {
+        market: 1,
+        convenience: 1,
+        subway: 1,
+        food: 1,
+        cafe: 1,
+        hospital: 1,
+        pharmacy: 1,
+        bank: 1,
+      },
+    };
+  },
+  created() {
+    // http.get(`/wish/` + this.userInfo.userid).then(({ data }) => {
+    //   this.score = data;
+    // });
+  },
   computed: {
     ...mapState(memberStore, ["userInfo"]),
   },
@@ -79,6 +148,52 @@ export default {
     },
     movePage() {
       this.$router.push({ name: "main" });
+    },
+
+    isWishModify() {
+      this.showWishModify = !this.showWishModify;
+    },
+
+    onSubmit(event) {
+      console.log("입력버튼");
+      event.preventDefault();
+
+      let err = true;
+      let msg = "";
+      if (!err) alert(msg);
+      else {
+        this.modifyScore();
+      }
+    },
+    modifyScore() {
+      // http
+      //   .put(`/board`, {
+      //     market: this.score.market,
+      //     convenience: this.score.market,
+      //     subway: this.score.subway,
+      //     food: this.score.food,
+      //     cafe: this.score.cafe,
+      //     hospital: this.score.hospital,
+      //     pharmarcy: this.score.pharmarcy,
+      //     bank: this.score.bank,
+      //   })
+      //   .then(({ data }) => {
+      //     let msg = "관심 지수 처리시 문제가 발생했습니다.";
+      //     if (data === "success") {
+      //       msg = "관심 지수 수정이 완료되었습니다.";
+      //     }
+      //     alert(msg);
+      //     // 현재 route를 /list로 변경.
+      //     this.moveList();
+      //   });
+      this.moveList();
+    },
+    moveList() {
+      // http.get(`/wish/` + this.userInfo.userid).then(({ data }) => {
+      //   this.score = data;
+      // });
+      console.log("창을 닫습니다.");
+      this.isWishModify();
     },
   },
 };

@@ -37,18 +37,10 @@
       <a href="index.jsp" class="navbar-brand d-block d-lg-none">
         <h1 class="text-primary fw-bold m-0">구해줘홈즈</h1>
       </a>
-      <button
-        type="button"
-        class="navbar-toggler"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="collapse navbar-collapse justify-content-between py-4 py-lg-0"
-        id="navbarCollapse"
-      >
+      <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
           <router-link to="/search" class="nav-item nav-link px-4">매매검색</router-link>
           <router-link to="/traffic" class="nav-item nav-link px-4">교통정보</router-link>
@@ -60,9 +52,7 @@
         <div class="navbar-nav me-auto py-0" v-if="userInfo">
           <!-- <router-link to="/about" class="nav-item nav-link px-4">회원가입/로그인</router-link> -->
           <router-link to="/wish" class="nav-item nav-link px-4">관심지역</router-link>
-          <router-link :to="{ name: 'mypage' }" class="nav-item nav-link px-4"
-            >마이페이지</router-link
-          >
+          <router-link :to="{ name: 'mypage' }" class="nav-item nav-link px-4">마이페이지</router-link>
         </div>
 
         <div class="navbar-nav me-auto py-0" v-else>
@@ -114,7 +104,7 @@ export default {
 
 <style>
 .userinfo {
-  top: 18px;
+  top: 15px;
   right: 50px;
 }
 </style>
