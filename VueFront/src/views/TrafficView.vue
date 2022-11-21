@@ -5,12 +5,7 @@
       <div class="container">
         <div class="row g-5 pt-5 align-items-center">
           <div class="col-lg-6">
-            <img
-              class="img-fluid text-center"
-              src="@/assets/img/automobile.png"
-              alt=""
-              id="automobile"
-            />
+            <img class="img-fluid text-center" src="@/assets/img/automobile.png" alt="" id="automobile" />
           </div>
           <div class="col-lg-6 py-6 pb-0 pt-lg-0">
             <img src="@/assets/img/live.gif" alt="" id="live" />
@@ -66,47 +61,17 @@
         </div>
         <div class="col-lg-12 text-lg-end">
           <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-            <img
-              class="img-fluid text-center"
-              src="@/assets/img/traffic_state0.png"
-              alt=""
-              id="img_traffic_state"
-            />
+            <img class="img-fluid text-center" src="@/assets/img/traffic_state0.png" alt="" id="img_traffic_state" />
             <li class="mx-3" data-filter="*">정보 없음</li>
-            <img
-              class="img-fluid text-center"
-              src="@/assets/img/traffic_state1.png"
-              alt=""
-              id="img_traffic_state"
-            />
+            <img class="img-fluid text-center" src="@/assets/img/traffic_state1.png" alt="" id="img_traffic_state" />
             <li class="mx-3" data-filter=".first">정체</li>
-            <img
-              class="img-fluid text-center"
-              src="@/assets/img/traffic_state2.png"
-              alt=""
-              id="img_traffic_state"
-            />
+            <img class="img-fluid text-center" src="@/assets/img/traffic_state2.png" alt="" id="img_traffic_state" />
             <li class="mx-3" data-filter=".second">지체</li>
-            <img
-              class="img-fluid text-center"
-              src="@/assets/img/traffic_state3.png"
-              alt=""
-              id="img_traffic_state"
-            />
+            <img class="img-fluid text-center" src="@/assets/img/traffic_state3.png" alt="" id="img_traffic_state" />
             <li class="mx-3" data-filter=".second">서행</li>
-            <img
-              class="img-fluid text-center"
-              src="@/assets/img/traffic_state4.png"
-              alt=""
-              id="img_traffic_state"
-            />
+            <img class="img-fluid text-center" src="@/assets/img/traffic_state4.png" alt="" id="img_traffic_state" />
             <li class="mx-3" data-filter=".second">원활</li>
-            <img
-              class="img-fluid text-center"
-              src="@/assets/img/traffic_state6.png"
-              alt=""
-              id="img_traffic_state"
-            />
+            <img class="img-fluid text-center" src="@/assets/img/traffic_state6.png" alt="" id="img_traffic_state" />
             <li class="mx-3" data-filter=".second">통행 불가</li>
           </ul>
         </div>
@@ -123,8 +88,6 @@
     <bus-view></bus-view>
     <train-view></train-view>
     <bicycle-view></bicycle-view>
-    <tourist-destination></tourist-destination>
-    <fav-weather></fav-weather>
   </div>
 </template>
 
@@ -133,8 +96,7 @@ import LiveView from "@/views/traffic/LiveView";
 import BusView from "@/views/traffic/BusView";
 import TrainView from "@/views/traffic/TrainView";
 import BicycleView from "@/views/traffic/BicycleView";
-import TouristDestination from "@/components/fav/TouristDestination";
-import FavWeather from "@/components/fav/FavWeather";
+
 export default {
   name: "AppMain",
   components: {
@@ -142,8 +104,6 @@ export default {
     BusView,
     TrainView,
     BicycleView,
-    TouristDestination,
-    FavWeather,
   },
   data() {
     return {
