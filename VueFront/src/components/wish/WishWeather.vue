@@ -1,7 +1,7 @@
 <template>
   <!-- 테스트용 관광 -->
   <div>
-    <b-container>
+    <b-container v-if="this.weathertable.length > 0">
       <div class="row g-4">
         <div
           id="weather-container"
@@ -14,7 +14,9 @@
               <span class="ml-5"></span> "_________아파트"
               <br />
               {{ this.hours }}시 현재 기온
-              <span class="text-danger fw-bold"> {{ weathertable[this.startdata].fcstValue }} °C </span>
+              <span v-if="weathertable[this.startdata].fcstValue" class="text-danger fw-bold">
+                {{ weathertable[this.startdata].fcstValue }} °C
+              </span>
               <img
                 v-if="weathertable[this.startdata + 5].fcstValue == '4'"
                 class="img-fluid"
@@ -37,8 +39,12 @@
           </div>
 
           <div class="col-lg-6 ml-5">
-            <h4 class="display-7 my-4 mb-10">강수확률 {{ weathertable[this.startdata + 7].fcstValue }}%</h4>
-            <h4 class="display-7 my-4 mb-10">습도 {{ weathertable[this.startdata + 10].fcstValue }}%</h4>
+            <h4 v-if="weathertable[this.startdata + 7].fcstValue" class="display-7 my-4 mb-10">
+              강수확률 {{ weathertable[this.startdata + 7].fcstValue }}%
+            </h4>
+            <h4 v-if="weathertable[this.startdata + 10].fcstValue" class="display-7 my-4 mb-10">
+              습도 {{ weathertable[this.startdata + 10].fcstValue }}%
+            </h4>
           </div>
           <br />
         </div>
@@ -146,9 +152,6 @@
             </tr>
           </tbody>
         </table>
-        <div class="portfolio-btn">
-          <b-button v-b-toggle.sidebar-right><i class="bi bi-chat-right-dots-fill"></i></b-button>
-        </div>
       </div>
     </b-container>
   </div>
@@ -167,7 +170,7 @@ export default {
       weathertable: [],
       temp: "",
       startdata: "",
-      bgimage: "",
+      bgimage: "sunny.gif",
     };
   },
   created() {
@@ -264,7 +267,7 @@ export default {
       } else {
         this.startdata = temp;
       }
-      console.log(this.weathertable[this.startdata + 6].fcstValue);
+      //console.log(this.weathertable[this.startdata + 6].fcstValue);
 
       if (this.weathertable[this.startdata + 6].fcstValue == "0") {
         if (this.weathertable[this.startdata + 5].fcstValue == "3") {
@@ -305,19 +308,19 @@ export default {
     },
     startnum() {
       var list = [];
-      console.log(this.temp);
+      // console.log(this.temp);
       for (var i = this.temp; i < this.temp + 10; i = i + 12) {
         if (this.weathertable[i].category == "TMX" || this.weathertable[i].category == "TMN") {
           i++;
         }
         list.push(i);
       }
-      console.log(list);
+      //console.log(list);
       return list;
     },
     tempnum() {
       var list = [];
-      console.log(this.temp);
+      //console.log(this.temp);
       for (var i = this.temp + 12; i < this.temp + 120; i = i + 12) {
         if (this.weathertable[i].category == "TMX" || this.weathertable[i].category == "TMN") {
           i++;
@@ -326,7 +329,7 @@ export default {
         }
         list.push(i);
       }
-      console.log(list);
+      //console.log(list);
       return list;
     },
   },

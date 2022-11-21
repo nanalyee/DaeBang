@@ -1,19 +1,15 @@
 <template>
   <!-- 버스 서비스 시작 -->
 
-  <div class="container-fluid bg-light my-5 py-6" id="bus">
+  <div v-if="this.busstops.length > 0" class="container-fluid bg-light my-5 py-6" id="bus">
     <div class="container">
       <div class="row g-5 mb-4">
         <div class="col-lg-6">
-          <h1 class="display-5 mb-0">
-            버스 <img src="@/assets/img/busgif.gif" alt="" id="busgif" />
-          </h1>
+          <h1 class="display-5 mb-0">버스 <img src="@/assets/img/busgif.gif" alt="" id="busgif" /></h1>
         </div>
       </div>
       <div class="row align-items-center">
-        <h5 class="text-primary fw-bold mb-3">
-          대전광역시 3072개의 정류소 정보를 제공합니다. (* 정렬기준: 가나다순)
-        </h5>
+        <h5 class="text-primary fw-bold mb-3">대전광역시 3072개의 정류소 정보를 제공합니다. (* 정렬기준: 가나다순)</h5>
         <h5 class="text-success fw-bold mb-3">클릭 시 실시간 노선 정보를 가져옵니다.</h5>
       </div>
 
@@ -53,9 +49,7 @@
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
                   <div class="portfolio-btn rounded justify-content-end">
-                    <b-button
-                      v-b-toggle.sidebar-bus
-                      @click="getBusInfo(busstops[0].stop_name, busstops[0].stop_id, 1)"
+                    <b-button v-b-toggle.sidebar-bus @click="getBusInfo(busstops[0].stop_name, busstops[0].stop_id, 1)"
                       ><i class="bi bi-info-square-fill"></i
                     ></b-button>
                   </div>
@@ -75,9 +69,7 @@
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
                   <div class="portfolio-btn rounded m-6">
-                    <b-button
-                      v-b-toggle.sidebar-bus
-                      @click="getBusInfo(busstops[1].stop_name, busstops[1].stop_id, 2)"
+                    <b-button v-b-toggle.sidebar-bus @click="getBusInfo(busstops[1].stop_name, busstops[1].stop_id, 2)"
                       ><i class="bi bi-info-square-fill"></i
                     ></b-button>
                   </div>
@@ -97,9 +89,7 @@
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
                   <div class="portfolio-btn rounded m-6 justify-content-end">
-                    <b-button
-                      v-b-toggle.sidebar-bus
-                      @click="getBusInfo(busstops[2].stop_name, busstops[2].stop_id, 3)"
+                    <b-button v-b-toggle.sidebar-bus @click="getBusInfo(busstops[2].stop_name, busstops[2].stop_id, 3)"
                       ><i class="bi bi-info-square-fill"></i
                     ></b-button>
                   </div>
@@ -119,9 +109,7 @@
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
                   <div class="portfolio-btn rounded m-6">
-                    <b-button
-                      v-b-toggle.sidebar-bus
-                      @click="getBusInfo(busstops[3].stop_name, busstops[3].stop_id, 4)"
+                    <b-button v-b-toggle.sidebar-bus @click="getBusInfo(busstops[3].stop_name, busstops[3].stop_id, 4)"
                       ><i class="bi bi-info-square-fill"></i
                     ></b-button>
                   </div>
@@ -143,17 +131,14 @@
                   <div class="ms-sm-4">
                     <h4 class="mb-3">{{ item + 1 }} . {{ busstops[item].stop_name }}</h4>
                     <!-- <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6> -->
-                    <span class="text-primary fw-bold">
-                      정류소 ID: {{ busstops[item].stop_id }}</span
+                    <span class="text-primary fw-bold"> 정류소 ID: {{ busstops[item].stop_id }}</span
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
                   <div class="portfolio-btn rounded m-6 justify-content-end">
                     <b-button
                       v-b-toggle.sidebar-bus
-                      @click="
-                        getBusInfo(busstops[item].stop_name, busstops[item].stop_id, item + 1)
-                      "
+                      @click="getBusInfo(busstops[item].stop_name, busstops[item].stop_id, item + 1)"
                       ><i class="bi bi-info-square-fill"></i
                     ></b-button>
                   </div>
@@ -168,21 +153,14 @@
                   </div>
                   <div class="ms-sm-4">
                     <h4 class="mb-3">{{ item + 2 }} . {{ busstops[item + 1].stop_name }}</h4>
-                    <span class="text-primary fw-bold">
-                      정류소 ID: {{ busstops[item + 1].stop_id }}</span
+                    <span class="text-primary fw-bold"> 정류소 ID: {{ busstops[item + 1].stop_id }}</span
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
                   <div class="portfolio-btn rounded m-6">
                     <b-button
                       v-b-toggle.sidebar-bus
-                      @click="
-                        getBusInfo(
-                          busstops[item + 1].stop_name,
-                          busstops[item + 1].stop_id,
-                          item + 2
-                        )
-                      "
+                      @click="getBusInfo(busstops[item + 1].stop_name, busstops[item + 1].stop_id, item + 2)"
                       ><i class="bi bi-info-square-fill"></i
                     ></b-button>
                   </div>
@@ -197,21 +175,14 @@
                   </div>
                   <div class="ms-sm-4">
                     <h4 class="mb-3">{{ item + 3 }} . {{ busstops[item + 2].stop_name }}</h4>
-                    <span class="text-primary fw-bold">
-                      정류소 ID: {{ busstops[item + 2].stop_id }}</span
+                    <span class="text-primary fw-bold"> 정류소 ID: {{ busstops[item + 2].stop_id }}</span
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
                   <div class="portfolio-btn rounded m-6 justify-content-end">
                     <b-button
                       v-b-toggle.sidebar-bus
-                      @click="
-                        getBusInfo(
-                          busstops[item + 2].stop_name,
-                          busstops[item + 2].stop_id,
-                          item + 3
-                        )
-                      "
+                      @click="getBusInfo(busstops[item + 2].stop_name, busstops[item + 2].stop_id, item + 3)"
                       ><i class="bi bi-info-square-fill"></i
                     ></b-button>
                   </div>
@@ -226,21 +197,14 @@
                   </div>
                   <div class="ms-sm-4">
                     <h4 class="mb-3">{{ item + 4 }} . {{ busstops[item + 3].stop_name }}</h4>
-                    <span class="text-primary fw-bold">
-                      정류소 ID: {{ busstops[item + 3].stop_id }}</span
+                    <span class="text-primary fw-bold"> 정류소 ID: {{ busstops[item + 3].stop_id }}</span
                     ><br />
                     <span class="text-primary fw-bold">관심 정류소 등록 💌</span>
                   </div>
                   <div class="portfolio-btn rounded m-6">
                     <b-button
                       v-b-toggle.sidebar-bus
-                      @click="
-                        getBusInfo(
-                          busstops[item + 3].stop_name,
-                          busstops[item + 3].stop_id,
-                          item + 4
-                        )
-                      "
+                      @click="getBusInfo(busstops[item + 3].stop_name, busstops[item + 3].stop_id, item + 4)"
                       ><i class="bi bi-info-square-fill"></i
                     ></b-button>
                   </div>
@@ -273,15 +237,7 @@
         </button>
       </div>
     </div>
-    <b-sidebar
-      id="sidebar-bus"
-      title="정류소 노선 정보"
-      right
-      shadow
-      backdrop
-      backdrop-variant="dark"
-      width="620px"
-    >
+    <b-sidebar id="sidebar-bus" title="정류소 노선 정보" right shadow backdrop backdrop-variant="dark" width="620px">
       <div id="busList" class="px-3 py-2">
         <!-- button start -->
         <div
@@ -292,9 +248,7 @@
           v-on:scroll.prevent="onScroll"
         >
           <div class="p-3">
-            <h4 id="sidebar-no-header-title">
-              {{ busstop_info.stopindex }} . {{ busstop_info.stopname }}
-            </h4>
+            <h4 id="sidebar-no-header-title">{{ busstop_info.stopindex }} . {{ busstop_info.stopname }}</h4>
           </div>
           <div
             v-for="(item, i) in busstop_info_list"
@@ -325,11 +279,7 @@
                       <span v-if="item.ROUTE_TP == '6'" class="pe-3" style="color: gray">첨단</span>
                     </div>
 
-                    <div
-                      class="collapse border-top pt-2 mt-2"
-                      :id="'toggle' + i"
-                      data-parent="#accordion"
-                    >
+                    <div class="collapse border-top pt-2 mt-2" :id="'toggle' + i" data-parent="#accordion">
                       <div class="row">
                         <table class="table table-borderless">
                           <tbody>
