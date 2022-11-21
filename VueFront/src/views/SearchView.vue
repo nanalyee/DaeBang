@@ -4,25 +4,25 @@
     <div class="container-fluid bg-light my-6 mt-0" id="home">
       <div class="container">
         <div class="row g-5 pt-5 align-items-center">
-          <div class="col-lg-6">
-            <img class="img-fluid text-center" src="@/assets/img/marker/home.png" alt="" />
+          <div class="col-lg-7 pb-5 pr-0">
+            <img class="img-fluid text-center" src="@/assets/img/houseSearch.png" alt="" />
           </div>
-          <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-            <h4 class="text-primary mb-3">내가 원하는 방</h4>
-            <h1 class="display-3 mb-3">검색하는</h1>
+          <div class="col-lg-5 py-6 pb-0 pt-lg-0">
+            <h4 class="text-primary mb-3">국토교통부 공공데이터 기반</h4>
+            <h1 class="display-5 mb-3">대전 매매 검색</h1>
             <h2 class="typed-text-output d-inline"></h2>
             <div class="typed-text">
-              검색하는<br />
-              검색하는
+              2018~2022년의 구군별 매달 대전시 매매 기록을 모았습니다.<br />
+              오피스텔, 아파트, 다세대주택, 원룸 원하는 타입별로<br />
+              한눈에 확인해보세요.<br />
             </div>
             <div class="d-flex align-items-center pt-5">
-              <a href="" class="btn btn-primary py-3 px-4 me-5">Sign In</a>
               <!-- <button @click="modalShow = !modalShow">Open Modal</b-button> -->
               <!-- <b-button @click="show" type="button" class="btn-play"> -->
               <b-button type="button" class="btn-play">
                 <span></span>
               </b-button>
-              <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
+              <h5 class="ms-4 mb-0 d-none d-sm-block">소개영상</h5>
             </div>
           </div>
         </div>
@@ -83,28 +83,24 @@
                 </b-form-select>
               </div>
               <div class="form-group my-2">
-                <b-form-select
-                  class="form-select col-auto"
-                  id="gugun"
-                  v-model="monthSelected"
-                  :options="monthOptions"
-                >
+                <b-form-select class="form-select col-auto" id="gugun" v-model="monthSelected" :options="monthOptions">
                 </b-form-select>
               </div>
             </div>
           </div>
           <div class="d-grid gap-2 p-2">
-            <button type="button" id="list-btn" class="btn btn-primary" @click="searchApt">
-              검색
-            </button>
+            <button type="button" id="list-btn" class="btn btn-primary" @click="searchApt">검색</button>
           </div>
         </div>
         <div class="col px-4 mx-4">
-          <div>
+          <!-- <div>
             <h5 class="text-right mt-4">검색결과 총 {{ $store.state.count }}건</h5>
+          </div> -->
+          <div class="text-center" v-if="!showList">
+            <img class="img-fluid text-center" src="@/assets/img/empty.gif" alt="" style="width: 500px" />
+            <p>타입, 지역, 기간을 설정해주세요</p>
           </div>
-
-          <router-view></router-view>
+          <router-view v-else></router-view>
         </div>
         <div id="searchtype">
           {{ searchType }}
@@ -127,6 +123,7 @@ export default {
       totalPage: 1,
       endPage: 1,
       apts: [], // 아파트 목록 저장할 배열
+      showList: false,
 
       // gugun
       gugunSelected: null,
@@ -200,14 +197,17 @@ export default {
     resetGugun() {
       this.gugunSelected = null;
       this.CLEAR_APT_LIST();
+      this.showList = false;
     },
     resetYear() {
       this.yearSelected = null;
       this.monthSelected = null;
+      this.showList = false;
     },
     resetMonth() {
       this.monthSelected = null;
       this.CLEAR_APT_LIST();
+      this.showList = false;
     },
     searchApt() {
       console.log(this.gugunSelected);
@@ -221,6 +221,7 @@ export default {
         this.SET_DATE_TYPE(this.yearSelected + this.monthSelected);
       }
       this.getHouseList(this.gugunSelected);
+      this.showList = true;
     },
     searchBtn(link) {
       console.log("search btn click");

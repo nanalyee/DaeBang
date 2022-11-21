@@ -1,73 +1,82 @@
 <template>
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <!-- button start -->
-    <div
-      v-for="(item, i) in houses"
-      :key="i"
-      type="button"
-      :id="'storeinfo' + i"
-      class="p-2 my-3 border rounded row"
-      v-on:click="tableClick(item.아파트)"
-      data-toggle="collapse"
-      :href="'#toggle' + i"
-      role="button"
-      aria-expanded="false"
-      :aria-controls="'toggle' + i"
-    >
-      <div class="col align-self-center">
-        <div class="">
-          <span class="fs-4 pe-3" v-html="item.아파트"></span>
-          <span class="" style="color: gray">아파트</span>
-        </div>
-
-        <div class="collapse" :id="'toggle' + i" data-parent="#accordion">
-          <div class="row">
-            <div class="col">
-              <span class="pe-3" style="color: gray">전용면적</span>
-              <span>{{ item.전용면적 }}</span>
-            </div>
-            <div class="col">
-              <span class="pe-3" style="color: gray">층수</span>
-              <span>{{ item.층 }}</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <span class="pe-3" style="color: gray">보증금액</span>
-              <span>{{ item.보증금액 }}</span>
-            </div>
-            <div class="col">
-              <span class="pe-3" style="color: gray">월세</span>
-              <span>{{ item.월세금액 }}</span>
-            </div>
+    <div class="search-wrapper row justify-content-between">
+      <h5 class="mt-4 mb-2 col-auto">검색결과 총 {{ $store.state.count }}건</h5>
+      <div class="col-auto align-self-end mb-2">
+        <label></label>
+        <input class="form-control" type="text" v-model="search" placeholder="이름으로 검색하기" />
+      </div>
+    </div>
+    <div class="p-0 m-0 list" style="height: 700px; overflow: auto">
+      <div class="text-center" v-if="$store.state.count == 0">
+        <img class="img-fluid text-center" src="@/assets/img/empty.gif" alt="" style="width: 500px" />
+        <p>검색 결과가 없습니다.</p>
+      </div>
+      <!-- button start -->
+      <div
+        v-for="(item, i) in filteredList"
+        :key="i"
+        type="button"
+        :id="'storeinfo' + i"
+        class="py-2 my-2 mx-0 border rounded row"
+        v-on:click="tableClick(item.아파트)"
+        data-toggle="collapse"
+        :href="'#toggle' + i"
+        role="button"
+        aria-expanded="false"
+        :aria-controls="'toggle' + i"
+      >
+        <div class="col align-self-center">
+          <div class="">
+            <span class="fs-4 pe-3" v-html="item.아파트"></span>
+            <span class="" style="color: gray">아파트</span>
           </div>
 
-          <div class="row">
-            <div class="col">
-              <span class="pe-3" style="color: gray">법정동</span>
-              <span>{{ item.법정동 }}</span>
+          <div class="collapse" :id="'toggle' + i" data-parent="#accordion">
+            <div class="row">
+              <div class="col">
+                <span class="pe-3" style="color: gray">전용면적</span>
+                <span>{{ item.전용면적 }}</span>
+              </div>
+              <div class="col">
+                <span class="pe-3" style="color: gray">층수</span>
+                <span>{{ item.층 }}</span>
+              </div>
             </div>
-            <div class="col">
-              <span class="pe-3" style="color: gray">건축년도</span>
-              <span>{{ item.건축년도 }}</span>
+            <div class="row">
+              <div class="col">
+                <span class="pe-3" style="color: gray">보증금액</span>
+                <span>{{ item.보증금액 }}</span>
+              </div>
+              <div class="col">
+                <span class="pe-3" style="color: gray">월세</span>
+                <span>{{ item.월세금액 }}</span>
+              </div>
             </div>
-            <!-- <div class="col">
+
+            <div class="row">
+              <div class="col">
+                <span class="pe-3" style="color: gray">법정동</span>
+                <span>{{ item.법정동 }}</span>
+              </div>
+              <div class="col">
+                <span class="pe-3" style="color: gray">건축년도</span>
+                <span>{{ item.건축년도 }}</span>
+              </div>
+              <!-- <div class="col">
               <a id="copy" style="color: #8797c7" href="#" onclick="callFunction();">복사</a>
             </div> -->
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-3 collapse" :id="'toggle' + i" data-parent="#accordion">
-        <img class="img-fluid img-thumbnail rounded" :src="$store.state.houseimg" alt="" />
-      </div>
-      <div
-        class="col-1 text-right align-self-center collapse"
-        :id="'toggle' + i"
-        data-parent="#accordion"
-      >
-        <a href="#" class="golink" v-on:click="goDetail(i)">
-          <i class="bi bi-chevron-compact-right fs-1"></i>
-        </a>
+        <div class="col-3 collapse" :id="'toggle' + i" data-parent="#accordion">
+          <img class="img-fluid img-thumbnail rounded" :src="$store.state.houseimg" alt="" />
+        </div>
+        <div class="col-1 text-right align-self-center collapse" :id="'toggle' + i" data-parent="#accordion">
+          <a href="#" class="golink" v-on:click="goDetail(i)">
+            <i class="bi bi-chevron-compact-right fs-1"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -82,6 +91,7 @@ export default {
   name: "AppSearch",
   data() {
     return {
+      search: "",
       code: "",
       gugun: "",
       gugunOptions: [
@@ -111,6 +121,11 @@ export default {
     ...mapState(["houses"]),
     // ...mapState(memberStore, ["isLogin", "userInfo"]),
     // ...mapGetters(["checkUserInfo"]),
+    filteredList() {
+      return this.houses.filter((post) => {
+        return post.아파트.toLowerCase().includes(this.search.toLowerCase());
+      });
+    },
   },
   methods: {
     ...mapActions(["getTitleImg"]),
@@ -135,13 +150,7 @@ export default {
     goDetail(index) {
       var _this = this;
       var keywords =
-        "대전시 " +
-        this.gugun +
-        " " +
-        this.houses[index].법정동 +
-        " " +
-        this.houses[index].아파트 +
-        " 아파트";
+        "대전시 " + this.gugun + " " + this.houses[index].법정동 + " " + this.houses[index].아파트 + " 아파트";
       console.log("검색할 주소 : " + keywords);
 
       // 장소 검색 객체를 생성합니다
@@ -218,4 +227,20 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.list::-webkit-scrollbar {
+  padding-left: 8px;
+  width: 8px; /* 스크롤바의 너비 */
+}
+
+.list::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #6b799e62; /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: #6b799e0c; /*스크롤바 뒷 배경 색상*/
+}
+</style>

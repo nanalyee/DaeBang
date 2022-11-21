@@ -8,12 +8,14 @@
             <img class="img-fluid text-center" src="@/assets/img/main_top.png" alt="" />
           </div>
           <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-            <h4 class="text-primary mb-3">내가 원하는 방</h4>
+            <h4 class="text-primary mb-3">대전 입문 안내 도우미</h4>
             <h1 class="display-3 mb-3">대방</h1>
             <h2 class="typed-text-output d-inline"></h2>
             <div class="typed-text">
-              아파트부터 오피스텔까지 당신이 원하는 정보를 찾아드립니다<br />
-              지금 바로 시작해 보세요!
+              아파트부터 오피스텔까지 다양한 매매 정보<br />
+              대전시 주요 교통 시설 정보와 실시간 정체 정도<br />
+              주택 위치 기반 나만의 관심 지역 <br />
+              대전에 처음 적응하기 위한 필수 안내 도우미, 대방입니다. <br />
             </div>
             <div class="d-flex align-items-center pt-5">
               <a href="" class="btn btn-primary py-3 px-4 me-5">Sign In</a>
@@ -51,7 +53,7 @@
       <div class="container">
         <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
           <div class="col-lg-6">
-            <h1 class="display-5 mb-0">기능 미리보기</h1>
+            <h1 class="display-5 mb-0">대방 미리보기</h1>
           </div>
           <div class="col-lg-6 text-lg-end">
             <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
