@@ -30,6 +30,7 @@
               </div>
             </div>
           </div>
+
           <div class="col border" style="height: 500px; overflow: auto">
             <div class="row" style="height: 120px; overflow: auto">
               <div class="col align-self-end text-center">
