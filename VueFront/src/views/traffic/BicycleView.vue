@@ -4,9 +4,7 @@
     <div class="container">
       <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="col-lg-6">
-          <h1 class="display-5 mb-0">
-            자전거 <img src="@/assets/img/bicyclegif.gif" alt="" id="bicyclegif" />
-          </h1>
+          <h1 class="display-5 mb-0">자전거 <img src="@/assets/img/bicyclegif.gif" alt="" id="bicyclegif" /></h1>
           <br />
           <h5 class="text-primary fw-bold mb-4">
             대전 공영 자전거
@@ -14,7 +12,7 @@
           </h5>
         </div>
         <div class="col-lg-6 text-lg-end">
-          <a class="btn" href="https://bike.tashu.or.kr/main.do" target="_black" id="tashu_logo"
+          <a class="btn" href="https://bike.tashu.or.kr/main.do" target="blank" id="tashu_logo"
             ><img src="@/assets/img/tashu.png" alt="타슈"
           /></a>
         </div>
