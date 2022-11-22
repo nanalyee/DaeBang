@@ -36,6 +36,15 @@ Vue.use(IconsPlugin);
 import VueApexCharts from "vue-apexcharts";
 Vue.use(VueApexCharts);
 
+// TYPER
+// ES6
+import VueTyperPlugin from "vue-typer";
+// CommonJS
+//var VueTyperPlugin = require("vue-typer").default;
+// Global
+//var VueTyperPlugin = window.VueTyper.default;
+Vue.use(VueTyperPlugin);
+
 new Vue({
   router,
   store,

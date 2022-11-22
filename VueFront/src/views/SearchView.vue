@@ -11,11 +11,25 @@
             <h4 class="text-primary mb-3">국토교통부 공공데이터 기반</h4>
             <h1 class="display-5 mb-3">대전 매매 검색</h1>
             <h2 class="typed-text-output d-inline"></h2>
-            <div class="typed-text">
-              2018~2022년의 구군별 매달 대전시 매매 기록을 모았습니다.<br />
-              오피스텔, 아파트, 다세대주택, 원룸 원하는 타입별로<br />
-              한눈에 확인해보세요.<br />
-            </div>
+
+            <vue-typer
+              class="fs-4"
+              :text="[
+                '2018~2022년의 구군별 매달 대전시 매매 기록을 모았습니다.',
+                '오피스텔, 아파트, 다세대주택, 원룸 원하는 타입별로',
+                '한눈에 확인해보세요.',
+              ]"
+              :repeat="Infinity"
+              initial-action="typing"
+              :pre-type-delay="100"
+              :type-delay="100"
+              :pre-erase-delay="1500"
+              :erase-delay="250"
+              erase-style="clear"
+              :erase-on-complete="false"
+              caret-animation="blink"
+            >
+            </vue-typer>
             <div class="d-flex align-items-center pt-5">
               <!-- <button @click="modalShow = !modalShow">Open Modal</b-button> -->
               <!-- <b-button @click="show" type="button" class="btn-play"> -->
@@ -83,13 +97,20 @@
                 </b-form-select>
               </div>
               <div class="form-group my-2">
-                <b-form-select class="form-select col-auto" id="gugun" v-model="monthSelected" :options="monthOptions">
+                <b-form-select
+                  class="form-select col-auto"
+                  id="gugun"
+                  v-model="monthSelected"
+                  :options="monthOptions"
+                >
                 </b-form-select>
               </div>
             </div>
           </div>
           <div class="d-grid gap-2 p-2">
-            <button type="button" id="list-btn" class="btn btn-primary" @click="searchApt">검색</button>
+            <button type="button" id="list-btn" class="btn btn-primary" @click="searchApt">
+              검색
+            </button>
           </div>
         </div>
         <div class="col px-4 mx-4">
@@ -97,7 +118,12 @@
             <h5 class="text-right mt-4">검색결과 총 {{ $store.state.count }}건</h5>
           </div> -->
           <div class="text-center" v-if="!showList">
-            <img class="img-fluid text-center" src="@/assets/img/empty.gif" alt="" style="width: 500px" />
+            <img
+              class="img-fluid text-center"
+              src="@/assets/img/empty.gif"
+              alt=""
+              style="width: 500px"
+            />
             <p>타입, 지역, 기간을 설정해주세요</p>
           </div>
           <router-view v-else></router-view>

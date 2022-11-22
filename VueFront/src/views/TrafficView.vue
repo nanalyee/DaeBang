@@ -27,10 +27,24 @@
                   <br />
                   <h1 class="display-5 mb-3">실시간 주요 교통 상황</h1>
                   <h2 class="typed-text-output d-inline"></h2>
-                  <div class="typed-text">
-                    대전시 주요 경유 지역의 도로 정체 정도가 궁금하신가요?<br />
-                    실시간 교통 상황을 확인하고 다른 사용자와 공유해보세요.<br />
-                  </div>
+                  <vue-typer
+                    class="fs-4"
+                    :text="[
+                      '대전시 주요 경유 지역의 도로 정체 정도가 궁금하신가요?',
+                      '실시간 교통 상황을 확인하고 다른 사용자와 공유해보세요.',
+                    ]"
+                    :repeat="Infinity"
+                    initial-action="typing"
+                    :pre-type-delay="100"
+                    :type-delay="100"
+                    :pre-erase-delay="1500"
+                    :erase-delay="250"
+                    erase-style="clear"
+                    :erase-on-complete="false"
+                    caret-animation="blink"
+                  >
+                  </vue-typer>
+
                   <div class="d-flex align-items-center pt-5">
                     <!-- <button @click="modalShow = !modalShow">Open Modal</b-button> -->
                     <!-- <b-button @click="show" type="button" class="btn-play"> -->
@@ -59,10 +73,24 @@
                   <br />
                   <h1 class="display-5 mb-3">실시간 버스 정류소 조회</h1>
                   <h2 class="typed-text-output d-inline"></h2>
-                  <div class="typed-text">
-                    정류장에 어떤 버스가 얼마나 자주오는지 궁금하신가요?<br />
-                    3072개의 정류소의 실시간 노선 정보를 검색해보세요.<br />
-                  </div>
+                  <vue-typer
+                    class="fs-4"
+                    :text="[
+                      '정류장에 어떤 버스가 얼마나 자주오는지 궁금하신가요?',
+                      '3072개의 정류소의 실시간 노선 정보를 검색해보세요.',
+                    ]"
+                    :repeat="Infinity"
+                    initial-action="typing"
+                    :pre-type-delay="100"
+                    :type-delay="100"
+                    :pre-erase-delay="1500"
+                    :erase-delay="250"
+                    erase-style="clear"
+                    :erase-on-complete="false"
+                    caret-animation="blink"
+                  >
+                  </vue-typer>
+
                   <div class="d-flex align-items-center pt-5">
                     <!-- <button @click="modalShow = !modalShow">Open Modal</b-button> -->
                     <!-- <b-button @click="show" type="button" class="btn-play"> -->
@@ -88,10 +116,24 @@
                   <h4 class="text-primary mb-3">대전교통공사 공공데이터 기반</h4>
                   <h1 class="display-5 mb-3">도시철도 역사 정보</h1>
                   <h2 class="typed-text-output d-inline"></h2>
-                  <div class="typed-text">
-                    대전 도시철도의 역사 정보 궁금하신가요?<br />
-                    대전교통공사에서 제공하는 상세 정보를 확인해보세요.<br />
-                  </div>
+
+                  <vue-typer
+                    class="fs-4"
+                    :text="[
+                      '대전 도시철도의 역사 정보 궁금하신가요?',
+                      '대전교통공사에서 제공하는 상세 정보를 확인해보세요.',
+                    ]"
+                    :repeat="Infinity"
+                    initial-action="typing"
+                    :pre-type-delay="100"
+                    :type-delay="100"
+                    :pre-erase-delay="1500"
+                    :erase-delay="250"
+                    erase-style="clear"
+                    :erase-on-complete="false"
+                    caret-animation="blink"
+                  >
+                  </vue-typer>
                   <div class="d-flex align-items-center pt-5">
                     <!-- <button @click="modalShow = !modalShow">Open Modal</b-button> -->
                     <!-- <b-button @click="show" type="button" class="btn-play"> -->

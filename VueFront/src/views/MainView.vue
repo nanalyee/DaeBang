@@ -11,12 +11,25 @@
             <h4 class="text-primary mb-3">대전 입문 안내 도우미</h4>
             <h1 class="display-3 mb-3">대방</h1>
             <h2 class="typed-text-output d-inline"></h2>
-            <div class="typed-text">
-              아파트부터 오피스텔까지 다양한 매매 정보<br />
-              대전시 주요 교통 시설 정보와 실시간 정체 정도<br />
-              주택 위치 기반 나만의 관심 지역 <br />
-              대전에 처음 적응하기 위한 필수 안내 도우미, 대방입니다. <br />
-            </div>
+            <vue-typer
+              class="fs-4"
+              :text="[
+                '아파트부터 오피스텔까지 다양한 매매 정보',
+                '대전시 주요 교통 시설 정보와 실시간 정체 정도',
+                '주택 위치 기반 나만의 관심 지역',
+                '대전에 처음 적응하기 위한 필수 안내 도우미, 대방입니다.',
+              ]"
+              :repeat="Infinity"
+              initial-action="typing"
+              :pre-type-delay="100"
+              :type-delay="100"
+              :pre-erase-delay="1500"
+              :erase-delay="250"
+              erase-style="clear"
+              :erase-on-complete="false"
+              caret-animation="blink"
+            >
+            </vue-typer>
             <div class="d-flex align-items-center pt-5">
               <a href="" class="btn btn-primary py-3 px-4 me-5">Sign In</a>
               <!-- <button @click="modalShow = !modalShow">Open Modal</b-button> -->
@@ -82,7 +95,9 @@
                 >
                   <i class="bi bi-eye-fill"></i>
                 </a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="bi bi-link"></i></a>
+                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
+                  ><i class="bi bi-link"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -103,7 +118,9 @@
                   data-lightbox="portfolio"
                   ><i class="bi bi-eye-fill"></i
                 ></a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="bi bi-link"></i></a>
+                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
+                  ><i class="bi bi-link"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -124,7 +141,9 @@
                   data-lightbox="portfolio"
                   ><i class="bi bi-eye-fill"></i
                 ></a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="bi bi-link"></i></a>
+                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
+                  ><i class="bi bi-link"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -145,7 +164,9 @@
                   data-lightbox="portfolio"
                   ><i class="bi bi-eye-fill"></i
                 ></a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="bi bi-link"></i></a>
+                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
+                  ><i class="bi bi-link"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -166,7 +187,9 @@
                   data-lightbox="portfolio"
                   ><i class="bi bi-eye-fill"></i
                 ></a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="bi bi-link"></i></a>
+                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
+                  ><i class="bi bi-link"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -187,7 +210,9 @@
                   data-lightbox="portfolio"
                   ><i class="bi bi-eye-fill"></i
                 ></a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="bi bi-link"></i></a>
+                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
+                  ><i class="bi bi-link"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -220,7 +245,9 @@
         </div>
         <div class="row g-4">
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+            <div
+              class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+            >
               <div class="bg-icon flex-shrink-0 mb-3">
                 <img class="img-fluid rounded" src="@/assets/img/apartment.png" alt="" />
               </div>
@@ -228,47 +255,55 @@
                 <h4 class="mb-3">전국 아파트 매매 검색</h4>
                 <!-- <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6> -->
                 <span>
-                  아파트 매매 공공 데이터를 활용해 사용자가 지정한 시도, 구, 동, 기간에 거래된 상세 정보 및 위치를
-                  조회할 수 있습니다.
+                  아파트 매매 공공 데이터를 활용해 사용자가 지정한 시도, 구, 동, 기간에 거래된 상세
+                  정보 및 위치를 조회할 수 있습니다.
                 </span>
               </div>
             </div>
           </div>
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+            <div
+              class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+            >
               <div class="bg-icon flex-shrink-0 mb-3">
                 <img class="img-fluid rounded" src="@/assets/img/community.png" alt="" />
               </div>
               <div class="ms-sm-4">
                 <h4 class="mb-3">커뮤니티</h4>
-                <span> 회원가입 후 로그인을 통해 자유롭게 글을 올리고 읽는 커뮤니티 기능을 제공합니다. </span>
+                <span>
+                  회원가입 후 로그인을 통해 자유롭게 글을 올리고 읽는 커뮤니티 기능을 제공합니다.
+                </span>
               </div>
             </div>
           </div>
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+            <div
+              class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+            >
               <div class="bg-icon flex-shrink-0 mb-3">
                 <img class="img-fluid rounded" src="@/assets/img/commercial.png" alt="" />
               </div>
               <div class="ms-sm-4">
                 <h4 class="mb-3">지정 지역 내 상권 조회</h4>
                 <span
-                  >사용자가 선택한 유형 상권으로 필터링 된 정보를 가져옵니다. 지정한 지역을 기준으로 반경 1km 내의
-                  상권을 조회할 수 있습니다.</span
+                  >사용자가 선택한 유형 상권으로 필터링 된 정보를 가져옵니다. 지정한 지역을 기준으로
+                  반경 1km 내의 상권을 조회할 수 있습니다.</span
                 >
               </div>
             </div>
           </div>
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+            <div
+              class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
+            >
               <div class="bg-icon flex-shrink-0 mb-3">
                 <img class="img-fluid rounded" src="@/assets/img/favorite.png" alt="" />
               </div>
               <div class="ms-sm-4">
                 <h4 class="mb-3">즐겨찾기</h4>
                 <span
-                  >사용자는 원하는 매물을 즐겨찾기에 등록할 수 있습니다. 언제든지 등록한 매물을 편리하게 확인할 수
-                  있습니다.</span
+                  >사용자는 원하는 매물을 즐겨찾기에 등록할 수 있습니다. 언제든지 등록한 매물을
+                  편리하게 확인할 수 있습니다.</span
                 >
               </div>
             </div>
@@ -308,8 +343,8 @@
               <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">68827</h2>
             </div>
             <p class="mb-4">
-              부동산 거래신고에 관한 법률에 따라 신고된 주택의 68827건의 실거래 자료<br />시,도,행정동 구역별 정해진
-              기간 조회 가능
+              부동산 거래신고에 관한 법률에 따라 신고된 주택의 68827건의 실거래 자료<br />시,도,행정동
+              구역별 정해진 기간 조회 가능
             </p>
             <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
           </div>
@@ -330,7 +365,9 @@
               소상공인 상권정보 상가업소 공공 데이터 기반<br />
               조회 당 최대 1000건 상권내 상가업소 조회 가능
             </p>
-            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>소상공인시장진흥공단</p>
+            <p class="mb-3">
+              <i class="bi bi-check-circle-fill text-primary me-3"></i>소상공인시장진흥공단
+            </p>
           </div>
         </div>
       </div>
@@ -357,7 +394,10 @@
                   <h5>이현구</h5>
                   <span>Developer</span>
                 </div>
-                <i class="fa fa-arrow-right fa-2x text-primary" onclick="window.open('https://github.com/Leeh9')"></i>
+                <i
+                  class="fa fa-arrow-right fa-2x text-primary"
+                  onclick="window.open('https://github.com/Leeh9')"
+                ></i>
               </div>
             </div>
           </div>
