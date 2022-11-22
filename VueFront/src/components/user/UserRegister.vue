@@ -1,23 +1,17 @@
 <template>
   <b-container class="bv-example-row mt-3">
-    <b-row>
-      <b-col>
-        <b-alert variant="secondary" show><h3>회원가입</h3></b-alert>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col></b-col>
-      <b-col cols="8">
-        <b-card class="text-center mt-3" style="max-width: 40rem" align="left">
+    <b-row class="d-flex justify-content-center">
+      <h1 class="underline-steelblue py-4 my-4"><i class="bi bi-person-square"></i> 회원가입</h1>
+      <b-col cols="8 d-flex justify-content-center">
+        <b-card class="text-center mt-3" style="width: 30rem" align="left">
           <b-form class="text-left">
-            <b-alert show variant="danger" v-if="isLoginError">모든 항목을 입력해주세요.</b-alert>
-            <b-form-group label="아이디:" label-for="userid">
+            <b-form-group label="아이디" label-for="userid">
               <b-form-input id="userid" v-model="user.userid" required placeholder="ID"></b-form-input>
             </b-form-group>
-            <b-form-group label="이름:" label-for="username">
+            <b-form-group label="이름" label-for="username">
               <b-form-input id="username" v-model="user.username" required placeholder="name"></b-form-input>
             </b-form-group>
-            <b-form-group label="비밀번호:" label-for="userpwd">
+            <b-form-group label="비밀번호" label-for="userpwd">
               <b-form-input
                 type="password"
                 id="userpwd"
@@ -26,7 +20,7 @@
                 placeholder="password"
               ></b-form-input>
             </b-form-group>
-            <b-form-group label="비밀번호확인:" label-for="userpwdCK">
+            <b-form-group label="비밀번호 확인" label-for="userpwdCK">
               <b-form-input
                 type="password"
                 id="userpwdCK"
@@ -35,15 +29,14 @@
                 placeholder="password"
               ></b-form-input>
             </b-form-group>
-            <b-form-group label="이메일:" label-for="email">
+            <b-form-group label="이메일" label-for="email">
               <b-form-input id="email" v-model="user.email" required placeholder="email"> </b-form-input>
             </b-form-group>
-
-            <b-button type="button" variant="success" class="m-1" @click="regist">회원가입</b-button>
           </b-form>
+          <b-alert show variant="danger" v-if="isLoginError" class="text-center">모든 항목을 입력해주세요.</b-alert>
+          <b-button type="button" variant="success" class="m-1" @click="regist" style="width: 100%">회원가입</b-button>
         </b-card>
       </b-col>
-      <b-col></b-col>
     </b-row>
   </b-container>
 </template>
