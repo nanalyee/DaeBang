@@ -10,9 +10,18 @@
         >
           <div class="col mt-5 justify-content-between">
             <div class="display-7 mt-5 mb-5 px-5 text-start" style="color: black">
-              <i v-if="weathertable[this.startdata + 5].fcstValue == '4'" class="display-5 bi bi-cloud-haze-fill"></i>
-              <i v-if="weathertable[this.startdata + 5].fcstValue == '3'" class="display-5 bi bi-cloud-fill"></i>
-              <i v-if="weathertable[this.startdata + 5].fcstValue == '1'" class="display-5 bi bi-sun-fill"></i>
+              <i
+                v-if="weathertable[this.startdata + 5].fcstValue == '4'"
+                class="display-5 bi bi-cloud-haze-fill"
+              ></i>
+              <i
+                v-if="weathertable[this.startdata + 5].fcstValue == '3'"
+                class="display-5 bi bi-cloud-fill"
+              ></i>
+              <i
+                v-if="weathertable[this.startdata + 5].fcstValue == '1'"
+                class="display-5 bi bi-sun-fill"
+              ></i>
               <span v-if="weathertable[this.startdata].fcstValue" class="fw-bold display-5">
                 {{ weathertable[this.startdata].fcstValue }}°
               </span>
@@ -40,7 +49,10 @@
           <div class="col text-end align-self-end mb-5" style="color: black">
             <div class="text fw-bold">대전시 유성구</div>
             <div class="text fw-bold">{{ this.hours }}시 현재 기상 정보</div>
-            <span v-if="weathertable[this.startdata + 7].fcstValue" class="display-7 my-4 mb-10 pr-3">
+            <span
+              v-if="weathertable[this.startdata + 7].fcstValue"
+              class="display-7 my-4 mb-10 pr-3"
+            >
               <i class="bi bi-droplet-half"></i>
               강수확률 {{ weathertable[this.startdata + 7].fcstValue }}%
             </span>
@@ -72,7 +84,9 @@
             </tr>
             <tr>
               <th scope="row">풍속</th>
-              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 4].fcstValue }} m/s</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                {{ weathertable[item + 4].fcstValue }} m/s
+              </td>
             </tr>
             <tr>
               <th class="align-middle" scope="row">하늘상태</th>
@@ -136,7 +150,9 @@
             </tr>
             <tr>
               <th scope="row">강수확률</th>
-              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 7].fcstValue }} %</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                {{ weathertable[item + 7].fcstValue }} %
+              </td>
             </tr>
             <tr>
               <th scope="row">1시간 강수량(mm)</th>
@@ -146,7 +162,9 @@
             </tr>
             <tr>
               <th scope="row">습도</th>
-              <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 10].fcstValue }} %</td>
+              <td v-for="(item, i) in tempnum()" :key="i">
+                {{ weathertable[item + 10].fcstValue }} %
+              </td>
             </tr>
             <tr>
               <th scope="row">1시간 적설량(mm)</th>
@@ -266,7 +284,10 @@ export default {
       //console.log(data.response.body.items.item[temp].fcstValue);
       //console.log(temp);
       //console.log(this.weathertable);
-      if (this.weathertable[this.temp].category == "TMX" || this.weathertable[this.temp].category == "TMN") {
+      if (
+        this.weathertable[this.temp].category == "TMX" ||
+        this.weathertable[this.temp].category == "TMN"
+      ) {
         this.startdata = temp + 1;
       } else {
         this.startdata = temp;
@@ -275,9 +296,9 @@ export default {
 
       if (this.weathertable[this.startdata + 6].fcstValue == "0") {
         if (this.weathertable[this.startdata + 5].fcstValue == "3") {
-          this.bgimage = "sunny.gif";
+          this.bgimage = "cloud.gif";
         } else if (this.weathertable[this.startdata + 5].fcstValue == "4") {
-          this.bgimage = "sunny.gif";
+          this.bgimage = "cloud.gif";
         } else if (this.weathertable[this.startdata + 5].fcstValue == "1") {
           if (this.hours <= 18 && this.hours >= 6) {
             this.bgimage = "sunny.gif";
