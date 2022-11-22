@@ -17,13 +17,10 @@
           /></a>
         </div>
       </div>
-      <div class="row g-4">
-        <div class="border portfolio-img rounded overflow-hidden">
-          <div class="col-lg-12 text-center">
-            <h1 class="display-7 my-4 mb-10">지도</h1>
-            <tashu-map></tashu-map>
-          </div>
-        </div>
+      <div>{{ this.time }}</div>
+      <div class="col-lg-12 text-center">
+        <h1 class="display-7 my-4 mb-10"></h1>
+        <tashu-map></tashu-map>
       </div>
     </div>
   </div>
@@ -39,7 +36,9 @@ export default {
     TashuMap,
   },
   data() {
-    return {};
+    return {
+      time: new Date(),
+    };
   },
   created() {},
 
