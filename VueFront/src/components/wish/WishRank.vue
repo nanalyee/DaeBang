@@ -29,6 +29,7 @@
                   type="button"
                   class="btn btn-outline-primary col"
                   style="height: 280px; overflow: auto"
+                  @click="select = 1"
                 >
                   <div id="bcon" class="rounded">
                     <div class="fs-4 pt-3">
@@ -62,6 +63,7 @@
                   type="button"
                   class="btn btn-outline-primary col"
                   style="height: 360px; overflow: auto"
+                  @click="select = 0"
                 >
                   <div id="bcon" class="rounded">
                     <div class="fs-4 pt-3">
@@ -94,6 +96,7 @@
                   type="button"
                   class="btn btn-outline-primary col"
                   style="height: 240px; overflow: auto"
+                  @click="select = 2"
                 >
                   <div id="bcon" class="rounded">
                     <div class="fs-4 pt-3">
@@ -112,12 +115,11 @@
       </div>
       <div class="col-lg-5 pl-0">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div
-            class="container mb-3 p-3 bg-white border-left"
-            style="height: 500px; overflow: auto"
-          >
+          <div class="container mb-3 p-3 bg-white" style="height: 600px; overflow: auto">
             <div>
-              <h6>점수 집계 방식 : 선호 상권 유/무 + 반경500m 해당 상권 개수</h6>
+              <h6 class="text-center">
+                점수 집계 방식 : 선호 상권 유/무 + 반경500m 해당 상권 개수
+              </h6>
             </div>
             <div>
               <apexcharts
@@ -129,6 +131,68 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row justify-content-center p-2 m-2" v-if="select || select == 0">
+        <h4 class="text-center my-2 py-2">
+          {{ this.wishhouse[this.scoreboard[select][1]].wishname }}
+          {{ this.wishhouse[this.scoreboard[select][1]].wishtype }} 상세 결과
+        </h4>
+        <table class="table align-middle">
+          <thead>
+            <tr class="text-center">
+              <th style="width: 12.5%">대형마트</th>
+              <th style="width: 12.5%">편의점</th>
+              <th style="width: 12.5%">지하철역</th>
+              <th style="width: 12.5%">음식점</th>
+              <th style="width: 12.5%">카페</th>
+              <th style="width: 12.5%">병원</th>
+              <th style="width: 12.5%">약국</th>
+              <th style="width: 12.5%">은행</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td v-for="(near, i) in 8" :key="i" class="text-center">
+                <div class="box" style="height: 300px; overflow: auto">
+                  <button
+                    v-for="(item, j) in detailBoard[select][i]"
+                    :key="j"
+                    class="btn btn-sm btn-primary m-1"
+                    :style="{
+                      backgroundColor: btnColor[Math.floor(Math.random() * 4)],
+                      border: 'none',
+                      color: 'black',
+                    }"
+                  >
+                    {{ detailBoard[select][i][j].place_name }}
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+
+          <!-- <tbody v-if="select >= 0">
+            <tr v-for="(near, i) in 8" :key="i" class="text-center">
+              <th style="width: 10%" class="align-middle">{{ categoryName[i] }}</th>
+              <td class="box text-start">
+                <button
+                  v-for="(item, j) in detailBoard[select][i]"
+                  :key="j"
+                  class="btn btn-sm btn-primary m-1"
+                  :style="{
+                    backgroundColor: btnColor[Math.floor(Math.random() * 4)],
+                    border: 'none',
+                    color: 'black',
+                    fontWeight: 'light',
+                    fontFamily: 'Pretendard-Regular',
+                  }"
+                >
+                  {{ detailBoard[select][i][j].place_name }}
+                </button>
+              </td>
+            </tr>
+          </tbody> -->
+        </table>
       </div>
     </div>
   </div>
@@ -154,8 +218,12 @@ export default {
         { wishname: "아파트6" },
       ],
       category: ["MT1", "CS2", "SW8", "FD6", "CE7", "HP8", "PM9", "BK9"],
+      categoryName: ["대형마트", "편의점", "지하철역", "음식점", "카페", "병원", "약국", "은행"],
       wishhouse: [],
       scoreboard: [],
+      detailBoard: [],
+      select: 0,
+      btnColor: ["#6dc0ff8c", "#3fce9e8a", "#ffc95da1", "#ed82928c", "#9584d09c"],
 
       // 차트 관련 시작
       series: [
@@ -174,6 +242,7 @@ export default {
           bar: {
             borderRadius: 4,
             horizontal: true,
+            fontFamily: "LINESeedKR-Bd, sans-serif",
           },
         },
         dataLabels: {
@@ -205,9 +274,9 @@ export default {
   created() {
     http.get(`/wish/listwishid/${this.userInfo.userid}`).then(({ data }) => {
       this.wishhouse = data;
-      console.log("스코어보드 보여줘");
-      console.log(this.scoreboard);
-      console.log(this.wishhouse);
+      //console.log("스코어보드 보여줘");
+      //console.log(this.scoreboard);
+      //console.log(this.wishhouse);
       this.calculateWishList();
     });
   },
@@ -216,6 +285,7 @@ export default {
     async calculateWishList() {
       // 대형마트 : MT1 , 편의점 : CS2 , 지하철역: SW8 , 음식점 : FD6 , 카페 : CE7 , 병원 : HP8 , 약국 : PM9, 은행 : BK9
       for (let i = 0; i < this.wishhouse.length; i++) {
+        let nearDetail = [];
         let sumscore = 0;
         for (let j = 0; j < 8; j++) {
           await http
@@ -224,7 +294,8 @@ export default {
             )
             .then(({ data }) => {
               console.log(data.documents);
-              console.log(data.documents.length);
+              nearDetail.push(data.documents);
+              //console.log(data.documents.length);
               if (data.documents.length >= 1) {
                 if (this.category[j] == "MT1") {
                   sumscore += parseInt(this.$store.state.cd_score["market"]) * 10;
@@ -256,9 +327,13 @@ export default {
         }
         const score = [sumscore, i];
         this.scoreboard.push(score);
+        // console.log(nearDetail);
+        this.detailBoard.push(nearDetail);
+        console.log(this.detailBoard);
       }
 
       console.log("스코어 보여줘");
+      window.dispatchEvent(new Event("resize"));
       this.scoreboard.sort((a, b) => b[0] - a[0]);
       console.log(this.scoreboard);
       for (let i = 0; i < this.scoreboard.length; i++) {
@@ -339,5 +414,13 @@ export default {
 #bcon {
   margin-top: 70px;
   background-color: rgb(255, 255, 255, 0.3);
+}
+
+.box {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.box::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 </style>

@@ -1,167 +1,247 @@
 <template>
-  <b-container class="mt-4" v-if="userInfo">
-    <b-row>
-      <b-col>
-        <b-alert variant="secondary" show><h3>내정보</h3></b-alert>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col></b-col>
-      <b-col cols="8">
-        <b-jumbotron>
-          <template #header>My Page</template>
+  <b-container class="bv-example-row mt-3">
+    <b-row class="d-flex justify-content-center">
+      <h1 class="underline-steelblue py-4 my-4"><i class="bi bi-door-open-fill"></i>마이페이지</h1>
 
-          <template #lead> 내 정보 확인페이지입니다. </template>
+      <b-container class="mt-4 border m-2 p-2 bg-light rounded" style="max-width: 40rem">
+        <h3 class="pt-3 m-3">{{ userInfo.userid }}님의 정보</h3>
+        <b-row class="d-flex justify-content-center py-2">
+          <b-col cols="2" class="text-center p-2 t-2 px-4">아이디</b-col
+          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{
+            userInfo.userid
+          }}</b-col>
+        </b-row>
+        <b-row class="d-flex justify-content-center py-2">
+          <b-col cols="2" class="text-center p-2 t-2 px-4">이름</b-col
+          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{
+            userInfo.username
+          }}</b-col>
+        </b-row>
+        <b-row class="d-flex justify-content-center py-2">
+          <b-col cols="2" class="text-center p-2 t-2 px-4">이메일</b-col
+          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{
+            userInfo.email
+          }}</b-col>
+        </b-row>
+        <b-row class="d-flex justify-content-center py-2">
+          <b-col cols="2" class="text-center p-2 t-2 px-4">가입일</b-col
+          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{
+            userInfo.joindate
+          }}</b-col>
+        </b-row>
 
-          <hr class="my-4" />
-
-          <b-container class="mt-4">
-            <b-row>
-              <b-col cols="2"></b-col>
-              <b-col cols="2" align-self="end">아이디</b-col
-              ><b-col cols="4" align-self="start">{{ userInfo.userid }}</b-col>
-              <b-col cols="2"></b-col>
-            </b-row>
-            <b-row>
-              <b-col cols="2"></b-col>
-              <b-col cols="2" align-self="end">이름</b-col
-              ><b-col cols="4" align-self="start">{{ userInfo.username }}</b-col>
-              <b-col cols="2"></b-col>
-            </b-row>
-            <b-row>
-              <b-col cols="2"></b-col>
-              <b-col cols="2" align-self="end">이메일</b-col
-              ><b-col cols="4" align-self="start">{{ userInfo.email }}</b-col>
-              <b-col cols="2"></b-col>
-            </b-row>
-            <b-row>
-              <b-col cols="2"></b-col>
-              <b-col cols="2" align-self="end">가입일</b-col
-              ><b-col cols="4" align-self="start">{{ userInfo.joindate }}</b-col>
-              <b-col cols="2"></b-col>
-            </b-row>
-
-            <router-link :to="{ name: 'modify' }" class="btn btn-primary mr-1"
+        <b-row class="d-flex justify-content-center py-2">
+          <b-col cols="4" class="text-center pr-0"
+            ><router-link :to="{ name: 'modify' }" class="btn btn-primary mr-1" style="width: 100%"
               >정보수정</router-link
+            ></b-col
+          ><b-col cols="4" class="text-start pr-0"
+            ><b-button variant="danger" href="#" @click="deleteMember" style="width: 100%"
+              >회원탈퇴</b-button
+            ></b-col
+          >
+        </b-row>
+
+        <b-container class="mt-4" v-show="showWishModify">
+          <hr />
+          <h3 class="pt-4 m-3">{{ userInfo.userid }}님의 주변 상권 선호도</h3>
+
+          <b-row class="d-flex justify-content-center py-2">
+            <b-col cols="2" class="text-end p-2"><i class="bi bi-shop"></i> 대형마트</b-col>
+            <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
+              {{ $store.state.cd_score["market"] }}
+            </b-col>
+            <b-col cols="2" class="text-end p-2"><i class="bi bi-shop-window"></i> 편의점</b-col>
+            <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
+              {{ $store.state.cd_score["convenience"] }}
+            </b-col>
+          </b-row>
+
+          <b-row class="d-flex justify-content-center py-2">
+            <b-col cols="2" class="text-end p-2"
+              ><i class="bi bi-train-lightrail-front"></i> 지하철역</b-col
             >
-            <!-- <b-button variant="primary" href="#" class="mr-1">정보수정</b-button> -->
-            <b-button variant="danger" href="#" @click="deleteMember">회원탈퇴</b-button>
-            <b-row>
-              대형마트: {{ $store.state.cd_score["market"] }}, 편의점:
-              {{ $store.state.cd_score["convenience"] }}, 지하철역:
-              {{ $store.state.cd_score["subway"] }}, 음식점: {{ $store.state.cd_score["food"] }},
-              카페: {{ $store.state.cd_score["cafe"] }}, 병원:
-              {{ $store.state.cd_score["hospital"] }}, 약국:
-              {{ $store.state.cd_score["pharmacy"] }}, 은행:
+            <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
+              {{ $store.state.cd_score["subway"] }}
+            </b-col>
+            <b-col cols="2" class="text-end p-2"><i class="bi bi-egg-fried"></i> 음식점</b-col>
+            <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
+              {{ $store.state.cd_score["food"] }}
+            </b-col>
+          </b-row>
+
+          <b-row class="d-flex justify-content-center py-2">
+            <b-col cols="2" class="text-end p-2"><i class="bi bi-cup-hot"></i> 카페</b-col>
+            <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
+              {{ $store.state.cd_score["cafe"] }}
+            </b-col>
+            <b-col cols="2" class="text-end p-2"><i class="bi bi-cash-coin"></i> 은행</b-col>
+            <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
               {{ $store.state.cd_score["bank"] }}
-              <b-button type="reset" variant="danger" class="m-1" @click="isWishModify"
-                >관심지수 재설정</b-button
+            </b-col>
+          </b-row>
+
+          <b-row class="d-flex justify-content-center py-2">
+            <b-col cols="2" class="text-end p-2"><i class="bi bi-bandaid"></i> 약국</b-col>
+            <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
+              {{ $store.state.cd_score["pharmacy"] }}
+            </b-col>
+            <b-col cols="2" class="text-end p-2"><i class="bi bi-hospital"></i> 병원</b-col>
+            <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
+              {{ $store.state.cd_score["hospital"] }}
+            </b-col>
+          </b-row>
+
+          <b-row class="d-flex justify-content-center py-2">
+            <b-col cols="6" class="text-end p-2">
+              <b-button
+                type="reset"
+                variant="primary"
+                class="m-1"
+                @click="isWishModify"
+                style="width: 100%"
               >
+                관심지수 재설정
+              </b-button>
+            </b-col>
+          </b-row>
+        </b-container>
+
+        <b-container class="mt-4" v-show="!showWishModify">
+          <hr />
+          <h3 class="pt-4 m-3">주변 상권 선호도 점수 재설정</h3>
+          <p>1~5점 사이의 점수로 입력해주세요. 관심지역 랭킹 시스템에 반영됩니다.</p>
+          <b-form @submit="onSubmit">
+            <b-row class="d-flex justify-content-center">
+              <b-col cols="2" class="text-end p-2"><i class="bi bi-shop"></i> 대형마트</b-col>
+              <b-col cols="2" class="text-start mx-2">
+                <b-form-group id="market-group" label-for="market">
+                  <b-form-input
+                    id="market"
+                    v-model="score.market"
+                    type="number"
+                    min="1"
+                    max="5"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col cols="2" class="text-end p-2"><i class="bi bi-shop-window"></i> 편의점</b-col>
+              <b-col cols="2" class="text-start mx-2">
+                <b-form-group id="convenience-group" label-for="convenience">
+                  <b-form-input
+                    id="convenience"
+                    v-model="score.convenience"
+                    type="number"
+                    min="1"
+                    max="5"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
             </b-row>
-          </b-container>
-          <hr class="my-4" />
 
-          <b-container class="mt-4" v-show="!showWishModify">
-            <h3>관심 지수</h3>
-            <p>1~5점 사이의 점수로 입력해주세요. 관심지역 랭킹 시스템에 반영됩니다.</p>
-            <b-form @submit="onSubmit">
-              <b-button type="submit" variant="primary" class="m-1"
-                ><i class="bi bi-send-fill white fs-4"></i
-              ></b-button>
+            <b-row class="d-flex justify-content-center">
+              <b-col cols="2" class="text-end p-2"
+                ><i class="bi bi-train-lightrail-front"></i> 지하철</b-col
+              >
+              <b-col cols="2" class="text-start mx-2">
+                <b-form-group id="subway-group" label-for="subway">
+                  <b-form-input
+                    id="subway"
+                    v-model="score.subway"
+                    type="number"
+                    min="1"
+                    max="5"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col cols="2" class="text-end p-2"><i class="bi bi-egg-fried"></i> 음식점</b-col>
+              <b-col cols="2" class="text-start mx-2">
+                <b-form-group id="food-group" label-for="food">
+                  <b-form-input
+                    id="food"
+                    v-model="score.food"
+                    type="number"
+                    min="1"
+                    max="5"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+            </b-row>
 
-              <b-form-group id="market-group" label="대형마트:" label-for="market">
-                <b-form-input
-                  id="market"
-                  v-model="score.market"
-                  type="number"
-                  min="1"
-                  max="5"
-                  required
-                ></b-form-input>
-              </b-form-group>
+            <b-row class="d-flex justify-content-center py-2">
+              <b-col cols="2" class="text-end p-2"><i class="bi bi-cup-hot"></i> 카페</b-col>
+              <b-col cols="2" class="text-start mx-2">
+                <b-form-group id="cafe-group" label-for="cafe">
+                  <b-form-input
+                    id="cafe"
+                    v-model="score.cafe"
+                    type="number"
+                    min="1"
+                    max="5"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col cols="2" class="text-end p-2"><i class="bi bi-hospital"></i> 병원</b-col>
+              <b-col cols="2" class="text-start mx-2">
+                <b-form-group id="hospital-group" label-for="hospital">
+                  <b-form-input
+                    id="hospital"
+                    v-model="score.hospital"
+                    type="number"
+                    min="1"
+                    max="5"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+            </b-row>
 
-              <b-form-group id="convenience-group" label="편의점:" label-for="convenience">
-                <b-form-input
-                  id="convenience"
-                  v-model="score.convenience"
-                  type="number"
-                  min="1"
-                  max="5"
-                  required
-                ></b-form-input>
-              </b-form-group>
+            <b-row class="d-flex justify-content-center py-2">
+              <b-col cols="2" class="text-end p-2"><i class="bi bi-bandaid"></i> 약국</b-col>
+              <b-col cols="2" class="text-start mx-2">
+                <b-form-group id="pharmacy-group" label-for="pharmacy">
+                  <b-form-input
+                    id="pharmacy"
+                    v-model="score.pharmacy"
+                    type="number"
+                    min="1"
+                    max="5"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col cols="2" class="text-end p-2"><i class="bi bi-cash-coin"></i> 은행</b-col>
+              <b-col cols="2" class="text-start mx-2">
+                <b-form-group id="bank-group" label-for="bank">
+                  <b-form-input
+                    id="bank"
+                    v-model="score.bank"
+                    type="number"
+                    min="1"
+                    max="5"
+                    step="1"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+            </b-row>
 
-              <b-form-group id="subway-group" label="지하철:" label-for="subway">
-                <b-form-input
-                  id="subway"
-                  v-model="score.subway"
-                  type="number"
-                  min="1"
-                  max="5"
-                  required
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group id="food-group" label="음식점:" label-for="food">
-                <b-form-input
-                  id="food"
-                  v-model="score.food"
-                  type="number"
-                  min="1"
-                  max="5"
-                  required
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group id="cafe-group" label="카페:" label-for="cafe">
-                <b-form-input
-                  id="cafe"
-                  v-model="score.cafe"
-                  type="number"
-                  min="1"
-                  max="5"
-                  required
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group id="hospital-group" label="병원:" label-for="hospital">
-                <b-form-input
-                  id="hospital"
-                  v-model="score.hospital"
-                  type="number"
-                  min="1"
-                  max="5"
-                  required
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group id="pharmacy-group" label="약국:" label-for="pharmacy">
-                <b-form-input
-                  id="pharmacy"
-                  v-model="score.pharmacy"
-                  type="number"
-                  min="1"
-                  max="5"
-                  required
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group id="bank-group" label="은행:" label-for="bank">
-                <b-form-input
-                  id="bank"
-                  v-model="score.bank"
-                  type="number"
-                  min="1"
-                  max="5"
-                  required
-                ></b-form-input>
-              </b-form-group>
-            </b-form>
-          </b-container>
-          <hr class="my-4" />
-        </b-jumbotron>
-      </b-col>
-      <b-col></b-col>
+            <b-row class="d-flex justify-content-center py-2">
+              <b-col cols="8" class="text-end p-2">
+                <b-button type="submit" variant="primary" class="p-1" style="width: 100%">
+                  변경내용 저장
+                </b-button>
+              </b-col>
+            </b-row>
+          </b-form>
+        </b-container>
+      </b-container>
+      <hr class="my-4" />
     </b-row>
   </b-container>
 </template>
@@ -233,6 +313,7 @@ export default {
       // else {
       //   this.modifyScore();
       // }
+      this.isWishModify();
     },
     modifyScore() {
       // http
