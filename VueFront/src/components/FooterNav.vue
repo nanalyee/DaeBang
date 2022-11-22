@@ -29,9 +29,7 @@
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
               &copy; <a class="border-bottom" href="#">WhereIsMyHome</a>, All Right Reserved.
             </div>
-            <div class="col-md-6 text-center text-md-end">
-              Designed By <a class="border-bottom" href="#">team05</a>
-            </div>
+            <div class="col-md-6 text-center text-md-end">Designed By <a class="border-bottom" href="#">team05</a></div>
           </div>
         </div>
       </nav>

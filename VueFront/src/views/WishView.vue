@@ -36,7 +36,7 @@
     </div>
     <div class="container-fluid bg-light my-5 py-6" id="tour">
       <div class="container">
-        <wish-weather></wish-weather>
+        <!-- <wish-weather></wish-weather> -->
       </div>
     </div>
     <div class="container-xxl py-6 pt-5" id="weather">
@@ -50,11 +50,11 @@
 <script>
 import WishRank from "../components/wish/WishRank.vue";
 import WishTour from "../components/wish/WishTour.vue";
-import WishWeather from "../components/wish/WishWeather.vue";
+// import WishWeather from "../components/wish/WishWeather.vue";
 
 export default {
   name: "appWish",
-  components: { WishRank, WishTour, WishWeather },
+  components: { WishRank, WishTour },
 };
 </script>
 

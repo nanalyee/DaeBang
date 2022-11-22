@@ -254,4 +254,20 @@ export default {
 #searchtype {
   display: none;
 }
+
+.list::-webkit-scrollbar {
+  padding-left: 8px;
+  width: 8px; /* 스크롤바의 너비 */
+}
+
+.list::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #6b799e62; /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: #6b799e0c; /*스크롤바 뒷 배경 색상*/
+}
 </style>

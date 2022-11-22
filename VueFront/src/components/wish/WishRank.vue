@@ -1,17 +1,17 @@
 <template>
   <div class="container">
     <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-      <div class="col-lg-6">
+      <div class="col text-center">
         <h1 class="display-5 mb-0">{{ userInfo.username }} 님의 관심 지역 랭킹</h1>
       </div>
       <!-- <div class="col-lg-6 text-lg-end">
         <a class="btn btn-primary py-3 px-5" href="https://www.data.go.kr/">공공데이터 포털</a>
       </div> -->
     </div>
-    <div class="row g-5">
+    <div class="row justify-content-center">
       <div class="col-lg-7 pr-0">
-        <div class="container mb-3 bg-white border rounded-3 row">
-          <div class="col border" style="height: 500px; overflow: auto">
+        <div class="container mb-3 row" id="stage">
+          <div class="col" style="height: 500px; overflow: auto">
             <div class="row" style="height: 230px; overflow: auto">
               <div class="col align-self-end text-center">
                 <img
@@ -23,21 +23,22 @@
               </div>
             </div>
             <div class="row-6">
-              <div class="col align-self-end px-0">
+              <div class="col align-self-end px-3">
                 <div
+                  id="second"
                   type="button"
                   class="btn btn-outline-primary col"
                   style="height: 250px; overflow: auto"
                 >
-                  2등 : {{ this.wishhouse[this.scoreboard[1][1]].wishname }}
-                  <br />
-                  {{ this.scoreboard[1][0] }} 점 !
+                  <div class="fs-4 pt-3">{{ this.wishhouse[this.scoreboard[1][1]].wishname }}</div>
+                  <div class="fs-5">{{ this.wishhouse[this.scoreboard[1][1]].wishtype }}</div>
+                  <div class="fs-5 pt-2" style="color: #5f5f5f">{{ this.scoreboard[1][0] }}점</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col border" style="height: 500px; overflow: auto">
+          <div class="col" style="height: 500px; overflow: auto">
             <div class="row" style="height: 120px; overflow: auto">
               <div class="col align-self-end text-center">
                 <img
@@ -49,20 +50,16 @@
               </div>
             </div>
             <div class="row-6">
-              <div class="col align-self-end px-0">
-                <div
-                  type="button"
-                  class="btn btn-outline-primary col"
-                  style="height: 360px; overflow: auto"
-                >
-                  1등 : {{ this.wishhouse[this.scoreboard[0][1]].wishname }}
-                  <br />
-                  {{ this.scoreboard[0][0] }} 점 !
+              <div class="col align-self-end px-3">
+                <div id="first" type="button" class="btn btn-outline-primary col" style="height: 360px; overflow: auto">
+                  <div class="fs-4 pt-3">{{ this.wishhouse[this.scoreboard[0][1]].wishname }}</div>
+                  <div class="fs-5">{{ this.wishhouse[this.scoreboard[0][1]].wishtype }}</div>
+                  <div class="fs-5 pt-2" style="color: #5f5f5f">{{ this.scoreboard[0][0] }}점</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col border" style="height: 500px; overflow: auto">
+          <div class="col" style="height: 500px; overflow: auto">
             <div class="row" style="height: 300px; overflow: auto">
               <div class="col align-self-end text-center">
                 <img
@@ -74,15 +71,11 @@
               </div>
             </div>
             <div class="row-6">
-              <div class="col align-self-end px-0">
-                <div
-                  type="button"
-                  class="btn btn-outline-primary col"
-                  style="height: 180px; overflow: auto"
-                >
-                  3등 : {{ this.wishhouse[this.scoreboard[2][1]].wishname }}
-                  <br />
-                  {{ this.scoreboard[2][0] }} 점 !
+              <div class="col align-self-end px-3">
+                <div id="third" type="button" class="btn btn-outline-primary col" style="height: 180px; overflow: auto">
+                  <div class="fs-4 pt-3">{{ this.wishhouse[this.scoreboard[2][1]].wishname }}</div>
+                  <div class="fs-5">{{ this.wishhouse[this.scoreboard[2][1]].wishtype }}</div>
+                  <div class="fs-5 pt-2" style="color: #5f5f5f">{{ this.scoreboard[2][0] }}점</div>
                 </div>
               </div>
             </div>
@@ -90,69 +83,35 @@
         </div>
       </div>
       <div class="col-lg-5 pl-0">
-        <div class="container mb-3 p-5 bg-white border rounded-3">
-          <div
-            v-for="(item, i) in example"
-            :key="i"
-            type="button"
-            :id="'storeinfo' + i"
-            class=""
-            data-toggle="collapse"
-            :href="'#toggle' + i"
-            role="button"
-            aria-expanded="false"
-            :aria-controls="'toggle' + i"
-          >
-            <div class="p-2 my-3 border rounded row" v-if="i > 2">
-              <div class="col align-self-center">
-                <div class="">
-                  <span class="fs-4 pe-3">{{ item.wishname }}</span>
-                  <span class="" style="color: gray">아파트</span>
-                </div>
-
-                <div class="collapse" :id="'toggle' + i" data-parent="#accordion">
-                  <div class="row">
-                    <div class="col">
-                      <span class="pe-3" style="color: gray">전용면적</span>
-                      <span></span>
-                    </div>
-                    <div class="col">
-                      <span class="pe-3" style="color: gray">층수</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span class="pe-3" style="color: gray">보증금액</span>
-                    </div>
-                    <div class="col">
-                      <span class="pe-3" style="color: gray">월세</span>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col">
-                      <span class="pe-3" style="color: gray">법정동</span>
-                    </div>
-                    <div class="col">
-                      <span class="pe-3" style="color: gray">건축년도</span>
-                    </div>
-                    <!-- <div class="col">
-              <a id="copy" style="color: #8797c7" href="#" onclick="callFunction();">복사</a>
-            </div> -->
-                  </div>
-                </div>
-              </div>
-              <div class="col-3 collapse" :id="'toggle' + i" data-parent="#accordion">
-                <img class="img-fluid img-thumbnail rounded" :src="$store.state.houseimg" alt="" />
-              </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="container mb-3 p-3 bg-white border-left" style="height: 500px; overflow: auto">
+            <div
+              v-for="(item, i) in wishhouse"
+              :key="i"
+              type="button"
+              :id="'wishinfo' + i"
+              class=""
+              data-toggle="collapse"
+              :href="'#wishtoggle' + i"
+              role="button"
+              aria-expanded="false"
+              :aria-controls="'wishtoggle' + i"
+            >
               <div
-                class="col-1 text-right align-self-center collapse"
-                :id="'toggle' + i"
-                data-parent="#accordion"
+                class="p-2 my-3 border rounded py-2 my-2 mx-0 row"
+                v-if="i > 2"
+                :style="'width: ' + ((scoreboard[i][0] * 100) / scoreboard[0][0]) * 5 + 'px'"
               >
-                <a href="#" class="golink">
-                  <i class="bi bi-chevron-compact-right fs-1"></i>
-                </a>
+                <div class="col-auto align-self-center">
+                  <span class="fs-4 pe-3" style="color: gray">{{ i + 1 }}</span>
+                  <span class="fs-4 pe-3">{{ item.wishname }}</span>
+                  <span class="pe-3" style="color: gray">{{ item.wishtype }}</span>
+                  <span class="pe-3" style="color: gray">{{ scoreboard[i][0] }}점</span>
+                </div>
+                <!-- <div class="col">
+                  <div class="collapse" :id="'wishtoggle' + i" data-parent="#accordion">
+                  </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -205,9 +164,7 @@ export default {
         let sumscore = 0;
         for (let j = 0; j < 8; j++) {
           await http
-            .get(
-              `/wish/searchcategory/${this.wishhouse[i].lng}/${this.wishhouse[i].lat}/${this.category[j]}/500`
-            )
+            .get(`/wish/searchcategory/${this.wishhouse[i].lng}/${this.wishhouse[i].lat}/${this.category[j]}/500`)
             .then(({ data }) => {
               console.log(data.documents);
               console.log(data.documents.length);
@@ -254,4 +211,60 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.list::-webkit-scrollbar {
+  padding-left: 8px;
+  width: 8px; /* 스크롤바의 너비 */
+}
+
+.list::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #6b799e62; /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: #6b799e0c; /*스크롤바 뒷 배경 색상*/
+}
+
+#first {
+  background-color: #f7bd0c;
+  border: none;
+  border-radius: 5px 5px 0px 0px;
+  color: #000000;
+  font-weight: 600;
+}
+#first:hover {
+  background-color: #fed22c;
+}
+
+#second {
+  background-color: #cacaca;
+  border: none;
+  border-radius: 5px 5px 0px 0px;
+  color: #000000;
+  font-weight: 600;
+}
+#second:hover {
+  background-color: #d3d3d3;
+}
+
+#third {
+  background-color: #dd9f1a;
+  border: none;
+  border-radius: 5px 5px 0px 0px;
+  color: #000000;
+  font-weight: 600;
+}
+#third:hover {
+  background-color: #ecab1f;
+}
+
+#stage {
+  background-image: url("@/assets/img/effect2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 800px 400px;
+}
+</style>

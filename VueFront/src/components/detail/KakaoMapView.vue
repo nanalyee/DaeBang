@@ -8,16 +8,9 @@
     </div>
 
     <div class="col-6">
-      <div
-        class="container mb-3 p-5 bg-white border rounded-3 searchTableBox"
-        style="height: 600px; overflow: auto"
-      >
+      <div class="container mb-3 p-5 bg-white border rounded-3 searchTableBox" style="height: 600px; overflow: auto">
         <!-- 버튼 -->
-        <div
-          v-show="isNearList"
-          id="buttonList"
-          class="mt-4 mb-2 row text-center justify-content-md-center"
-        >
+        <div v-show="isNearList" id="buttonList" class="mt-4 mb-2 row text-center justify-content-md-center">
           <h3 class="text-center">찾고 싶은 상권을 선택해 주세요</h3>
           <button
             type="button"
@@ -94,16 +87,8 @@
         </div>
 
         <!-- 리스트 -->
-        <div
-          id="accordion"
-          role="tablist"
-          class="panel-group"
-          aria-multiselectable="true"
-          v-show="!isNearList"
-        >
-          <button type="button" class="btn btn-outline-primary col" @click="buttonShow">
-            돌아가기
-          </button>
+        <div id="accordion" role="tablist" class="panel-group" aria-multiselectable="true" v-show="!isNearList">
+          <button type="button" class="btn btn-outline-primary col" @click="buttonShow">돌아가기</button>
           <!-- button start -->
           <div
             v-for="(item, i) in nearList"
@@ -218,11 +203,7 @@ export default {
 
       // 마커를 생성합니다
       this.startMarkers = [];
-      this.homeImg = new kakao.maps.MarkerImage(
-        this.home.imageSrc,
-        this.home.imageSize,
-        this.home.imageOption
-      );
+      this.homeImg = new kakao.maps.MarkerImage(this.home.imageSrc, this.home.imageSize, this.home.imageOption);
 
       console.log([[this.$route.params.lat, this.$route.params.lng]]);
       var coord = new kakao.maps.LatLng(this.$route.params.lat, this.$route.params.lng);
@@ -241,19 +222,17 @@ export default {
       this.nearCoord = [];
       console.log("near search show");
       this.isNearList = !this.isNearList;
-      http
-        .get(`/map/store/${this.$route.params.lng}/${this.$route.params.lat}/` + id)
-        .then(({ data }) => {
-          //console.log(data);
-          console.log(data.response.body.items.item);
-          this.nearList = data.response.body.items.item;
-          console.log(this.nearList);
-          for (let i = 0; i < this.nearList.length; i++) {
-            this.nearCoord.push([this.nearList[i].lat, this.nearList[i].lon]);
-          }
-          console.log(this.nearCoord);
-          _this.displayMarker(this.nearCoord, img);
-        });
+      http.get(`/map/store/${this.$route.params.lng}/${this.$route.params.lat}/` + id).then(({ data }) => {
+        //console.log(data);
+        console.log(data.response.body.items.item);
+        this.nearList = data.response.body.items.item;
+        console.log(this.nearList);
+        for (let i = 0; i < this.nearList.length; i++) {
+          this.nearCoord.push([this.nearList[i].lat, this.nearList[i].lon]);
+        }
+        console.log(this.nearCoord);
+        _this.displayMarker(this.nearCoord, img);
+      });
     },
 
     // 돌아가기 버튼 눌러서 상권 선택창으로 돌아감 ---------------------------------------------------
@@ -349,10 +328,7 @@ export default {
               image: this.nearImg,
             })
         );
-        const bounds = positions.reduce(
-          (bounds, latlng) => bounds.extend(latlng),
-          new kakao.maps.LatLngBounds()
-        );
+        const bounds = positions.reduce((bounds, latlng) => bounds.extend(latlng), new kakao.maps.LatLngBounds());
         this.map.setBounds(bounds);
       }
     },
@@ -360,4 +336,20 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.container::-webkit-scrollbar {
+  padding-left: 8px;
+  width: 8px; /* 스크롤바의 너비 */
+}
+
+.container::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #6b799e62; /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #6b799e0c; /*스크롤바 뒷 배경 색상*/
+}
+</style>
