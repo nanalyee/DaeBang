@@ -90,7 +90,7 @@ export default {
         const infowindow = new kakao.maps.InfoWindow({
           removable: true,
           content: `
-          <div style="padding:5px;">이름 ${position.title}<br/>
+          <div style="width:200px; padding:5px;">이름 ${position.title}<br/>
           주소 ${position.address}<br/>
           대여 가능 대수 ${position.parking_count}</div>
           `,
