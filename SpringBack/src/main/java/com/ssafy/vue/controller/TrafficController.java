@@ -2,16 +2,21 @@ package com.ssafy.vue.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -51,7 +56,7 @@ public class TrafficController {
 	@Autowired
 	private SubwayService subwayService;
 
-	////////////////////////////// 카카오 모빌리티 길찾기 api
+	// 카카오 모빌리티 길찾기 api
 	@ApiOperation(value = "카카오 모빌리티 길찾기 api", notes = "출발지와 목적지를 기준으로 현재 교통상황을 알려준다.", response = List.class)
 	@GetMapping(value = "/searchroad/{origin}/{destination}", produces = "application/json;charset=utf-8")
 	public ResponseEntity<String> searchimg(@PathVariable("origin") String origin,
@@ -147,5 +152,39 @@ public class TrafficController {
 
 		System.out.println(list.size());
 		return new ResponseEntity<List<SubwayDto>>(subwayService.listSubwayInfo(), HttpStatus.OK);
+	}
+
+	// 타슈 실시간 대여소 현황 api
+	@ApiOperation(value = "타슈 실시간 대여소 현황 api", notes = "대전 공영 자전거 타슈의 정보를 알려준다.", response = List.class)
+	@GetMapping(value = "/tashu", produces = "application/json;charset=utf-8")
+	public ResponseEntity<String> tashu() throws IOException {
+		String serviceKey = "f060sw160bkatnz2";
+		StringBuilder urlBuilder = new StringBuilder("https://bikeapp.tashu.or.kr:50041/v1/openapi/station");
+
+		URL url = new URL(urlBuilder.toString());
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		conn.setRequestProperty("api-token", serviceKey);
+		conn.setRequestProperty("Accept", "*/*");
+		conn.setRequestProperty("Accept-Encoding", "gzip, deflate, br");
+		conn.setRequestProperty("Connection", "keep-alive");
+		conn.setRequestMethod("GET");
+		System.out.println("Response code: " + conn.getResponseCode());
+		BufferedReader rd;
+		if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+			rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+		} else {
+			rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+		}
+		StringBuilder sb = new StringBuilder();
+		String line;
+		while ((line = rd.readLine()) != null) {
+			sb.append(line);
+		}
+		rd.close();
+		conn.disconnect();
+		//System.out.println(sb.toString());
+		// JSONObject json = XML.toJSONObject(sb.toString());
+		// String jsonStr = json.toString();
+		return new ResponseEntity<String>(sb.toString(), HttpStatus.OK);
 	}
 }

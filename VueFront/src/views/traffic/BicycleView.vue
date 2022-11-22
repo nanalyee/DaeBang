@@ -20,44 +20,8 @@
       <div class="row g-4">
         <div class="border portfolio-img rounded overflow-hidden">
           <div class="col-lg-12 text-center">
-            <h1 class="display-7 my-4 mb-10">지도입니다</h1>
-          </div>
-          <br />
-          <div class="row g-5">
-            <div class="col-lg-7">
-              <tashu-map></tashu-map>
-              <!-- <div class="d-flex align-items-center mb-3">
-                ㅇㅇ
-                <img class="img-fluid" src="@/assets/img/project-5.jpg" alt="" id="traffic_img" />
-              </div> -->
-            </div>
-            <div class="col-lg-5">
-              <div class="d-flex align-items-center mb-3">
-                <h3 class="border-end pe-3 me-3 mb-0">대여소 명</h3>
-                <h2 class="text-warning fw-bold mb-0" data-toggle="counter-up">대여 가능 대수</h2>
-              </div>
-              <table class="table table-bordered">
-                <tbody>
-                  <tr>
-                    <th>주소</th>
-                    <td>대충 자전거 정보</td>
-                  </tr>
-                  <tr>
-                    <th>대여소ID</th>
-                    <td>대충 자전거 정보</td>
-                  </tr>
-                  <tr>
-                    <th>뭘 가져와야</th>
-                    <td>대충 자전거 정보</td>
-                  </tr>
-                  <tr>
-                    <th>좋을까?</th>
-                    <td>대충 자전거 정보</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p class="mb-4">@@@@@@@@@@@</p>
-            </div>
+            <h1 class="display-7 my-4 mb-10">지도</h1>
+            <tashu-map></tashu-map>
           </div>
         </div>
       </div>
@@ -74,10 +38,10 @@ export default {
   components: {
     TashuMap,
   },
-  created() {},
   data() {
     return {};
   },
+  created() {},
 
   methods: {},
 };
