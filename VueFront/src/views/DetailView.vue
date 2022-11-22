@@ -6,7 +6,9 @@
           <a v-if="!this.status && userInfo" class="fs-4 pe-3 like" @click="like"
             ><i id="heart" class="bi bi-heart"></i
           ></a>
-          <a v-else-if="userInfo" class="fs-4 pe-3 like" @click="like"><i id="heart" class="bi bi-heart-fill"></i></a>
+          <a v-else-if="userInfo" class="fs-4 pe-3 like" @click="like"
+            ><i id="heart" class="bi bi-heart-fill"></i
+          ></a>
           <h3 style="display: inline-block; color: #6b799e">{{ wishname }} {{ wishtype }}</h3>
           <h4 style="display: inline-block">&nbsp;&nbsp;주변 상권 정보</h4>
         </div>
@@ -45,7 +47,9 @@
                 <div class="row g-4">
                   <div
                     id="weather-container"
-                    :style="{ backgroundImage: `url(${require('@/assets/img/weather/' + this.bgimage)})` }"
+                    :style="{
+                      backgroundImage: `url(${require('@/assets/img/weather/' + this.bgimage)})`,
+                    }"
                     class="row"
                   >
                     <div class="col mt-5 justify-content-between">
@@ -63,10 +67,15 @@
                           v-if="weathertable[this.startdata + 5].fcstValue == '1'"
                           class="display-5 bi bi-sun-fill"
                         ></i>
-                        <span v-if="weathertable[this.startdata].fcstValue" class="fw-bold display-5">
+                        <span
+                          v-if="weathertable[this.startdata].fcstValue"
+                          class="fw-bold display-5"
+                        >
                           {{ weathertable[this.startdata].fcstValue }}°
                         </span>
-                        <span v-if="weathertable[this.startdata].fcstValue" class="fs-3"> 흐림 </span>
+                        <span v-if="weathertable[this.startdata].fcstValue" class="fs-3">
+                          흐림
+                        </span>
                         <!-- <img
                 v-if="weathertable[this.startdata + 5].fcstValue == '4'"
                 class="img-fluid"
@@ -89,28 +98,38 @@
                     </div>
                     <div class="col text-end align-self-end mb-5" style="color: black">
                       <div class="text fw-bold">{{ this.hours }}시 현재 기상 정보</div>
-                      <span v-if="weathertable[this.startdata + 7].fcstValue" class="display-7 my-4 mb-10 pr-3">
+                      <span
+                        v-if="weathertable[this.startdata + 7].fcstValue"
+                        class="display-7 my-4 mb-10 pr-3"
+                      >
                         <i class="bi bi-droplet-half"></i>
                         강수확률 {{ weathertable[this.startdata + 7].fcstValue }}%
                       </span>
-                      <span v-if="weathertable[this.startdata + 10].fcstValue" class="display-7 my-4 mb-10">
+                      <span
+                        v-if="weathertable[this.startdata + 10].fcstValue"
+                        class="display-7 my-4 mb-10"
+                      >
                         <i class="bi bi-moisture"></i>
                         습도 {{ weathertable[this.startdata + 10].fcstValue }}%
                       </span>
                     </div>
                   </div>
-                  <table class="table text-center table-borderless" style="table-layout: fixed">
+                  <table class="table text-center" style="table-layout: fixed">
                     <thead>
                       <tr>
                         <th scope="col border-right">시각</th>
-                        <th scope="col" v-for="(item, i) in hourslist()" :key="i">{{ item + 1 }} 시</th>
+                        <th scope="col" v-for="(item, i) in hourslist()" :key="i">
+                          {{ item + 1 }} 시
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">기온</th>
                         <td v-for="(item, i) in tempnum()" :key="i">
-                          <span class="text-danger fw-bold"> {{ weathertable[item].fcstValue }} °C</span>
+                          <span class="text-danger fw-bold">
+                            {{ weathertable[item].fcstValue }} °C</span
+                          >
                         </td>
                       </tr>
                       <tr>
@@ -121,7 +140,9 @@
                       </tr>
                       <tr>
                         <th scope="row">풍속</th>
-                        <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 4].fcstValue }} m/s</td>
+                        <td v-for="(item, i) in tempnum()" :key="i">
+                          {{ weathertable[item + 4].fcstValue }} m/s
+                        </td>
                       </tr>
                       <tr>
                         <th class="align-middle" scope="row">하늘상태</th>
@@ -185,7 +206,9 @@
                       </tr>
                       <tr>
                         <th scope="row">강수확률</th>
-                        <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 7].fcstValue }} %</td>
+                        <td v-for="(item, i) in tempnum()" :key="i">
+                          {{ weathertable[item + 7].fcstValue }} %
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">1시간 강수량(mm)</th>
@@ -195,7 +218,9 @@
                       </tr>
                       <tr>
                         <th scope="row">습도</th>
-                        <td v-for="(item, i) in tempnum()" :key="i">{{ weathertable[item + 10].fcstValue }} %</td>
+                        <td v-for="(item, i) in tempnum()" :key="i">
+                          {{ weathertable[item + 10].fcstValue }} %
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">1시간 적설량(mm)</th>
@@ -387,7 +412,10 @@ export default {
       //console.log(data.response.body.items.item[temp].fcstValue);
       //console.log(temp);
       //console.log(this.weathertable);
-      if (this.weathertable[this.temp].category == "TMX" || this.weathertable[this.temp].category == "TMN") {
+      if (
+        this.weathertable[this.temp].category == "TMX" ||
+        this.weathertable[this.temp].category == "TMN"
+      ) {
         this.startdata = temp + 1;
       } else {
         this.startdata = temp;
@@ -428,26 +456,28 @@ export default {
     showWeather() {
       this.isWeatherShow = !this.isWeatherShow;
     },
-    check() {
-      console.log(this.wishname + "가 관심지역에 포함되어있는지 DB검사를 진행합니다.");
-      http.get(`/wish/chkexistwish/${this.wishname}/${this.userInfo.userid}`).then(({ data }) => {
-        if (data === "success") {
-          console.log("true");
-          this.status = true;
-        } else {
-          console.log("false");
-          this.status = false;
-        }
-      });
-      console.log(this.wishname + "가 관심지역에 포함되어있으면 true를 반환합니다.");
-      //return false;
-    },
+    // check() {
+    //   console.log(this.wishname + "가 관심지역에 포함되어있는지 DB검사를 진행합니다.");
+    //   http.get(`/wish/chkexistwish/${this.wishname}/${this.userInfo.userid}`).then(({ data }) => {
+    //     if (data === "success") {
+    //       console.log("true");
+    //       this.status = true;
+    //     } else {
+    //       console.log("false");
+    //       this.status = false;
+    //     }
+    //   });
+    //   console.log(this.wishname + "가 관심지역에 포함되어있으면 true를 반환합니다.");
+    //   //return false;
+    // },
     like() {
       let heart = document.getElementById("heart");
       let status = heart.getAttribute("class");
       if (status == "bi bi-heart") {
         document.getElementById("heart").setAttribute("class", "bi bi-heart-fill");
-        console.log("관심지역에 해당 " + this.wishname + " 정보로 " + this.userInfo.userid + "에 추가합니다.");
+        console.log(
+          "관심지역에 해당 " + this.wishname + " 정보로 " + this.userInfo.userid + "에 추가합니다."
+        );
         http
           .post(`/wish`, {
             wishname: this.wishname,
@@ -468,7 +498,13 @@ export default {
           });
       } else {
         document.getElementById("heart").setAttribute("class", "bi bi-heart");
-        console.log("관심지역에 해당 " + this.wishname + " 정보로 " + this.userInfo.userid + "에서 삭제합니다.");
+        console.log(
+          "관심지역에 해당 " +
+            this.wishname +
+            " 정보로 " +
+            this.userInfo.userid +
+            "에서 삭제합니다."
+        );
         http.delete(`/wish/${this.wishname}/${this.userInfo.userid}`).then(({ data }) => {
           let msg = "관심 지역 삭제 처리시 문제가 발생했습니다.";
           if (data === "success") {

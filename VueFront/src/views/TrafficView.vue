@@ -226,7 +226,7 @@
 
     <bus-view></bus-view>
     <train-view></train-view>
-    <bicycle-view></bicycle-view>
+    <!-- <bicycle-view></bicycle-view> -->
   </div>
 </template>
 
@@ -234,7 +234,7 @@
 import LiveView from "@/views/traffic/LiveView";
 import BusView from "@/views/traffic/BusView";
 import TrainView from "@/views/traffic/TrainView";
-import BicycleView from "@/views/traffic/BicycleView";
+// import BicycleView from "@/views/traffic/BicycleView";
 
 export default {
   name: "AppMain",
@@ -242,7 +242,7 @@ export default {
     LiveView,
     BusView,
     TrainView,
-    BicycleView,
+    // BicycleView,
   },
   data() {
     return {

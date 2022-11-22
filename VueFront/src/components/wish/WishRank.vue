@@ -12,7 +12,7 @@
       <div class="col-lg-7 pr-0">
         <div class="container mb-3 row" id="stage">
           <div class="col" style="height: 500px; overflow: auto">
-            <div class="row" style="height: 230px; overflow: auto">
+            <div class="row" style="height: 200px; overflow: auto">
               <div class="col align-self-end text-center">
                 <img
                   src="@/assets/img/marker/second.png"
@@ -28,11 +28,17 @@
                   id="second"
                   type="button"
                   class="btn btn-outline-primary col"
-                  style="height: 250px; overflow: auto"
+                  style="height: 280px; overflow: auto"
                 >
-                  <div class="fs-4 pt-3">{{ this.wishhouse[this.scoreboard[1][1]].wishname }}</div>
-                  <div class="fs-5">{{ this.wishhouse[this.scoreboard[1][1]].wishtype }}</div>
-                  <div class="fs-5 pt-2" style="color: #5f5f5f">{{ this.scoreboard[1][0] }}점</div>
+                  <div id="bcon" class="rounded">
+                    <div class="fs-4 pt-3">
+                      {{ this.wishhouse[this.scoreboard[1][1]].wishname }}
+                    </div>
+                    <div class="fs-5">{{ this.wishhouse[this.scoreboard[1][1]].wishtype }}</div>
+                    <div class="fs-5 pt-2" style="color: #5f5f5f">
+                      {{ this.scoreboard[1][0] }}점
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -51,16 +57,27 @@
             </div>
             <div class="row-6">
               <div class="col align-self-end px-3">
-                <div id="first" type="button" class="btn btn-outline-primary col" style="height: 360px; overflow: auto">
-                  <div class="fs-4 pt-3">{{ this.wishhouse[this.scoreboard[0][1]].wishname }}</div>
-                  <div class="fs-5">{{ this.wishhouse[this.scoreboard[0][1]].wishtype }}</div>
-                  <div class="fs-5 pt-2" style="color: #5f5f5f">{{ this.scoreboard[0][0] }}점</div>
+                <div
+                  id="first"
+                  type="button"
+                  class="btn btn-outline-primary col"
+                  style="height: 360px; overflow: auto"
+                >
+                  <div id="bcon" class="rounded">
+                    <div class="fs-4 pt-3">
+                      {{ this.wishhouse[this.scoreboard[0][1]].wishname }}
+                    </div>
+                    <div class="fs-5">{{ this.wishhouse[this.scoreboard[0][1]].wishtype }}</div>
+                    <div class="fs-5 pt-2" style="color: #5f5f5f">
+                      {{ this.scoreboard[0][0] }}점
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="col" style="height: 500px; overflow: auto">
-            <div class="row" style="height: 300px; overflow: auto">
+            <div class="row" style="height: 240px; overflow: auto">
               <div class="col align-self-end text-center">
                 <img
                   src="@/assets/img/marker/third.png"
@@ -72,10 +89,21 @@
             </div>
             <div class="row-6">
               <div class="col align-self-end px-3">
-                <div id="third" type="button" class="btn btn-outline-primary col" style="height: 180px; overflow: auto">
-                  <div class="fs-4 pt-3">{{ this.wishhouse[this.scoreboard[2][1]].wishname }}</div>
-                  <div class="fs-5">{{ this.wishhouse[this.scoreboard[2][1]].wishtype }}</div>
-                  <div class="fs-5 pt-2" style="color: #5f5f5f">{{ this.scoreboard[2][0] }}점</div>
+                <div
+                  id="third"
+                  type="button"
+                  class="btn btn-outline-primary col"
+                  style="height: 240px; overflow: auto"
+                >
+                  <div id="bcon" class="rounded">
+                    <div class="fs-4 pt-3">
+                      {{ this.wishhouse[this.scoreboard[2][1]].wishname }}
+                    </div>
+                    <div class="fs-5">{{ this.wishhouse[this.scoreboard[2][1]].wishtype }}</div>
+                    <div class="fs-5 pt-2" style="color: #5f5f5f">
+                      {{ this.scoreboard[2][0] }}점
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -84,35 +112,20 @@
       </div>
       <div class="col-lg-5 pl-0">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="container mb-3 p-3 bg-white border-left" style="height: 500px; overflow: auto">
-            <div
-              v-for="(item, i) in wishhouse"
-              :key="i"
-              type="button"
-              :id="'wishinfo' + i"
-              class=""
-              data-toggle="collapse"
-              :href="'#wishtoggle' + i"
-              role="button"
-              aria-expanded="false"
-              :aria-controls="'wishtoggle' + i"
-            >
-              <div
-                class="p-2 my-3 border rounded py-2 my-2 mx-0 row"
-                v-if="i > 2"
-                :style="'width: ' + ((scoreboard[i][0] * 100) / scoreboard[0][0]) * 5 + 'px'"
-              >
-                <div class="col-auto align-self-center">
-                  <span class="fs-4 pe-3" style="color: gray">{{ i + 1 }}</span>
-                  <span class="fs-4 pe-3">{{ item.wishname }}</span>
-                  <span class="pe-3" style="color: gray">{{ item.wishtype }}</span>
-                  <span class="pe-3" style="color: gray">{{ scoreboard[i][0] }}점</span>
-                </div>
-                <!-- <div class="col">
-                  <div class="collapse" :id="'wishtoggle' + i" data-parent="#accordion">
-                  </div>
-                </div> -->
-              </div>
+          <div
+            class="container mb-3 p-3 bg-white border-left"
+            style="height: 500px; overflow: auto"
+          >
+            <div>
+              <h6>점수 집계 방식 : 선호 상권 유/무 + 반경500m 해당 상권 개수</h6>
+            </div>
+            <div>
+              <apexcharts
+                type="bar"
+                height="450"
+                :options="chartOptions"
+                :series="series"
+              ></apexcharts>
             </div>
           </div>
         </div>
@@ -122,11 +135,14 @@
 </template>
 
 <script>
+import VueApexCharts from "vue-apexcharts";
 import http from "@/util/http"; // 관심지역 순위 정하기
 import { mapState, mapGetters } from "vuex";
 const memberStore = "memberStore";
+
 export default {
   name: "wishRank",
+  components: { apexcharts: VueApexCharts }, // 차트 관련
   data() {
     return {
       example: [
@@ -140,6 +156,45 @@ export default {
       category: ["MT1", "CS2", "SW8", "FD6", "CE7", "HP8", "PM9", "BK9"],
       wishhouse: [],
       scoreboard: [],
+
+      // 차트 관련 시작
+      series: [
+        {
+          data: [
+            //400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380
+          ],
+        },
+      ],
+      chartOptions: {
+        chart: {
+          type: "bar",
+          height: 450,
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: 4,
+            horizontal: true,
+          },
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        xaxis: {
+          categories: [
+            // "South Korea",
+            // "Canada",
+            // "United Kingdom",
+            // "Netherlands",
+            // "Italy",
+            // "France",
+            // "Japan",
+            // "United States",
+            // "China",
+            // "Germany",
+          ],
+        },
+      },
+      //차트 끝
     };
   },
   computed: {
@@ -164,7 +219,9 @@ export default {
         let sumscore = 0;
         for (let j = 0; j < 8; j++) {
           await http
-            .get(`/wish/searchcategory/${this.wishhouse[i].lng}/${this.wishhouse[i].lat}/${this.category[j]}/500`)
+            .get(
+              `/wish/searchcategory/${this.wishhouse[i].lng}/${this.wishhouse[i].lat}/${this.category[j]}/500`
+            )
             .then(({ data }) => {
               console.log(data.documents);
               console.log(data.documents.length);
@@ -204,8 +261,13 @@ export default {
       console.log("스코어 보여줘");
       this.scoreboard.sort((a, b) => b[0] - a[0]);
       console.log(this.scoreboard);
+      for (let i = 0; i < this.scoreboard.length; i++) {
+        this.chartOptions.xaxis.categories.push(this.wishhouse[this.scoreboard[i][1]].wishname);
+        this.series[0].data.push(this.scoreboard[i][0]);
+      }
 
-      this.scoreboard[0][1];
+      console.log(this.chartOptions.xaxis.categories);
+      console.log(this.series[0].data);
     },
   },
 };
@@ -229,7 +291,9 @@ export default {
 }
 
 #first {
-  background-color: #f7bd0c;
+  background-image: url("@/assets/img/rank/gold.png");
+  background-size: cover;
+  /* background-color: #f7bd0c; */
   border: none;
   border-radius: 5px 5px 0px 0px;
   color: #000000;
@@ -240,7 +304,9 @@ export default {
 }
 
 #second {
-  background-color: #cacaca;
+  background-image: url("@/assets/img/rank/silver.png");
+  background-size: cover;
+  /* background-color: #cacaca; */
   border: none;
   border-radius: 5px 5px 0px 0px;
   color: #000000;
@@ -251,7 +317,9 @@ export default {
 }
 
 #third {
-  background-color: #dd9f1a;
+  background-image: url("@/assets/img/rank/bronze.png");
+  background-size: cover;
+  /* background-color: #dd9f1a; */
   border: none;
   border-radius: 5px 5px 0px 0px;
   color: #000000;
@@ -262,9 +330,14 @@ export default {
 }
 
 #stage {
-  background-image: url("@/assets/img/effect2.png");
+  background-image: url("@/assets/img/gif/podium2.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 800px 400px;
+}
+
+#bcon {
+  margin-top: 70px;
+  background-color: rgb(255, 255, 255, 0.3);
 }
 </style>

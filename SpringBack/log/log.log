@@ -10,3 +10,6 @@
 [2m2022-11-22 16:51:46.985[0;39m [32m INFO[0;39m [35m1716[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.s.vue.controller.TrafficController    [0;39m [2m:[0;39m listSubway - 호출
 [2m2022-11-22 16:51:46.986[0;39m [32m INFO[0;39m [35m1716[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.s.vue.controller.TrafficController    [0;39m [2m:[0;39m listBusStop - 호출
 [2m2022-11-22 16:51:46.992[0;39m [32m INFO[0;39m [35m1716[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-22 18:23:06.805[0;39m [32m INFO[0;39m [35m20320[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-11-22 18:23:06.868[0;39m [32m INFO[0;39m [35m20320[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 709 ms
+[2m2022-11-22 18:23:07.409[0;39m [32m INFO[0;39m [35m20320[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'

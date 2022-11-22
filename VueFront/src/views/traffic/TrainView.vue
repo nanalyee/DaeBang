@@ -33,7 +33,7 @@
             class="text-center"
           >
             <div class=""><div class=""></div></div>
-            {{ subwayListInfo[i].stationName }}
+            {{ subwayListInfo[i + 1].stationName }}
           </li>
         </ol>
 
@@ -86,6 +86,8 @@
         </button>
       </div>
       <!-- 지하철 캐러셀 끝   -->
+      <br />
+      <br />
       <div class="row" id="test">
         <div class="col-lg-6 align-self-end text-center" style="height: 400px">
           <!-- <div class="d-flex align-items-center mb-3">
@@ -123,7 +125,7 @@
     <!-- Video Modal Start -->
     <b-modal v-model="subwaymodalShow" hide-footer title="대전 지하철 역 상세정보">
       <div class="col-lg-12 text-center">
-        <h3 class="text-success display-7 my-4 mb-10">{{ subwayInfo.stationName }} 역</h3>
+        <h3 class="text-success display-7 my-4 mb-10">{{ subwayInfo.stationName }}</h3>
       </div>
       <h5 class="display-7 mb-4">역 정보</h5>
       <table class="table caption-top">

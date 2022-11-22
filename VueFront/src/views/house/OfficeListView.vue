@@ -9,7 +9,12 @@
     </div>
     <div class="p-0 m-0 list" style="height: 700px; overflow: auto">
       <div class="text-center" v-if="$store.state.count == 0">
-        <img class="img-fluid text-center" src="@/assets/img/empty.gif" alt="" style="width: 500px" />
+        <img
+          class="img-fluid text-center"
+          src="@/assets/img/empty.gif"
+          alt=""
+          style="width: 500px"
+        />
         <p>검색 결과가 없습니다.</p>
       </div>
       <!-- button start -->
@@ -69,7 +74,11 @@
         <div class="col-3 collapse" :id="'toggle' + i" data-parent="#accordion">
           <img class="img-fluid img-thumbnail rounded" :src="$store.state.houseimg" alt="" />
         </div>
-        <div class="col-1 text-right align-self-center collapse" :id="'toggle' + i" data-parent="#accordion">
+        <div
+          class="col-1 text-right align-self-center collapse"
+          :id="'toggle' + i"
+          data-parent="#accordion"
+        >
           <a href="#" class="golink" v-on:click="goDetail(i)">
             <i class="bi bi-chevron-compact-right fs-1"></i>
           </a>
@@ -142,7 +151,13 @@ export default {
     goDetail(index) {
       var _this = this;
       var keywords =
-        "대전시 " + this.gugun + " " + this.houses[index].법정동 + " " + this.houses[index].단지 + "오피스텔";
+        "대전시 " +
+        this.gugun +
+        " " +
+        this.houses[index].법정동 +
+        " " +
+        this.houses[index].단지 +
+        "오피스텔";
       console.log("검색할 주소 : " + keywords);
 
       // 장소 검색 객체를 생성합니다
@@ -157,7 +172,7 @@ export default {
             // 파라미터로 위도 경도를 보냅니다.
             name: "detail",
             params: {
-              wishname: _this.houses[index].아파트,
+              wishname: _this.houses[index].단지,
               wishtype: "오피스텔",
               gugunname: _this.gugun,
               dongname: _this.houses[index].법정동,

@@ -32,6 +32,10 @@ Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
 
+//apex charts
+import VueApexCharts from "vue-apexcharts";
+Vue.use(VueApexCharts);
+
 new Vue({
   router,
   store,
