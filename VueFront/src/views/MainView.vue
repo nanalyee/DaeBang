@@ -61,176 +61,46 @@
     </b-modal>
     <!-- Video Modal End -->
 
-    <!-- 미리보기 시작 -->
+    <!-- 소개 시작 -->
+
     <div class="container-xxl py-6 pt-5" id="project">
       <div class="container">
-        <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
+        <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
           <div class="col-lg-6">
-            <h1 class="display-5 mb-0">대방 미리보기</h1>
+            <h1 class="display-7 mb-0">대방은 다양한 데이터를 바탕으로</h1>
+            <h1 class="display-7 mb-0">최적의 결과를 보여드려요.</h1>
           </div>
           <div class="col-lg-6 text-lg-end">
-            <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-              <li class="mx-3 active" data-filter="*">All Projects</li>
-              <li class="mx-3" data-filter=".first">Home Search</li>
-              <li class="mx-3" data-filter=".second">Board List</li>
-            </ul>
+            <!-- <a class="btn btn-primary py-3 px-5" href="">Hire Me</a> -->
           </div>
         </div>
-        <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
-          <div class="col-lg-4 portfolio-item first">
-            <div class="border portfolio-img rounded overflow-hidden">
-              <img class="img-fluid" src="@/assets/img/preview1.png" alt="" />
-              <div class="portfolio-btn">
-                <a
-                  @click="photoshow('preview1.png')"
-                  type="button"
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                >
-                  <i class="bi bi-eye-fill"></i>
-                </a>
-                <!-- <a
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                  href="@/assets/img/preview2.png"
-                  data-lightbox="portfolio"
-                >
-                  <i class="bi bi-eye-fill"></i>
-                </a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
-                  ><i class="bi bi-link"></i
-                ></a>
-              </div>
-            </div>
+        <div class="row g-4 mt-5">
+          <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+            <img class="rounded" src="@/assets/img/gif/td1.gif" alt="" style="width: 500px; height: 300px" />
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item second">
-            <div class="border portfolio-img rounded overflow-hidden">
-              <img class="img-fluid" src="@/assets/img/preview2.png" alt="" />
-              <div class="portfolio-btn">
-                <a
-                  @click="photoshow('preview2.png')"
-                  type="button"
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                >
-                  <i class="bi bi-eye-fill"></i>
-                </a>
-                <!-- <a
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                  href="@/assets/img/preview2.png"
-                  data-lightbox="portfolio"
-                  ><i class="bi bi-eye-fill"></i
-                ></a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
-                  ><i class="bi bi-link"></i
-                ></a>
-              </div>
-            </div>
+          <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="fs-2 mb-0" id="mainintroduce">대전이 처음이라 어려우신가요?</h1>
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item first">
-            <div class="border portfolio-img rounded overflow-hidden">
-              <img class="img-fluid" src="@/assets/img/preview3.png" alt="" />
-              <div class="portfolio-btn">
-                <a
-                  @click="photoshow('preview3.png')"
-                  type="button"
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                >
-                  <i class="bi bi-eye-fill"></i>
-                </a>
-                <!-- <a
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                  href="@/assets/img/preview3.png"
-                  data-lightbox="portfolio"
-                  ><i class="bi bi-eye-fill"></i
-                ></a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
-                  ><i class="bi bi-link"></i
-                ></a>
-              </div>
-            </div>
+        </div>
+        <div class="row g-4 mt-5" style="margin-top: 30px">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="fs-2 mb-0" id="mainintroduce">걱정하지 마세요.</h1>
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item second">
-            <div class="border portfolio-img rounded overflow-hidden">
-              <img class="img-fluid" src="@/assets/img/preview4.png" alt="" />
-              <div class="portfolio-btn">
-                <a
-                  @click="photoshow('preview4.png')"
-                  type="button"
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                >
-                  <i class="bi bi-eye-fill"></i>
-                </a>
-                <!-- <a
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                  href="@/assets/img/preview4.png"
-                  data-lightbox="portfolio"
-                  ><i class="bi bi-eye-fill"></i
-                ></a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
-                  ><i class="bi bi-link"></i
-                ></a>
-              </div>
-            </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <img class="rounded" src="@/assets/img/gif/td2.gif" alt="" style="width: 500px; height: 300px" />
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item first">
-            <div class="border portfolio-img rounded overflow-hidden">
-              <img class="img-fluid" src="@/assets/img/preview5.png" alt="" />
-              <div class="portfolio-btn">
-                <a
-                  @click="photoshow('preview5.png')"
-                  type="button"
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                >
-                  <i class="bi bi-eye-fill"></i>
-                </a>
-                <!-- <a
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                  href="@/assets/img/preview5.png"
-                  data-lightbox="portfolio"
-                  ><i class="bi bi-eye-fill"></i
-                ></a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
-                  ><i class="bi bi-link"></i
-                ></a>
-              </div>
-            </div>
+        </div>
+        <div class="row g-4 mt-5" style="margin-top: 30px">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <img class="rounded" src="@/assets/img/gif/td3.gif" alt="" style="width: 500px; height: 300px" />
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item second">
-            <div class="border portfolio-img rounded overflow-hidden">
-              <img class="img-fluid" src="@/assets/img/preview6.png" alt="" />
-              <div class="portfolio-btn">
-                <a
-                  @click="photoshow('preview6.png')"
-                  type="button"
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                >
-                  <i class="bi bi-eye-fill"></i>
-                </a>
-                <!-- <a
-                  class="btn btn-lg-square btn-outline-secondary border-2 mx-1"
-                  href="@/assets/img/preview6.png"
-                  data-lightbox="portfolio"
-                  ><i class="bi bi-eye-fill"></i
-                ></a> -->
-                <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""
-                  ><i class="bi bi-link"></i
-                ></a>
-              </div>
-            </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="fs-2 mb-0" id="mainintroduce">제가 당신의 이정표가 되어드릴게요.</h1>
           </div>
         </div>
       </div>
     </div>
-    <!-- 미리보기 끝 -->
-
-    <!-- photo Modal Start -->
-    <b-modal v-model="photoModalShow" hide-footer hide-header centered>
-      <div class="d-block text-center">
-        <h3>Hello From My Modal!222</h3>
-      </div>
-      <div>
-        <b-img :src="require(`@/assets/img/${photolink}`)" fluid alt="Fluid image"></b-img>
-      </div>
-    </b-modal>
-    <!-- photo Modal End -->
+    <!-- 소개 끝 -->
 
     <!-- 서비스 소개 시작 -->
     <div class="container-fluid bg-light my-5 py-6" id="service">
@@ -245,65 +115,56 @@
         </div>
         <div class="row g-4">
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div
-              class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
-            >
+            <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
               <div class="bg-icon flex-shrink-0 mb-3">
-                <img class="img-fluid rounded" src="@/assets/img/apartment.png" alt="" />
+                <img class="img-fluid rounded" src="@/assets/img/main/apartment.png" alt="" />
               </div>
               <div class="ms-sm-4">
-                <h4 class="mb-3">전국 아파트 매매 검색</h4>
+                <h4 class="mb-3">전/월세 거래 기록검색</h4>
                 <!-- <h6 class="mb-3">Start from <span class="text-primary">$199</span></h6> -->
                 <span>
-                  아파트 매매 공공 데이터를 활용해 사용자가 지정한 시도, 구, 동, 기간에 거래된 상세
-                  정보 및 위치를 조회할 수 있습니다.
+                  아파트, 오피스텔, 원룸, 빌라의 전, 월세 거래 정보를 알려드립니다. 여러분이 지정한 필터에 맞춰 거래된
+                  상세 정보 및 위치를 조회할 수 있습니다.
                 </span>
               </div>
             </div>
           </div>
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div
-              class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
-            >
+            <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
               <div class="bg-icon flex-shrink-0 mb-3">
-                <img class="img-fluid rounded" src="@/assets/img/community.png" alt="" />
+                <img class="img-fluid rounded" src="@/assets/img/main/comment.png" alt="" />
               </div>
               <div class="ms-sm-4">
-                <h4 class="mb-3">커뮤니티</h4>
-                <span>
-                  회원가입 후 로그인을 통해 자유롭게 글을 올리고 읽는 커뮤니티 기능을 제공합니다.
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div
-              class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
-            >
-              <div class="bg-icon flex-shrink-0 mb-3">
-                <img class="img-fluid rounded" src="@/assets/img/commercial.png" alt="" />
-              </div>
-              <div class="ms-sm-4">
-                <h4 class="mb-3">지정 지역 내 상권 조회</h4>
+                <h4 class="mb-3">관심 지역 추천 서비스</h4>
                 <span
-                  >사용자가 선택한 유형 상권으로 필터링 된 정보를 가져옵니다. 지정한 지역을 기준으로
-                  반경 1km 내의 상권을 조회할 수 있습니다.</span
+                  >사용자가 선택한 상권 선호도에 맞춰 관심 지역 순위를 정해드립니다. 고르기 어렵다면 도움을
+                  받아보세요.</span
                 >
               </div>
             </div>
           </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div
-              class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"
-            >
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
               <div class="bg-icon flex-shrink-0 mb-3">
-                <img class="img-fluid rounded" src="@/assets/img/favorite.png" alt="" />
+                <img class="img-fluid rounded" src="@/assets/img/main/live.png" alt="" />
               </div>
               <div class="ms-sm-4">
-                <h4 class="mb-3">즐겨찾기</h4>
+                <h4 class="mb-3">실시간 교통 정보</h4>
+                <span> 주요 지역의 도로 상황, 실시간 버스 도착 정보, 지하철 역사 정보를 제공합니다.</span>
+                <span> 게시판을 이용해 다른 사용자와 교통 상황을 공유해 보세요!</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+              <div class="bg-icon flex-shrink-0 mb-3">
+                <img class="img-fluid rounded" src="@/assets/img/main/travel-guide.png" alt="" />
+              </div>
+              <div class="ms-sm-4">
+                <h4 class="mb-3">상권, 날씨, 관광지</h4>
                 <span
-                  >사용자는 원하는 매물을 즐겨찾기에 등록할 수 있습니다. 언제든지 등록한 매물을
-                  편리하게 확인할 수 있습니다.</span
+                  >여러분이 원하는 매물을 선택하면 해당 지역의 상권 정보, 날씨를 알려드립니다. <br />주변의 관광지도
+                  둘러보세요!</span
                 >
               </div>
             </div>
@@ -318,57 +179,264 @@
       <div class="container">
         <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
           <div class="col-lg-6">
-            <h1 class="display-5 mb-0">공공데이터</h1>
+            <h1 class="display-5 mb-0">데이터</h1>
           </div>
-          <div class="col-lg-6 text-lg-end">
+          <!-- <div class="col-lg-6 text-lg-end">
             <a class="btn btn-primary py-3 px-5" href="https://www.data.go.kr/">공공데이터 포털</a>
-          </div>
+          </div> -->
         </div>
         <div class="row g-5">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <!-- <div class="d-flex align-items-center mb-5">
-                        <div class="years flex-shrink-0 text-center me-4">
-                            <h1 class="display-1 mb-0">5</h1>
-                            <h5 class="mb-0">Years</h5>
-                        </div>
-                        <h3 class="lh-base mb-0">2015~2020년간<br> 전국 아파트 실거래 <br> 공공데이터 사용</h3>
-                    </div>
-                    <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>국토교통부</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>High Quality Product</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>On Time Project Delivery</p>
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a> -->
-            <div class="d-flex align-items-center mb-3">
-              <h3 class="border-end pe-3 me-3 mb-0">아파트매매 실거래자료</h3>
-              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">68827</h2>
+          <div class="d-flex align-items-center mb-5">
+            <h3 class="text-end lh-base mb-0">
+              사용한<br />
+              API 개수
+            </h3>
+            <div class="years flex-shrink-0 text-center ms-4">
+              <h1 class="display-1 mb-0 text-danger">12</h1>
             </div>
-            <p class="mb-4">
-              부동산 거래신고에 관한 법률에 따라 신고된 주택의 68827건의 실거래 자료<br />시,도,행정동
-              구역별 정해진 기간 조회 가능
-            </p>
+          </div>
+          <!-- API 캐러셀 시작   -->
+          <div id="carouselAPI" class="carousel carousel-dark slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li id="indicator" data-target="#carouselAPI" data-slide-to="0" class="active"></li>
+              <li id="indicator" data-target="#carouselAPI" data-slide-to="1"></li>
+              <li id="indicator" data-target="#carouselAPI" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <div id="carousel_api_speed" class="carousel-item active rounded">
+                <div class="row g-4">
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">아파트 전,월세 거래자료</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+                    </div>
+                    <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">다세대주택 전,월세 거래자료</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+                    </div>
+                    <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">오피스텔 전,월세 거래자료</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+                    </div>
+                    <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">다가구주택 전,월세 거래자료</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+                    </div>
+                    <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
+                  </div>
+                </div>
+              </div>
+              <div id="carousel_api_speed" class="carousel-item">
+                <div class="row g-4">
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">상가(상권)정보</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">100</h2>
+                    </div>
+                    <p class="mb-4">소상공인 상권정보 조회 당 최대 100건 상권내 상가업소 조회 <br /></p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>소상공인시장진흥공단</p>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">자동차 길찾기</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
+                    </div>
+                    <p class="mb-4">하나의 출발지에서 하나의 목적지까지로의 경로에 대한 상세 정보</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO MOBILITY</p>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">카테고리로 장소 검색하기</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">8개 카테고리</h2>
+                    </div>
+                    <p class="mb-4">정의된 카테고리 코드에 해당하는 장소 검색 결과를 지정된 정렬 기준에 따라 제공</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO</p>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">정류소별 도착정보 조회 서비스</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">3072개 정류소</h2>
+                    </div>
+                    <p class="mb-4">버스정보시스템 정보(도착예정정보,정류소정보, 노선정보, 운수사정보, 차량정보)</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>공공교통정책과</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="carousel_api_speed" class="carousel-item">
+                <div class="row g-4">
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">역사정보</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">22개 역사</h2>
+                    </div>
+                    <p class="mb-4">대전 도시철도의 역사정보</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>대전교통공사</p>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">문화관광(관광지)</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">127개 관광지</h2>
+                    </div>
+                    <p class="mb-4">문화관광 (관광지) 정보</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>스마트도시과</p>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">단기예보 조회서비스</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
+                    </div>
+                    <p class="mb-4">초단기실황, 초단기예보, 단기예보, 예보버전 정보를 조회하는 서비스</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>기상청</p>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-3">
+                      <h3 class="border-end pe-3 me-3 mb-0">이미지 검색</h3>
+                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
+                    </div>
+                    <p class="mb-4">다음 검색 서비스에서 질의어로 이미지를 검색합니다.</p>
+                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              id="carousel-control-prev"
+              class="carousel-control-prev"
+              type="button"
+              data-target="#carouselAPI"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </button>
+            <button
+              id="carousel-control-next"
+              class="carousel-control-next"
+              type="button"
+              data-target="#carouselAPI"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </button>
+          </div>
+
+          <!-- API 캐러셀 끝   -->
+          <!-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">아파트 전,월세 거래자료</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+            </div>
+            <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">다세대주택 전,월세 거래자료</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+            </div>
+            <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">오피스텔 전,월세 거래자료</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+            </div>
+            <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">다가구주택 전,월세 거래자료</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+            </div>
+            <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
             <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
           </div>
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-            <!-- <div class="row g-3 mb-4">
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="${root}/img/about-1.jpg" alt="">
-                        </div>
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="${root}/img/about-2.jpg" alt="">
-                        </div>
-                    </div> -->
             <div class="d-flex align-items-center mb-3">
-              <h3 class="border-end pe-3 me-3 mb-0">소상공인시장 상가(상권)정보</h3>
-              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1000</h2>
+              <h3 class="border-end pe-3 me-3 mb-0">상가(상권)정보</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">100</h2>
             </div>
             <p class="mb-4">
               소상공인 상권정보 상가업소 공공 데이터 기반<br />
-              조회 당 최대 1000건 상권내 상가업소 조회 가능
+              조회 당 최대 100건 상권내 상가업소 조회 가능
             </p>
-            <p class="mb-3">
-              <i class="bi bi-check-circle-fill text-primary me-3"></i>소상공인시장진흥공단
-            </p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>소상공인시장진흥공단</p>
           </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">자동차 길찾기</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
+            </div>
+            <p class="mb-4">하나의 출발지에서 하나의 목적지까지로의 경로에 대한 상세 정보</p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO MOBILITY</p>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">카테고리로 장소 검색하기</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">8개 카테고리</h2>
+            </div>
+            <p class="mb-4">정의된 카테고리 코드에 해당하는 장소 검색 결과를 지정된 정렬 기준에 따라 제공</p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO</p>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">정류소별 도착정보 조회 서비스</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">3072개 정류소</h2>
+            </div>
+            <p class="mb-4">버스정보시스템 정보(도착예정정보,정류소정보, 노선정보, 운수사정보, 차량정보)</p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>공공교통정책과</p>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">역사정보</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">22개 역사</h2>
+            </div>
+            <p class="mb-4">대전 도시철도의 역사정보</p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>대전교통공사</p>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">문화관광(관광지)</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">127개 관광지</h2>
+            </div>
+            <p class="mb-4">문화관광 (관광지) 정보</p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>스마트도시과</p>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">단기예보 조회서비스</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
+            </div>
+            <p class="mb-4">초단기실황, 초단기예보, 단기예보, 예보버전 정보를 조회하는 서비스</p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>기상청</p>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-flex align-items-center mb-3">
+              <h3 class="border-end pe-3 me-3 mb-0">이미지 검색</h3>
+              <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
+            </div>
+            <p class="mb-4">다음 검색 서비스에서 질의어로 이미지를 검색합니다.</p>
+            <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO</p>
+          </div> -->
         </div>
       </div>
     </div>
@@ -394,10 +462,7 @@
                   <h5>이현구</h5>
                   <span>Developer</span>
                 </div>
-                <i
-                  class="fa fa-arrow-right fa-2x text-primary"
-                  onclick="window.open('https://github.com/Leeh9')"
-                ></i>
+                <i class="fa fa-arrow-right fa-2x text-primary" onclick="window.open('https://github.com/Leeh9')"></i>
               </div>
             </div>
           </div>
@@ -447,3 +512,23 @@ export default {
   },
 };
 </script>
+
+<style>
+#carousel_api_speed {
+  transition: 0.3s !important;
+}
+
+#mainintroduce {
+  margin-top: 140px;
+  /* line-height: middle; */
+  text-align: center;
+}
+
+#carouselAPI ol li {
+  background-color: #d4a817 !important;
+  width: 22px;
+  height: 22px;
+  margin: 12px;
+  letter-spacing: 0.5px !important;
+}
+</style>

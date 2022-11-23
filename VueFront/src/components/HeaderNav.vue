@@ -35,7 +35,9 @@
       class="navbar navbar-expand-lg bg-white navbar-light shadow py-lg-0 px-4 px-lg-5 justify-content-center position-relative"
     >
       <a href="index.jsp" class="navbar-brand d-block d-lg-none">
-        <h1 class="text-primary fw-bold m-0">구해줘홈즈</h1>
+        <h1 class="text-primary fw-bold m-0">
+          <h1 class="text-primary fw-bold m-0">H<i class="bi bi-house-heart-fill fs-3"></i>mes</h1>
+        </h1>
       </a>
       <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>

@@ -94,7 +94,7 @@ export default {
     // spring에서 비동기로 랜덤 관광지 불러오기
     http.get(`/wish/gettd`).then(({ data }) => {
       this.td_info_list = data.msgBody;
-      //console.log(data.msgBody);
+      console.log(data.msgBody);
     });
   },
   data() {
