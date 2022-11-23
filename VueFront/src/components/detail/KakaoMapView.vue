@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row m-0">
     <div class="col-6">
       <!-- Kakao Map start -->
       <div class="container bg-white border px-0">
