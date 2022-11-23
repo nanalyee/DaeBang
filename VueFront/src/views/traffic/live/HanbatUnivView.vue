@@ -82,9 +82,7 @@
                 교통 상황 서비스 !<br />
                 한밭대학교에서 SSAFY 대전캠퍼스까지의 경로에 대한 상세 정보를 제공합니다.
               </p>
-              <p class="mb-3">
-                <i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO MOBILITY
-              </p>
+              <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO MOBILITY</p>
             </div>
           </div>
           <div class="portfolio-btn text-right">
@@ -93,15 +91,7 @@
         </div>
       </div>
     </div>
-    <b-sidebar
-      id="sidebar-right"
-      title="실시간 한마디"
-      right
-      shadow
-      backdrop
-      backdrop-variant="dark"
-      width="620px"
-    >
+    <b-sidebar id="sidebar-right" title="실시간 한마디" right shadow backdrop backdrop-variant="dark" width="620px">
       <template>
         <div>
           <b-collapse id="collapse-4" v-model="visible" class="mt-2">
@@ -123,28 +113,8 @@
               <b-button type="submit" variant="primary" class="m-1" v-else
                 ><i class="bi bi-send-fill white fs-4"></i
               ></b-button>
-              <b-form-group
-                id="userid-group"
-                label="작성자:"
-                label-for="userid"
-                description="작성자를 입력하세요."
-              >
-                <b-form-input
-                  id="userid"
-                  :disabled="isUserid"
-                  v-model="article.userid"
-                  type="text"
-                  required
-                  placeholder="작성자 입력..."
-                ></b-form-input>
-              </b-form-group>
 
-              <b-form-group
-                id="subject-group"
-                label="제목:"
-                label-for="subject"
-                description="제목을 입력하세요."
-              >
+              <b-form-group id="subject-group" label="제목:" label-for="subject" description="제목을 입력하세요.">
                 <b-form-input
                   id="subject"
                   v-model="article.subject"
@@ -166,7 +136,7 @@
             </b-form>
           </b-collapse>
         </div>
-        <div class="float-right p-2 m-2">
+        <div v-if="userInfo" class="float-right p-2 m-2">
           <b-button
             :class="visible ? null : 'collapsed'"
             :aria-expanded="visible ? 'true' : 'false'"
@@ -215,17 +185,17 @@
                       <span class="fs-6 font-weight-bold">{{ item.subject }}</span>
                     </div>
 
-                    <div
-                      class="collapse border-top pt-2 mt-2"
-                      :id="'toggle' + i"
-                      data-parent="#accordion"
-                    >
+                    <div class="collapse border-top pt-2 mt-2" :id="'toggle' + i" data-parent="#accordion">
                       <div class="row mb-3 justify-content-between">
                         <div class="col-auto">
                           <div style="color: #6b799e">조회수 {{ item.hit }}</div>
                         </div>
                         <div class="col-auto">
-                          <a class="float-right" variant="primary" @click="editBtn"
+                          <a
+                            v-if="userInfo && userInfo.userid == item.userid"
+                            class="float-right"
+                            variant="primary"
+                            @click="editBtn"
                             ><i class="bi bi-pencil-square"></i
                           ></a>
                         </div>
@@ -255,28 +225,12 @@
 </template>
 
 <script>
-import { mapActions, mapMutations } from "vuex";
+import { mapActions, mapMutations, mapState } from "vuex";
 import http from "@/util/http"; // 게시판 테스트용
+const memberStore = "memberStore";
+
 export default {
   name: "HanbatUnivView",
-  created() {
-    // 한밭대학교 위도,경도
-    this.setOrigin("127.30933962043177,36.34007922524467");
-    // 게시판 테스트용
-    http.get(`/board`).then(({ data }) => {
-      this.articles = data;
-    });
-    if (this.type === "modify") {
-      http.get(`/board/${this.article.articleno}`).then(({ data }) => {
-        // this.article.articleno = data.article.articleno;
-        // this.article.userid = data.article.userid;
-        // this.article.subject = data.article.subject;
-        // this.article.content = data.article.content;
-        this.article = data;
-      });
-      this.isUserid = true;
-    }
-  },
   data() {
     return {
       // 게시판 테스트용
@@ -301,7 +255,31 @@ export default {
       visible: false,
     };
   },
+  computed: {
+    ...mapState(memberStore, ["userInfo"]),
+  },
+  created() {
+    if (this.userInfo) {
+      this.article.userid = this.userInfo.userid;
+    }
 
+    // 한밭대학교 위도,경도
+    this.setOrigin("127.30933962043177,36.34007922524467");
+    // 게시판 테스트용
+    http.get(`/board`).then(({ data }) => {
+      this.articles = data;
+    });
+    if (this.type === "modify") {
+      http.get(`/board/${this.article.articleno}`).then(({ data }) => {
+        // this.article.articleno = data.article.articleno;
+        // this.article.userid = data.article.userid;
+        // this.article.subject = data.article.subject;
+        // this.article.content = data.article.content;
+        this.article = data;
+      });
+      this.isUserid = true;
+    }
+  },
   methods: {
     ...mapActions(["getTrafficState"]),
     ...mapMutations(["SET_ORIGIN"]),
@@ -338,14 +316,9 @@ export default {
 
       let err = true;
       let msg = "";
-      !this.article.userid &&
-        ((msg = "작성자 입력해주세요"), (err = false), this.$refs.userid.focus());
-      err &&
-        !this.article.subject &&
-        ((msg = "제목 입력해주세요"), (err = false), this.$refs.subject.focus());
-      err &&
-        !this.article.content &&
-        ((msg = "내용 입력해주세요"), (err = false), this.$refs.content.focus());
+      !this.article.userid && ((msg = "작성자 입력해주세요"), (err = false), this.$refs.userid.focus());
+      err && !this.article.subject && ((msg = "제목 입력해주세요"), (err = false), this.$refs.subject.focus());
+      err && !this.article.content && ((msg = "내용 입력해주세요"), (err = false), this.$refs.content.focus());
 
       if (!err) alert(msg);
       else {

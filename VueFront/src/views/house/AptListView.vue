@@ -26,7 +26,7 @@
         aria-expanded="false"
         :aria-controls="'toggle' + i"
       >
-        <div class="col align-self-center">
+        <div class="align-self-center">
           <div class="">
             <span class="fs-4 pe-3" v-html="item.아파트"></span>
             <span class="" style="color: gray">아파트</span>

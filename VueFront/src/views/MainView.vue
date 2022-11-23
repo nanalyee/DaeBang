@@ -4,8 +4,8 @@
     <div class="container-fluid bg-light my-6 mt-0" id="home">
       <div class="container">
         <div class="row g-5 pt-5 align-items-center">
-          <div class="col-lg-6">
-            <img class="img-fluid text-center" src="@/assets/img/main_top.png" alt="" />
+          <div class="col-lg-6 text-end">
+            <img class="img-fluid" src="@/assets/img/main_top.png" alt="" />
           </div>
           <div class="col-lg-6 py-6 pb-0 pt-lg-0">
             <h4 class="text-primary mb-3">대전 입문 안내 도우미</h4>
@@ -177,167 +177,167 @@
     <!-- About Start -->
     <div class="container-xxl py-6" id="about">
       <div class="container">
-        <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="row g-5 wow fadeInUp" data-wow-delay="0.1s">
           <div class="col-lg-6">
-            <h1 class="display-5 mb-0">데이터</h1>
+            <h1 class="display-5 mb-0">공공데이터</h1>
           </div>
           <!-- <div class="col-lg-6 text-lg-end">
             <a class="btn btn-primary py-3 px-5" href="https://www.data.go.kr/">공공데이터 포털</a>
           </div> -->
         </div>
-        <div class="row g-5">
-          <div class="d-flex align-items-center mb-5">
-            <h3 class="text-end lh-base mb-0">
-              사용한<br />
-              API 개수
-            </h3>
-            <div class="years flex-shrink-0 text-center ms-4">
-              <h1 class="display-1 mb-0 text-danger">12</h1>
+        <div class="row g-5 m-0">
+          <div class="col-auto mb-5 mr-4 p-0">
+            <div class="fs-4 text-center mb-4">사용 API</div>
+            <div class="years flex-shrink-0 text-center">
+              <div class="display-1 mb-0 text-primary">12</div>
             </div>
           </div>
-          <!-- API 캐러셀 시작   -->
-          <div id="carouselAPI" class="carousel carousel-dark slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li id="indicator" data-target="#carouselAPI" data-slide-to="0" class="active"></li>
-              <li id="indicator" data-target="#carouselAPI" data-slide-to="1"></li>
-              <li id="indicator" data-target="#carouselAPI" data-slide-to="2"></li>
-            </ol>
+          <div class="col ml-4">
+            <!-- API 캐러셀 시작   -->
+            <div id="carouselAPI" class="carousel carousel-dark slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li id="indicator" data-target="#carouselAPI" data-slide-to="0" class="active"></li>
+                <li id="indicator" data-target="#carouselAPI" data-slide-to="1"></li>
+                <li id="indicator" data-target="#carouselAPI" data-slide-to="2"></li>
+              </ol>
 
-            <div class="carousel-inner">
-              <div id="carousel_api_speed" class="carousel-item active rounded">
-                <div class="row g-4">
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">아파트 전,월세 거래자료</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+              <div class="carousel-inner">
+                <div id="carousel_api_speed" class="carousel-item active rounded">
+                  <div class="row g-4">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">아파트 전,월세 거래자료</h3>
+                        <h2 class="text-primary fw-bold mb-0 fs-4" data-toggle="counter-up">2018-2022</h2>
+                      </div>
+                      <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
                     </div>
-                    <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
-                  </div>
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">다세대주택 전,월세 거래자료</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">다세대주택 전,월세 거래자료</h3>
+                        <h2 class="text-primary fw-bold mb-0 fs-4" data-toggle="counter-up">2018-2022</h2>
+                      </div>
+                      <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
                     </div>
-                    <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
-                  </div>
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">오피스텔 전,월세 거래자료</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">오피스텔 전,월세 거래자료</h3>
+                        <h2 class="text-primary fw-bold mb-0 fs-4" data-toggle="counter-up">2018-2022</h2>
+                      </div>
+                      <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
                     </div>
-                    <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
-                  </div>
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">다가구주택 전,월세 거래자료</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">2018-2022</h2>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">다가구주택 전,월세 거래자료</h3>
+                        <h2 class="text-primary fw-bold mb-0 fs-4" data-toggle="counter-up">2018-2022</h2>
+                      </div>
+                      <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
                     </div>
-                    <p class="mb-4">부동산 거래신고에 관한 법률에 따라 신고된 주택의 실거래 자료를 제공</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>국토교통부</p>
                   </div>
                 </div>
-              </div>
-              <div id="carousel_api_speed" class="carousel-item">
-                <div class="row g-4">
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">상가(상권)정보</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">100</h2>
+                <div id="carousel_api_speed" class="carousel-item">
+                  <div class="row g-4">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">상가(상권)정보</h3>
+                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">100</h2>
+                      </div>
+                      <p class="mb-4">소상공인 상권정보 조회 당 최대 100건 상권내 상가업소 조회 <br /></p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>소상공인시장진흥공단</p>
                     </div>
-                    <p class="mb-4">소상공인 상권정보 조회 당 최대 100건 상권내 상가업소 조회 <br /></p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>소상공인시장진흥공단</p>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">자동차 길찾기</h3>
+                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
+                      </div>
+                      <p class="mb-4">하나의 출발지에서 하나의 목적지까지로의 경로에 대한 상세 정보</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO MOBILITY</p>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">카테고리로 장소 검색하기</h3>
+                        <h2 class="text-primary fw-bold mb-0 fs-4" data-toggle="counter-up">8개 카테고리</h2>
+                      </div>
+                      <p class="mb-4">카테고리 코드에 해당하는 장소 검색 결과를 지정된 정렬 기준에 따라 제공</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO</p>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0 fs-4">정류소별 도착정보 조회 서비스</h3>
+                        <h2 class="text-primary fw-bold mb-0 fs-4" data-toggle="counter-up">3072개 정류소</h2>
+                      </div>
+                      <p class="mb-4 fs-8">버스정보시스템 - 도착예정정보,정류소정보, 노선정보, 운수사정보, 차량정보</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>공공교통정책과</p>
+                    </div>
                   </div>
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">자동차 길찾기</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
+                </div>
+
+                <div id="carousel_api_speed" class="carousel-item">
+                  <div class="row g-4">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">역사정보</h3>
+                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">22개 역사</h2>
+                      </div>
+                      <p class="mb-4">대전 도시철도의 역사정보</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>대전교통공사</p>
                     </div>
-                    <p class="mb-4">하나의 출발지에서 하나의 목적지까지로의 경로에 대한 상세 정보</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO MOBILITY</p>
-                  </div>
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">카테고리로 장소 검색하기</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">8개 카테고리</h2>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">문화관광(관광지)</h3>
+                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">127개 관광지</h2>
+                      </div>
+                      <p class="mb-4">문화관광 (관광지) 정보</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>스마트도시과</p>
                     </div>
-                    <p class="mb-4">정의된 카테고리 코드에 해당하는 장소 검색 결과를 지정된 정렬 기준에 따라 제공</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO</p>
-                  </div>
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">정류소별 도착정보 조회 서비스</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">3072개 정류소</h2>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">단기예보 조회서비스</h3>
+                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
+                      </div>
+                      <p class="mb-4">초단기실황, 초단기예보, 단기예보, 예보버전 정보를 조회하는 서비스</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>기상청</p>
                     </div>
-                    <p class="mb-4">버스정보시스템 정보(도착예정정보,정류소정보, 노선정보, 운수사정보, 차량정보)</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>공공교통정책과</p>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3 class="border-end pe-3 me-3 mb-0">이미지 검색</h3>
+                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
+                      </div>
+                      <p class="mb-4">다음 검색 서비스에서 질의어로 이미지를 검색합니다.</p>
+                      <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div id="carousel_api_speed" class="carousel-item">
-                <div class="row g-4">
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">역사정보</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">22개 역사</h2>
-                    </div>
-                    <p class="mb-4">대전 도시철도의 역사정보</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>대전교통공사</p>
-                  </div>
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">문화관광(관광지)</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">127개 관광지</h2>
-                    </div>
-                    <p class="mb-4">문화관광 (관광지) 정보</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>스마트도시과</p>
-                  </div>
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">단기예보 조회서비스</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
-                    </div>
-                    <p class="mb-4">초단기실황, 초단기예보, 단기예보, 예보버전 정보를 조회하는 서비스</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>기상청</p>
-                  </div>
-                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-3">
-                      <h3 class="border-end pe-3 me-3 mb-0">이미지 검색</h3>
-                      <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">LIVE</h2>
-                    </div>
-                    <p class="mb-4">다음 검색 서비스에서 질의어로 이미지를 검색합니다.</p>
-                    <p class="mb-3"><i class="bi bi-check-circle-fill text-primary me-3"></i>KAKAO</p>
-                  </div>
-                </div>
-              </div>
+              <button
+                id="carousel-control-prev"
+                class="carousel-control-prev"
+                type="button"
+                data-target="#carouselAPI"
+                data-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </button>
+              <button
+                id="carousel-control-next"
+                class="carousel-control-next"
+                type="button"
+                data-target="#carouselAPI"
+                data-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </button>
             </div>
 
-            <button
-              id="carousel-control-prev"
-              class="carousel-control-prev"
-              type="button"
-              data-target="#carouselAPI"
-              data-slide="prev"
-            >
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </button>
-            <button
-              id="carousel-control-next"
-              class="carousel-control-next"
-              type="button"
-              data-target="#carouselAPI"
-              data-slide="next"
-            >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </button>
+            <!-- API 캐러셀 끝   -->
           </div>
 
-          <!-- API 캐러셀 끝   -->
           <!-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="d-flex align-items-center mb-3">
               <h3 class="border-end pe-3 me-3 mb-0">아파트 전,월세 거래자료</h3>
@@ -515,7 +515,7 @@ export default {
 
 <style>
 #carousel_api_speed {
-  transition: 0.3s !important;
+  transition: 0s !important;
 }
 
 #mainintroduce {
@@ -524,11 +524,15 @@ export default {
   text-align: center;
 }
 
-#carouselAPI ol li {
+#carouselAPI .carousel-indicators {
+  margin-bottom: -4em !important;
+}
+
+/* #carouselAPI ol li {
   background-color: #d4a817 !important;
   width: 22px;
   height: 22px;
   margin: 12px;
   letter-spacing: 0.5px !important;
-}
+} */
 </style>
