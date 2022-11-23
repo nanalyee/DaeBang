@@ -204,7 +204,7 @@
         <template>
           <b-collapse id="tour-collapse">
             <!-- 관광 -->
-            관광 테스트
+            <wish-tour v-bind:gugun="gugunname"></wish-tour>
             <!-- 관광 끝 -->
           </b-collapse>
         </template>
@@ -218,13 +218,14 @@
 <script>
 import http from "@/util/http"; // 관심지역 추가, 삭제용
 
+import WishTour from "../components/wish/WishTour.vue";
 import KakaoMapView from "../components/detail/KakaoMapView.vue";
 import { mapState, mapGetters } from "vuex";
 const memberStore = "memberStore";
 
 export default {
   name: "appDetail",
-  components: { KakaoMapView },
+  components: { KakaoMapView, WishTour },
   data() {
     return {
       status: false,

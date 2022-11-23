@@ -5,12 +5,7 @@
       <div class="container">
         <div class="row g-5 align-items-center">
           <div class="col-lg-6 pt-5 pb-5 text-end">
-            <img
-              class="img-fluid"
-              src="@/assets/img/gif/wish3-unscreen.gif"
-              style="width: 500px"
-              alt=""
-            />
+            <img class="img-fluid" src="@/assets/img/gif/wish3-unscreen.gif" style="width: 500px" alt="" />
           </div>
           <div class="col-lg-6 py-6 pb-0 pt-lg-0">
             <img src="@/assets/img/rank/rank.png" alt="" id="podium_icon" />
@@ -60,22 +55,22 @@
         <!-- <wish-weather></wish-weather> -->
       </div>
     </div>
-    <div class="container-xxl py-6 pt-5" id="weather">
+    <!-- <div class="container-xxl py-6 pt-5" id="weather">
       <div class="container">
-        <wish-tour></wish-tour>
+        <wish-tour ></wish-tour>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import WishRank from "../components/wish/WishRank.vue";
-import WishTour from "../components/wish/WishTour.vue";
+//import WishTour from "../components/wish/WishTour.vue";
 // import WishWeather from "../components/wish/WishWeather.vue";
 
 export default {
   name: "appWish",
-  components: { WishRank, WishTour },
+  components: { WishRank },
 };
 </script>
 
