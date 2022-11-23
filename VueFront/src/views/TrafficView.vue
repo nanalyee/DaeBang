@@ -13,12 +13,7 @@
             <div class="carousel-item active">
               <div class="row g-5 align-items-center" style="height: 500px">
                 <div class="col-lg-6 pt-5 pb-5 text-end">
-                  <img
-                    class="img-fluid"
-                    src="@/assets/img/gif/car.gif"
-                    style="width: 500px"
-                    alt=""
-                  />
+                  <img class="img-fluid" src="@/assets/img/gif/car.gif" style="width: 500px" alt="" />
                 </div>
                 <div class="col-lg-6 py-6 pb-0 pt-lg-0">
                   <img src="@/assets/img/live.gif" alt="" id="live" />
@@ -59,12 +54,7 @@
             <div class="carousel-item">
               <div class="row g-5 pt-5 pb-5 align-items-center" style="height: 500px">
                 <div class="col-lg-6 pt-5 pb-5 pr-5 text-end">
-                  <img
-                    class="img-fluid"
-                    src="@/assets/img/gif/busrun.gif"
-                    style="width: 400px"
-                    alt=""
-                  />
+                  <img class="img-fluid" src="@/assets/img/gif/busrun.gif" style="width: 400px" alt="" />
                 </div>
                 <div class="col-lg-6 py-6 pb-0 pt-lg-0">
                   <img src="@/assets/img/live.gif" alt="" id="live" />
@@ -105,12 +95,7 @@
             <div class="carousel-item">
               <div class="row g-5 align-items-center" style="height: 500px">
                 <div class="col-lg-6 pt-2 pb-5 pr-5 text-end">
-                  <img
-                    class="img-fluid"
-                    src="@/assets/img/subway.png"
-                    style="width: 400px"
-                    alt=""
-                  />
+                  <img class="img-fluid" src="@/assets/img/subway.png" style="width: 400px" alt="" />
                 </div>
                 <div class="col-lg-6 py-6 pb-0 pt-lg-0">
                   <h4 class="text-primary mb-3">대전교통공사 공공데이터 기반</h4>
@@ -161,15 +146,12 @@
 
     <!-- Video Modal Start -->
     <b-modal v-model="modalShow" hide-footer title="교통 상황 시연 영상">
-      <!-- <div class="d-block text-center">
-        <h3>교통 상황 시연 영상</h3>
-      </div> -->
       <p align="middle">
         <iframe
           width="300"
           height="200"
-          src="https://www.youtube.com/embed/PYNvQIJ2cuM?controls=2&amp;showinfo=0&amp;modestbranding=1"
-          title="[KPOP Playlist] 요즘 듣는 케이팝 노동요"
+          src="https://www.youtube.com/embed/jA0PiCWDc0Q?controls=2&amp;showinfo=0&amp;modestbranding=1"
+          title="[SSAFY] 모집 영상"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
@@ -184,34 +166,22 @@
         <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
           <div class="col-lg-12">
             <h3 class="display-5 mb-0">
-              실시간 주요 교통 상황<img
-                src="@/assets/img/live_state.gif"
-                alt=""
-                id="img_live_state"
-              />
+              실시간 주요 교통 상황<img src="@/assets/img/live_state.gif" alt="" id="img_live_state" />
             </h3>
           </div>
           <div class="row pt-4 justify-content-between">
             <div class="col-lg-6 row pl-4">
               <div class="col-auto pr-0">
-                <router-link :to="{ name: 'daejeonStation' }" class="btn btn-primary"
-                  >대전역</router-link
-                >
+                <router-link :to="{ name: 'daejeonStation' }" class="btn btn-primary">대전역</router-link>
               </div>
               <div class="col-auto pr-0">
-                <router-link :to="{ name: 'yuseongStation' }" class="btn btn-primary"
-                  >유성온천역</router-link
-                >
+                <router-link :to="{ name: 'yuseongStation' }" class="btn btn-primary">유성온천역</router-link>
               </div>
               <div class="col-auto pr-0">
-                <router-link :to="{ name: 'noeunStation' }" class="btn btn-primary"
-                  >노은역</router-link
-                >
+                <router-link :to="{ name: 'noeunStation' }" class="btn btn-primary">노은역</router-link>
               </div>
               <div class="col-auto pr-0">
-                <router-link :to="{ name: 'hanbatUniv' }" class="btn btn-primary"
-                  >한밭대</router-link
-                >
+                <router-link :to="{ name: 'hanbatUniv' }" class="btn btn-primary">한밭대</router-link>
               </div>
             </div>
             <div class="col-lg-6 text-lg-end align-self-end">

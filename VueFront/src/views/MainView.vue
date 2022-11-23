@@ -46,18 +46,17 @@
 
     <!-- Video Modal Start -->
     <b-modal v-model="modalShow" hide-footer title="Using Component Methods">
-      <div class="d-block text-center">
-        <h3>Hello From My Modal!</h3>
-      </div>
-      <iframe
-        width="300"
-        height="200"
-        src="https://www.youtube.com/embed/PYNvQIJ2cuM?controls=2&amp;showinfo=0&amp;modestbranding=1"
-        title="[KPOP Playlist] 요즘 듣는 케이팝 노동요"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+      <p align="middle">
+        <iframe
+          width="300"
+          height="200"
+          src="https://www.youtube.com/embed/jA0PiCWDc0Q?controls=2&amp;showinfo=0&amp;modestbranding=1"
+          title="[SSAFY] 모집 영상"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </p>
     </b-modal>
     <!-- Video Modal End -->
 

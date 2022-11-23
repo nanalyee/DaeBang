@@ -97,20 +97,13 @@
                 </b-form-select>
               </div>
               <div class="form-group my-2">
-                <b-form-select
-                  class="form-select col-auto"
-                  id="gugun"
-                  v-model="monthSelected"
-                  :options="monthOptions"
-                >
+                <b-form-select class="form-select col-auto" id="gugun" v-model="monthSelected" :options="monthOptions">
                 </b-form-select>
               </div>
             </div>
           </div>
           <div class="d-grid gap-2 p-2">
-            <button type="button" id="list-btn" class="btn btn-primary" @click="searchApt">
-              검색
-            </button>
+            <button type="button" id="list-btn" class="btn btn-primary" @click="searchApt">검색</button>
           </div>
         </div>
         <div class="col px-4 mx-4">
@@ -118,12 +111,7 @@
             <h5 class="text-right mt-4">검색결과 총 {{ $store.state.count }}건</h5>
           </div> -->
           <div class="text-center" v-if="!showList">
-            <img
-              class="img-fluid text-center"
-              src="@/assets/img/empty.gif"
-              alt=""
-              style="width: 500px"
-            />
+            <img class="img-fluid text-center" src="@/assets/img/empty.gif" alt="" style="width: 500px" />
             <p>타입, 지역, 기간을 설정해주세요</p>
           </div>
           <router-view v-else></router-view>
