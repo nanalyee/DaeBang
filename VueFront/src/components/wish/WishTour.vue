@@ -4,8 +4,9 @@
     <b-container>
       <div class="row g-4 mt-5">
         <div class="p-3">
-          <h4 class="text-start">
-            {{ gugun }} 관광지 <br />
+          <h3 style="display: inline-block; color: #6b799e">{{ gugun }}</h3>
+          <h4 class="ms-2" style="display: inline-block">
+            관광지
             {{ gugun_td_list.length }}곳을 소개합니다.
           </h4>
         </div>
@@ -27,7 +28,7 @@
                   type="button"
                   :id="'article' + i"
                   class=""
-                  @click="log(td_info_list[item].tourSeq, td_info_list[item].name)"
+                  @click="log(td_info_list[item].tourSeq, td_info_list[item].name, item)"
                 >
                   <div class="row my-3">
                     <div class="col-2 p-2 text-right">
@@ -211,7 +212,7 @@ export default {
   methods: {
     ...mapActions(["getTitleImg"]),
 
-    log(id, title) {
+    log(id, title, index) {
       //this.TDInfoShow();
       // 0부터 126사이의 숫자 중 랜덤 뽑기
       // spring에서 비동기로 관광지 정보 불러오기
@@ -222,8 +223,7 @@ export default {
 
       // spring에서 비동기로 관광지 상세 정보 불러오기
       http.get(`/wish/gettddetail/${this.td_info.tourSeq}`).then(({ data }) => {
-        if (data.msgBody.zipcode == null) this.td_info_detail.zipcode = "정보 없음";
-        else this.td_info_detail.zipcode = data.msgBody.zipcode;
+        this.td_info_detail.zipcode = this.td_info_list[index].zipcode;
         if (data.msgBody.dCodeNm == null) this.td_info_detail.dCodeNm = "정보 없음";
         else this.td_info_detail.dCodeNm = data.msgBody.dCodeNm;
         if (data.msgBody.homepage == null) this.td_info_detail.homepage = "정보 없음";
