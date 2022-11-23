@@ -50,11 +50,7 @@
         <wish-rank></wish-rank>
       </div>
     </div>
-    <div class="container-fluid bg-light my-5 py-6" id="tour">
-      <div class="container">
-        <!-- <wish-weather></wish-weather> -->
-      </div>
-    </div>
+
     <!-- <div class="container-xxl py-6 pt-5" id="weather">
       <div class="container">
         <wish-tour ></wish-tour>

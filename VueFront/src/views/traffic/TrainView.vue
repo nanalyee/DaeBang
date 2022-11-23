@@ -1,12 +1,10 @@
 <template>
   <!-- 지하철 서비스 시작 -->
-  <div class="container-xxl py-6" id="train">
+  <div v-if="this.subwayListInfo.length > 0" class="container-xxl py-6" id="train">
     <div class="container">
       <div class="row g-6 mb-2 wow fadeInUp" data-wow-delay="0.1s">
         <div class="col-lg-6">
-          <h1 class="display-5 mb-0">
-            지하철<img src="@/assets/img/traingif.gif" alt="" id="traingif" />
-          </h1>
+          <h1 class="display-5 mb-0">지하철<img src="@/assets/img/traingif.gif" alt="" id="traingif" /></h1>
           <br />
           <h5 class="text-success fw-bold mb-4">클릭 시 역 상세 정보를 보여줍니다.</h5>
         </div>
@@ -15,12 +13,7 @@
       <!-- 지하철 캐러셀 시작   -->
       <div id="carouselTrain" class="carousel carousel-dark slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li
-            id="indicator"
-            data-target="#carouselTrain"
-            data-slide-to="0"
-            class="active text-center"
-          >
+          <li id="indicator" data-target="#carouselTrain" data-slide-to="0" class="active text-center">
             <div class=""><div class=""></div></div>
             {{ subwayListInfo[0].stationName }}
           </li>
@@ -97,12 +90,7 @@
           <div class="row" style="height: 140px; overflow: auto">
             <div class="col align-self-end text-center"></div>
           </div>
-          <img
-            id="daejeon_subway_all"
-            class="img img-fluid display-block"
-            src="@/assets/img/subwayall.png"
-            alt=""
-          />
+          <img id="daejeon_subway_all" class="img img-fluid display-block" src="@/assets/img/subwayall.png" alt="" />
           <!-- <p class="ml-2 mb-4">지하철지하철지하철</p>
           <p class="ml-2 mb-3">
             <i class="bi bi-check-circle-fill text-primary me-3"></i>언제일까용?

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div v-if="this.scoreboard.length > 0" class="container">
     <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="col text-center">
         <h1 class="display-5 mb-0">{{ userInfo.username }} 님의 관심 지역 랭킹</h1>
@@ -36,9 +36,7 @@
                       {{ this.wishhouse[this.scoreboard[1][1]].wishname }}
                     </div>
                     <div class="fs-5">{{ this.wishhouse[this.scoreboard[1][1]].wishtype }}</div>
-                    <div class="fs-5 pt-2" style="color: #5f5f5f">
-                      {{ this.scoreboard[1][0] }}점
-                    </div>
+                    <div class="fs-5 pt-2" style="color: #5f5f5f">{{ this.scoreboard[1][0] }}점</div>
                   </div>
                 </div>
               </div>
@@ -70,9 +68,7 @@
                       {{ this.wishhouse[this.scoreboard[0][1]].wishname }}
                     </div>
                     <div class="fs-5">{{ this.wishhouse[this.scoreboard[0][1]].wishtype }}</div>
-                    <div class="fs-5 pt-2" style="color: #5f5f5f">
-                      {{ this.scoreboard[0][0] }}점
-                    </div>
+                    <div class="fs-5 pt-2" style="color: #5f5f5f">{{ this.scoreboard[0][0] }}점</div>
                   </div>
                 </div>
               </div>
@@ -103,9 +99,7 @@
                       {{ this.wishhouse[this.scoreboard[2][1]].wishname }}
                     </div>
                     <div class="fs-5">{{ this.wishhouse[this.scoreboard[2][1]].wishtype }}</div>
-                    <div class="fs-5 pt-2" style="color: #5f5f5f">
-                      {{ this.scoreboard[2][0] }}점
-                    </div>
+                    <div class="fs-5 pt-2" style="color: #5f5f5f">{{ this.scoreboard[2][0] }}점</div>
                   </div>
                 </div>
               </div>
@@ -117,17 +111,10 @@
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="container mb-3 p-3 bg-white" style="height: 600px; overflow: auto">
             <div>
-              <h6 class="text-center">
-                점수 집계 방식 : 선호 상권 유/무 + 반경500m 해당 상권 개수
-              </h6>
+              <h6 class="text-center">점수 집계 방식 : 선호 상권 유/무 + 반경500m 해당 상권 개수</h6>
             </div>
             <div>
-              <apexcharts
-                type="bar"
-                height="450"
-                :options="chartOptions"
-                :series="series"
-              ></apexcharts>
+              <apexcharts type="bar" height="450" :options="chartOptions" :series="series"></apexcharts>
             </div>
           </div>
         </div>
@@ -289,11 +276,9 @@ export default {
         let sumscore = 0;
         for (let j = 0; j < 8; j++) {
           await http
-            .get(
-              `/wish/searchcategory/${this.wishhouse[i].lng}/${this.wishhouse[i].lat}/${this.category[j]}/500`
-            )
+            .get(`/wish/searchcategory/${this.wishhouse[i].lng}/${this.wishhouse[i].lat}/${this.category[j]}/500`)
             .then(({ data }) => {
-              console.log(data.documents);
+              //console.log(data.documents);
               nearDetail.push(data.documents);
               //console.log(data.documents.length);
               if (data.documents.length >= 1) {
@@ -329,20 +314,20 @@ export default {
         this.scoreboard.push(score);
         // console.log(nearDetail);
         this.detailBoard.push(nearDetail);
-        console.log(this.detailBoard);
+        //console.log(this.detailBoard);
       }
 
-      console.log("스코어 보여줘");
+      //console.log("스코어 보여줘");
       window.dispatchEvent(new Event("resize"));
       this.scoreboard.sort((a, b) => b[0] - a[0]);
-      console.log(this.scoreboard);
+      //console.log(this.scoreboard);
       for (let i = 0; i < this.scoreboard.length; i++) {
         this.chartOptions.xaxis.categories.push(this.wishhouse[this.scoreboard[i][1]].wishname);
         this.series[0].data.push(this.scoreboard[i][0]);
       }
 
-      console.log(this.chartOptions.xaxis.categories);
-      console.log(this.series[0].data);
+      //console.log(this.chartOptions.xaxis.categories);
+      //console.log(this.series[0].data);
     },
   },
 };

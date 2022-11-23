@@ -267,7 +267,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 import http from "@/util/http"; // 게시판 테스트용
 
 const memberStore = "memberStore";
@@ -300,8 +300,9 @@ export default {
   },
   methods: {
     ...mapMutations(["SET_CD_SCORE"]),
-
+    ...mapActions(memberStore, ["userLogout"]),
     deleteMember() {
+      var _this = this;
       const userid = this.userInfo.userid;
       http.delete(`user/delete/${userid}`).then(({ data }) => {
         let msg = "탈퇴 처리시 문제가 발생했습니다.";
@@ -309,7 +310,15 @@ export default {
           msg = "탈퇴가 완료되었습니다.";
         }
         alert(msg);
-        this.movePage();
+
+        // 로그아웃
+        console.log(_this.userInfo.userid);
+        _this.userLogout(_this.userInfo.userid);
+        sessionStorage.removeItem("access-token"); //저장된 토큰 없애기
+        sessionStorage.removeItem("refresh-token"); //저장된 토큰 없애기
+        if (_this.$route.path != "/") _this.$router.push({ name: "main" });
+
+        //this.movePage();
       });
     },
     movePage() {
