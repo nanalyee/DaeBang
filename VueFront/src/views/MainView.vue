@@ -189,7 +189,7 @@
           <div class="col-auto mb-5 mr-4 p-0">
             <div class="fs-4 text-center mb-4">사용 API</div>
             <div class="years flex-shrink-0 text-center">
-              <div class="display-1 mb-0 text-primary">12</div>
+              <div class="display-1 mb-0 text-success">12</div>
             </div>
           </div>
           <div class="col ml-4">
