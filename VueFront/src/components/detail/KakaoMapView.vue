@@ -2,9 +2,10 @@
   <div class="row m-0">
     <div :class="size">
       <!-- Kakao Map start -->
-      <div class="container bg-white border px-0">
-        <div id="map" style="width: 100%; height: 700px" class="position-relative"></div>
+      <div class="container bg-white border px-0 position-relative">
+        <div id="map" style="width: 100%; height: 700px"></div>
         <b-button
+          name="showBtn"
           v-show="status"
           v-b-toggle.list-collapse
           type="button"
@@ -21,80 +22,91 @@
       <b-collapse id="list-collapse">
         <div class="container mb-3 p-5 bg-white border rounded-3 searchTableBox" style="height: 700px; overflow: auto">
           <!-- 버튼 -->
-          <div v-show="isNearList" id="buttonList" class="mt-4 mb-2 row text-center justify-content-md-center">
-            <h3 class="text-center">찾고 싶은 상권을 선택해 주세요</h3>
-            <button
-              type="button"
-              id="Q"
-              class="col-5 m-2 btn btn-outline-primary btn-lg"
-              @click="nearSearchShow('Q', 'restaurant.png')"
-            >
-              <img src="@/assets/img/nearlist_food.png" alt="" class="m-2 img-fluid" />
-              <br />음식
-            </button>
-            <button
-              type="button"
-              id="O"
-              class="col-5 m-2 btn btn-outline-primary btn-lg"
-              @click="nearSearchShow('O', 'bed.png')"
-            >
-              <img src="@/assets/img/nearlist_accomodation.png" alt="" class="m-2 img-fluid" />
-              <br />숙박
-            </button>
-            <button
-              type="button"
-              id="P"
-              class="col-5 m-2 btn btn-outline-primary btn-lg"
-              @click="nearSearchShow('P', 'gym.png')"
-            >
-              <img src="@/assets/img/nearlist_sport.png" alt="" class="m-2 img-fluid" />
-              <br />스포츠
-            </button>
-            <button
-              type="button"
-              id="N"
-              class="col-5 m-2 btn btn-outline-primary btn-lg"
-              @click="nearSearchShow('N', 'tour.png')"
-            >
-              <img src="@/assets/img/nearlist_tour.png" alt="" class="m-2 img-fluid" />
-              <br />관광/여가/오락
-            </button>
-            <button
-              type="button"
-              id="G"
-              class="col-5 m-2 btn btn-outline-primary btn-lg"
-              @click="nearSearchShow('G', 'realestate.png')"
-            >
-              <img src="@/assets/img/nearlist_realestate.png" alt="" class="m-2 img-fluid" />
-              <br />부동산
-            </button>
-            <button
-              type="button"
-              id="F"
-              class="col-5 m-2 btn btn-outline-primary btn-lg"
-              @click="nearSearchShow('F', 'life.png')"
-            >
-              <img src="@/assets/img/nearlist_service.png" alt="" class="m-2 img-fluid" />
-              <br />생활서비스
-            </button>
-            <button
-              type="button"
-              id="D"
-              class="col-5 m-2 btn btn-outline-primary btn-lg"
-              @click="nearSearchShow('D', 'store.png')"
-            >
-              <img src="@/assets/img/nearlist_retail.png" alt="" class="m-2 img-fluid" />
-              <br />소매
-            </button>
-            <button
-              type="button"
-              id="R"
-              class="col-5 m-2 btn btn-outline-primary btn-lg"
-              @click="nearSearchShow('R', 'study.png')"
-            >
-              <img src="@/assets/img/nearlist_education.png" alt="" class="m-2" />
-              <br />학문/교육
-            </button>
+          <div v-show="isNearList" id="buttonList">
+            <div class="mb-2 row text-center justify-content-md-center">
+              <h3 class="text-center">찾고 싶은 상권을 선택해 주세요</h3>
+              <button
+                type="button"
+                id="Q"
+                class="col-5 m-2 btn btn-outline-primary btn-lg"
+                @click="nearSearchShow('Q', 'restaurant.png')"
+              >
+                <img src="@/assets/img/nearlist_food.png" alt="" class="m-2 img-fluid" />
+                <br />음식
+              </button>
+              <button
+                type="button"
+                id="O"
+                class="col-5 m-2 btn btn-outline-primary btn-lg"
+                @click="nearSearchShow('O', 'bed.png')"
+              >
+                <img src="@/assets/img/nearlist_accomodation.png" alt="" class="m-2 img-fluid" />
+                <br />숙박
+              </button>
+              <button
+                type="button"
+                id="P"
+                class="col-5 m-2 btn btn-outline-primary btn-lg"
+                @click="nearSearchShow('P', 'gym.png')"
+              >
+                <img src="@/assets/img/nearlist_sport.png" alt="" class="m-2 img-fluid" />
+                <br />스포츠
+              </button>
+              <button
+                type="button"
+                id="N"
+                class="col-5 m-2 btn btn-outline-primary btn-lg"
+                @click="nearSearchShow('N', 'tour.png')"
+              >
+                <img src="@/assets/img/nearlist_tour.png" alt="" class="m-2 img-fluid" />
+                <br />관광/여가/오락
+              </button>
+              <button
+                type="button"
+                id="G"
+                class="col-5 m-2 btn btn-outline-primary btn-lg"
+                @click="nearSearchShow('G', 'realestate.png')"
+              >
+                <img src="@/assets/img/nearlist_realestate.png" alt="" class="m-2 img-fluid" />
+                <br />부동산
+              </button>
+              <button
+                type="button"
+                id="F"
+                class="col-5 m-2 btn btn-outline-primary btn-lg"
+                @click="nearSearchShow('F', 'life.png')"
+              >
+                <img src="@/assets/img/nearlist_service.png" alt="" class="m-2 img-fluid" />
+                <br />생활서비스
+              </button>
+              <button
+                type="button"
+                id="D"
+                class="col-5 m-2 btn btn-outline-primary btn-lg"
+                @click="nearSearchShow('D', 'store.png')"
+              >
+                <img src="@/assets/img/nearlist_retail.png" alt="" class="m-2 img-fluid" />
+                <br />소매
+              </button>
+              <button
+                type="button"
+                id="R"
+                class="col-5 m-2 btn btn-outline-primary btn-lg"
+                @click="nearSearchShow('R', 'study.png')"
+              >
+                <img src="@/assets/img/nearlist_education.png" alt="" class="m-2" />
+                <br />학문/교육
+              </button>
+            </div>
+            <div class="text-center">
+              <v-button
+                v-b-toggle.list-collapse
+                type="button"
+                class="btn btn-sm col-auto border-none p-0 text-center justify-self-center"
+                @click="showList"
+                >목록접기</v-button
+              >
+            </div>
           </div>
 
           <!-- 리스트 -->
@@ -355,20 +367,28 @@ export default {
         this.map.setBounds(bounds);
       }
     },
+
+    // 리스트를 펼치고 접음 --------------------------------------------------------------------------------------
     showList() {
-      //let mapDiv = document.getElementById("map");
+      let mapDiv = document.getElementById("map");
       var _this = this;
       if (!this.status) {
         this.status = true;
         setTimeout(function () {
           _this.size = "";
-          _this.map.setCenter(new kakao.maps.LatLng(_this.$route.params.lat, _this.$route.params.lng));
+          var position = _this.map.getCenter();
+          mapDiv.style.width = "1272px";
+          _this.map.relayout();
+          _this.map.setCenter(position);
         }, 300);
       } else {
         this.status = false;
         setTimeout(function () {
           _this.size = "col-6";
-          _this.map.setCenter(new kakao.maps.LatLng(_this.$route.params.lat, _this.$route.params.lng));
+          var position = _this.map.getCenter();
+          mapDiv.style.width = "624px";
+          _this.map.relayout();
+          _this.map.setCenter(position);
         }, 50);
         //mapDiv.setAttribute("style", "width: 100%;  height: 700px");
       }
@@ -399,8 +419,8 @@ export default {
 }
 
 .open {
-  top: 200px;
-  right: 150px;
+  top: 30px;
+  right: 30px;
   z-index: 999;
 }
 
