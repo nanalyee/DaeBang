@@ -1,133 +1,151 @@
 <template>
   <div class="row m-0">
-    <div class="col-6">
+    <div :class="size">
       <!-- Kakao Map start -->
       <div class="container bg-white border px-0">
-        <div id="map" style="width: 100%; height: 600px"></div>
+        <div id="map" style="width: 100%; height: 700px" class="position-relative"></div>
+        <b-button
+          v-show="status"
+          v-b-toggle.list-collapse
+          type="button"
+          class="btn btn-outline-primary text-center p-0 m-0 py-1 open position-absolute float-right blink"
+          @click="showList"
+          style="width: 41px; height: 41px"
+        >
+          <i class="bi bi-shop fs-4"></i>
+        </b-button>
       </div>
     </div>
 
     <div class="col-6">
-      <div class="container mb-3 p-5 bg-white border rounded-3 searchTableBox" style="height: 600px; overflow: auto">
-        <!-- 버튼 -->
-        <div v-show="isNearList" id="buttonList" class="mt-4 mb-2 row text-center justify-content-md-center">
-          <h3 class="text-center">찾고 싶은 상권을 선택해 주세요</h3>
-          <button
-            type="button"
-            id="Q"
-            class="col-5 m-2 btn btn-outline-primary btn-lg"
-            @click="nearSearchShow('Q', 'restaurant.png')"
-          >
-            <img src="@/assets/img/nearlist_food.png" alt="" class="m-2 img-fluid" />
-            <br />음식
-          </button>
-          <button
-            type="button"
-            id="O"
-            class="col-5 m-2 btn btn-outline-primary btn-lg"
-            @click="nearSearchShow('O', 'bed.png')"
-          >
-            <img src="@/assets/img/nearlist_accomodation.png" alt="" class="m-2 img-fluid" />
-            <br />숙박
-          </button>
-          <button
-            type="button"
-            id="P"
-            class="col-5 m-2 btn btn-outline-primary btn-lg"
-            @click="nearSearchShow('P', 'gym.png')"
-          >
-            <img src="@/assets/img/nearlist_sport.png" alt="" class="m-2 img-fluid" />
-            <br />스포츠
-          </button>
-          <button
-            type="button"
-            id="N"
-            class="col-5 m-2 btn btn-outline-primary btn-lg"
-            @click="nearSearchShow('N', 'tour.png')"
-          >
-            <img src="@/assets/img/nearlist_tour.png" alt="" class="m-2 img-fluid" />
-            <br />관광/여가/오락
-          </button>
-          <button
-            type="button"
-            id="G"
-            class="col-5 m-2 btn btn-outline-primary btn-lg"
-            @click="nearSearchShow('G', 'realestate.png')"
-          >
-            <img src="@/assets/img/nearlist_realestate.png" alt="" class="m-2 img-fluid" />
-            <br />부동산
-          </button>
-          <button
-            type="button"
-            id="F"
-            class="col-5 m-2 btn btn-outline-primary btn-lg"
-            @click="nearSearchShow('F', 'life.png')"
-          >
-            <img src="@/assets/img/nearlist_service.png" alt="" class="m-2 img-fluid" />
-            <br />생활서비스
-          </button>
-          <button
-            type="button"
-            id="D"
-            class="col-5 m-2 btn btn-outline-primary btn-lg"
-            @click="nearSearchShow('D', 'store.png')"
-          >
-            <img src="@/assets/img/nearlist_retail.png" alt="" class="m-2 img-fluid" />
-            <br />소매
-          </button>
-          <button
-            type="button"
-            id="R"
-            class="col-5 m-2 btn btn-outline-primary btn-lg"
-            @click="nearSearchShow('R', 'study.png')"
-          >
-            <img src="@/assets/img/nearlist_education.png" alt="" class="m-2" />
-            <br />학문/교육
-          </button>
-        </div>
+      <b-collapse id="list-collapse">
+        <div class="container mb-3 p-5 bg-white border rounded-3 searchTableBox" style="height: 700px; overflow: auto">
+          <!-- 버튼 -->
+          <div v-show="isNearList" id="buttonList" class="mt-4 mb-2 row text-center justify-content-md-center">
+            <h3 class="text-center">찾고 싶은 상권을 선택해 주세요</h3>
+            <button
+              type="button"
+              id="Q"
+              class="col-5 m-2 btn btn-outline-primary btn-lg"
+              @click="nearSearchShow('Q', 'restaurant.png')"
+            >
+              <img src="@/assets/img/nearlist_food.png" alt="" class="m-2 img-fluid" />
+              <br />음식
+            </button>
+            <button
+              type="button"
+              id="O"
+              class="col-5 m-2 btn btn-outline-primary btn-lg"
+              @click="nearSearchShow('O', 'bed.png')"
+            >
+              <img src="@/assets/img/nearlist_accomodation.png" alt="" class="m-2 img-fluid" />
+              <br />숙박
+            </button>
+            <button
+              type="button"
+              id="P"
+              class="col-5 m-2 btn btn-outline-primary btn-lg"
+              @click="nearSearchShow('P', 'gym.png')"
+            >
+              <img src="@/assets/img/nearlist_sport.png" alt="" class="m-2 img-fluid" />
+              <br />스포츠
+            </button>
+            <button
+              type="button"
+              id="N"
+              class="col-5 m-2 btn btn-outline-primary btn-lg"
+              @click="nearSearchShow('N', 'tour.png')"
+            >
+              <img src="@/assets/img/nearlist_tour.png" alt="" class="m-2 img-fluid" />
+              <br />관광/여가/오락
+            </button>
+            <button
+              type="button"
+              id="G"
+              class="col-5 m-2 btn btn-outline-primary btn-lg"
+              @click="nearSearchShow('G', 'realestate.png')"
+            >
+              <img src="@/assets/img/nearlist_realestate.png" alt="" class="m-2 img-fluid" />
+              <br />부동산
+            </button>
+            <button
+              type="button"
+              id="F"
+              class="col-5 m-2 btn btn-outline-primary btn-lg"
+              @click="nearSearchShow('F', 'life.png')"
+            >
+              <img src="@/assets/img/nearlist_service.png" alt="" class="m-2 img-fluid" />
+              <br />생활서비스
+            </button>
+            <button
+              type="button"
+              id="D"
+              class="col-5 m-2 btn btn-outline-primary btn-lg"
+              @click="nearSearchShow('D', 'store.png')"
+            >
+              <img src="@/assets/img/nearlist_retail.png" alt="" class="m-2 img-fluid" />
+              <br />소매
+            </button>
+            <button
+              type="button"
+              id="R"
+              class="col-5 m-2 btn btn-outline-primary btn-lg"
+              @click="nearSearchShow('R', 'study.png')"
+            >
+              <img src="@/assets/img/nearlist_education.png" alt="" class="m-2" />
+              <br />학문/교육
+            </button>
+          </div>
 
-        <!-- 리스트 -->
-        <div id="accordion" role="tablist" class="panel-group" aria-multiselectable="true" v-show="!isNearList">
-          <button type="button" class="btn btn-outline-primary col" @click="buttonShow">돌아가기</button>
-          <!-- button start -->
-          <div
-            v-for="(item, i) in nearList"
-            :key="i"
-            type="button"
-            :id="'storeinfo' + i"
-            class="p-2 my-3 border rounded row"
-            data-toggle="collapse"
-            :href="'#toggle' + i"
-            role="button"
-            aria-expanded="false"
-            :aria-controls="'toggle' + i"
-            @click="nearDetail(i, item.lat, item.lon)"
-          >
-            <div class="col align-self-center">
-              <div class="">
-                <span class="fs-4 pe-3">{{ item.bizesNm }}</span>
-                <span class="pe-3" style="color: lightgray">{{ item.indsSclsNm }}</span>
-              </div>
+          <!-- 리스트 -->
 
-              <div class="collapse" :id="'toggle' + i" data-parent="#accordion">
-                <div class="row">
-                  <div class="col-2">
-                    <span class="" style="color: gray">지번주소</span>
+          <div id="accordion" role="tablist" class="panel-group" aria-multiselectable="true" v-show="!isNearList">
+            <div class="row">
+              <v-button v-b-toggle.list-collapse type="button" class="btn btn-outline-primary col m-1" @click="showList"
+                >목록접기</v-button
+              >
+              <button type="button" class="btn btn-outline-primary col m-1" @click="buttonShow">돌아가기</button>
+            </div>
+            <div class="row" style="height: 550px; overflow: auto">
+              <!-- button start -->
+              <div
+                v-for="(item, i) in nearList"
+                :key="i"
+                type="button"
+                :id="'storeinfo' + i"
+                class="p-0 m-0 py-1 my-2 border rounded row"
+                data-toggle="collapse"
+                :href="'#toggle' + i"
+                role="button"
+                aria-expanded="false"
+                :aria-controls="'toggle' + i"
+                @click="nearDetail(i, item.lat, item.lon)"
+              >
+                <div class="col align-self-center">
+                  <div class="">
+                    <span class="fs-4 pe-3">{{ item.bizesNm }}</span>
+                    <span class="pe-3" style="color: lightgray">{{ item.indsSclsNm }}</span>
                   </div>
-                  <div class="col">
-                    <span>{{ item.lnoAdr }}</span>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-2">
-                    <span class="" style="color: gray">도로명</span>
-                  </div>
-                  <div class="col">
-                    <span>{{ item.rdnmAdr }}</span>
-                  </div>
-                </div>
 
-                <!-- <div class="row">
+                  <div class="collapse" :id="'toggle' + i" data-parent="#accordion">
+                    <div class="row">
+                      <div class="col-2">
+                        <span class="" style="color: gray">지번주소</span>
+                      </div>
+                      <div class="col">
+                        <span>{{ item.lnoAdr }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-2">
+                        <span class="" style="color: gray">도로명</span>
+                      </div>
+                      <div class="col">
+                        <span>{{ item.rdnmAdr }}</span>
+                      </div>
+                    </div>
+
+                    <!-- <div class="row">
                   <div class="col">
                     <span class="pe-3" style="color: gray">법정동</span>
                     <span>{{ item.법정동 }}</span>
@@ -138,12 +156,14 @@
                   </div>
                   <span>{{ item.lat }} {{ item.lon }}</span>
                 </div> -->
+                  </div>
+                </div>
               </div>
+              <!-- button end -->
             </div>
           </div>
-          <!-- button end -->
         </div>
-      </div>
+      </b-collapse>
     </div>
   </div>
 </template>
@@ -168,6 +188,9 @@ export default {
       },
       homeImg: null,
       nearImg: null,
+
+      size: "",
+      status: true,
     };
   },
   mounted() {
@@ -332,24 +355,69 @@ export default {
         this.map.setBounds(bounds);
       }
     },
+    showList() {
+      //let mapDiv = document.getElementById("map");
+      var _this = this;
+      if (!this.status) {
+        this.status = true;
+        setTimeout(function () {
+          _this.size = "";
+          _this.map.setCenter(new kakao.maps.LatLng(_this.$route.params.lat, _this.$route.params.lng));
+        }, 300);
+      } else {
+        this.status = false;
+        setTimeout(function () {
+          _this.size = "col-6";
+          _this.map.setCenter(new kakao.maps.LatLng(_this.$route.params.lat, _this.$route.params.lng));
+        }, 50);
+        //mapDiv.setAttribute("style", "width: 100%;  height: 700px");
+      }
+    },
   },
 };
 </script>
 
 <style>
-.container::-webkit-scrollbar {
+.row::-webkit-scrollbar {
   padding-left: 8px;
   width: 8px; /* 스크롤바의 너비 */
 }
 
-.container::-webkit-scrollbar-thumb {
+.row::-webkit-scrollbar-thumb {
   height: 30%; /* 스크롤바의 길이 */
   background: #6b799e62; /* 스크롤바의 색상 */
 
   border-radius: 10px;
 }
 
-.container::-webkit-scrollbar-track {
+.row::-webkit-scrollbar-track {
   background: #6b799e0c; /*스크롤바 뒷 배경 색상*/
+}
+
+.btn-lg > img {
+  width: 50px;
+}
+
+.open {
+  top: 200px;
+  right: 150px;
+  z-index: 999;
+}
+
+@keyframes blink-effect {
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.blink {
+  animation: blink-effect 1s step-end infinite;
+
+  /*
+  animation-name: blink-effect;
+  animation-duration: 1s;
+  animation-iteration-count:infinite;
+  animation-timing-function:step-end;
+  */
 }
 </style>

@@ -7,27 +7,19 @@
         <h3 class="pt-3 m-3">{{ userInfo.userid }}님의 정보</h3>
         <b-row class="d-flex justify-content-center py-2">
           <b-col cols="2" class="text-center p-2 t-2 px-4">아이디</b-col
-          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{
-            userInfo.userid
-          }}</b-col>
+          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{ userInfo.userid }}</b-col>
         </b-row>
         <b-row class="d-flex justify-content-center py-2">
           <b-col cols="2" class="text-center p-2 t-2 px-4">이름</b-col
-          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{
-            userInfo.username
-          }}</b-col>
+          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{ userInfo.username }}</b-col>
         </b-row>
         <b-row class="d-flex justify-content-center py-2">
           <b-col cols="2" class="text-center p-2 t-2 px-4">이메일</b-col
-          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{
-            userInfo.email
-          }}</b-col>
+          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{ userInfo.email }}</b-col>
         </b-row>
         <b-row class="d-flex justify-content-center py-2">
           <b-col cols="2" class="text-center p-2 t-2 px-4">가입일</b-col
-          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{
-            userInfo.joindate
-          }}</b-col>
+          ><b-col cols="6" class="text-start p-2 t-2 border rounded bg-white">{{ userInfo.joindate }}</b-col>
         </b-row>
 
         <b-row class="d-flex justify-content-center py-2">
@@ -36,9 +28,7 @@
               >정보수정</router-link
             ></b-col
           ><b-col cols="4" class="text-start pr-0"
-            ><b-button variant="danger" href="#" @click="deleteMember" style="width: 100%"
-              >회원탈퇴</b-button
-            ></b-col
+            ><b-button variant="danger" href="#" @click="deleteMember" style="width: 100%">회원탈퇴</b-button></b-col
           >
         </b-row>
 
@@ -46,47 +36,101 @@
           <hr />
           <h3 class="pt-4 m-3">{{ userInfo.userid }}님의 주변 상권 선호도</h3>
 
-          <b-row class="d-flex justify-content-center py-2">
-            <b-col cols="2" class="text-end p-2"><i class="bi bi-shop"></i> 대형마트</b-col>
+          <b-row class="d-flex justify-content-center py-2 align-items-center">
+            <b-col cols="2" class="text-end p-0">
+              <div
+                class="btn btn-primary m-0 disabled"
+                style="background-color: #6dc0ff8c; border: none; color: black; padding: 5px 5px 5px 5px"
+              >
+                <i class="bi bi-shop"></i> 대형마트
+              </div>
+            </b-col>
             <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
               {{ $store.state.cd_score["market"] }}
             </b-col>
-            <b-col cols="2" class="text-end p-2"><i class="bi bi-shop-window"></i> 편의점</b-col>
+            <b-col cols="2" class="text-end p-0">
+              <div
+                class="btn btn-primary m-0 disabled"
+                style="background-color: #3fce9e8a; border: none; color: black; padding: 5px 5px 5px 5px"
+              >
+                <i class="bi bi-shop-window"></i> 편의점
+              </div>
+            </b-col>
             <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
               {{ $store.state.cd_score["convenience"] }}
             </b-col>
           </b-row>
 
-          <b-row class="d-flex justify-content-center py-2">
-            <b-col cols="2" class="text-end p-2"
-              ><i class="bi bi-train-lightrail-front"></i> 지하철역</b-col
-            >
+          <b-row class="d-flex justify-content-center py-2 align-items-center">
+            <b-col cols="2" class="text-end p-0">
+              <div
+                class="btn btn-primary m-0 disabled"
+                style="background-color: #ffc95da1; border: none; color: black; padding: 5px 5px 5px 5px"
+              >
+                <i class="bi bi-train-lightrail-front"></i> 지하철역
+              </div>
+            </b-col>
             <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
               {{ $store.state.cd_score["subway"] }}
             </b-col>
-            <b-col cols="2" class="text-end p-2"><i class="bi bi-egg-fried"></i> 음식점</b-col>
+            <b-col cols="2" class="text-end p-0">
+              <div
+                class="btn btn-primary m-0 disabled"
+                style="background-color: #ed82928c; border: none; color: black; padding: 5px 5px 5px 5px"
+              >
+                <i class="bi bi-egg-fried"></i> 음식점
+              </div>
+            </b-col>
             <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
               {{ $store.state.cd_score["food"] }}
             </b-col>
           </b-row>
 
-          <b-row class="d-flex justify-content-center py-2">
-            <b-col cols="2" class="text-end p-2"><i class="bi bi-cup-hot"></i> 카페</b-col>
+          <b-row class="d-flex justify-content-center py-2 align-items-center">
+            <b-col cols="2" class="text-end p-0">
+              <div
+                class="btn btn-primary m-0 disabled"
+                style="background-color: #9584d09c; border: none; color: black; padding: 5px 5px 5px 5px"
+              >
+                <i class="bi bi-cup-hot"></i> 카페
+              </div>
+            </b-col>
             <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
               {{ $store.state.cd_score["cafe"] }}
             </b-col>
-            <b-col cols="2" class="text-end p-2"><i class="bi bi-cash-coin"></i> 은행</b-col>
+            <b-col cols="2" class="text-end p-0">
+              <div
+                class="btn btn-primary m-0 disabled"
+                style="background-color: #6dc0ff8c; border: none; color: black; padding: 5px 5px 5px 5px"
+              >
+                <i class="bi bi-cash-coin"></i> 은행
+              </div>
+            </b-col>
             <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
               {{ $store.state.cd_score["bank"] }}
             </b-col>
           </b-row>
 
-          <b-row class="d-flex justify-content-center py-2">
-            <b-col cols="2" class="text-end p-2"><i class="bi bi-bandaid"></i> 약국</b-col>
+          <b-row class="d-flex justify-content-center py-2 align-items-center">
+            <b-col cols="2" class="text-end p-0">
+              <div
+                class="btn btn-primary m-0 disabled"
+                style="background-color: #6dc0ff8c; border: none; color: black; padding: 5px 5px 5px 5px"
+              >
+                <i class="bi bi-bandaid"></i> 약국
+              </div>
+            </b-col>
             <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
               {{ $store.state.cd_score["pharmacy"] }}
             </b-col>
-            <b-col cols="2" class="text-end p-2"><i class="bi bi-hospital"></i> 병원</b-col>
+            <b-col cols="2" class="text-end p-0">
+              <div
+                class="btn btn-primary m-0 disabled"
+                style="background-color: #ffc95da1; border: none; color: black; padding: 5px 5px 5px 5px"
+              >
+                <i class="bi bi-hospital"></i> 병원
+              </div>
+            </b-col>
             <b-col cols="2" class="text-start p-2 border rounded bg-white mx-2">
               {{ $store.state.cd_score["hospital"] }}
             </b-col>
@@ -94,13 +138,7 @@
 
           <b-row class="d-flex justify-content-center py-2">
             <b-col cols="6" class="text-end p-2">
-              <b-button
-                type="reset"
-                variant="primary"
-                class="m-1"
-                @click="isWishModify"
-                style="width: 100%"
-              >
+              <b-button type="reset" variant="primary" class="m-1" @click="isWishModify" style="width: 100%">
                 관심지수 재설정
               </b-button>
             </b-col>
@@ -142,9 +180,7 @@
             </b-row>
 
             <b-row class="d-flex justify-content-center">
-              <b-col cols="2" class="text-end p-2"
-                ><i class="bi bi-train-lightrail-front"></i> 지하철</b-col
-              >
+              <b-col cols="2" class="text-end p-2"><i class="bi bi-train-lightrail-front"></i> 지하철역</b-col>
               <b-col cols="2" class="text-start mx-2">
                 <b-form-group id="subway-group" label-for="subway">
                   <b-form-input
@@ -160,14 +196,7 @@
               <b-col cols="2" class="text-end p-2"><i class="bi bi-egg-fried"></i> 음식점</b-col>
               <b-col cols="2" class="text-start mx-2">
                 <b-form-group id="food-group" label-for="food">
-                  <b-form-input
-                    id="food"
-                    v-model="score.food"
-                    type="number"
-                    min="1"
-                    max="5"
-                    required
-                  ></b-form-input>
+                  <b-form-input id="food" v-model="score.food" type="number" min="1" max="5" required></b-form-input>
                 </b-form-group>
               </b-col>
             </b-row>
@@ -176,14 +205,7 @@
               <b-col cols="2" class="text-end p-2"><i class="bi bi-cup-hot"></i> 카페</b-col>
               <b-col cols="2" class="text-start mx-2">
                 <b-form-group id="cafe-group" label-for="cafe">
-                  <b-form-input
-                    id="cafe"
-                    v-model="score.cafe"
-                    type="number"
-                    min="1"
-                    max="5"
-                    required
-                  ></b-form-input>
+                  <b-form-input id="cafe" v-model="score.cafe" type="number" min="1" max="5" required></b-form-input>
                 </b-form-group>
               </b-col>
               <b-col cols="2" class="text-end p-2"><i class="bi bi-hospital"></i> 병원</b-col>
@@ -233,9 +255,7 @@
 
             <b-row class="d-flex justify-content-center py-2">
               <b-col cols="8" class="text-end p-2">
-                <b-button type="submit" variant="primary" class="p-1" style="width: 100%">
-                  변경내용 저장
-                </b-button>
+                <b-button type="submit" variant="primary" class="p-1" style="width: 100%"> 변경내용 저장 </b-button>
               </b-col>
             </b-row>
           </b-form>
