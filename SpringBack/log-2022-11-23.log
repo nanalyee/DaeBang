@@ -1,0 +1,30 @@
+[2m2022-11-23 17:26:46.252[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2022-11-23 17:26:46.325[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 777 ms
+[2m2022-11-23 17:26:46.868[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2022-11-23 17:28:57.572[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2022-11-23 17:28:57.575[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2022-11-23 17:28:57.593[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.s.vue.controller.TrafficController    [0;39m [2m:[0;39m listBusStop - 호출
+[2m2022-11-23 17:28:57.593[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.s.vue.controller.TrafficController    [0;39m [2m:[0;39m listSubway - 호출
+[2m2022-11-23 17:28:57.601[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-23 17:29:03.155[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-23 17:29:03.165[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.s.vue.controller.TrafficController    [0;39m [2m:[0;39m listSubway - 호출
+[2m2022-11-23 17:29:03.165[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.s.vue.controller.TrafficController    [0;39m [2m:[0;39m listBusStop - 호출
+[2m2022-11-23 17:31:35.176[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-23 17:31:36.263[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-23 17:31:36.967[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-23 17:31:37.561[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-23 17:31:41.975[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-23 17:31:43.991[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-23 17:31:44.894[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-23 17:31:45.852[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2022-11-23 17:56:15.588[0;39m [32m INFO[0;39m [35m21396[0;39m [2m---[0;39m [2m[on(2)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2022-11-23 17:56:15.655[0;39m [33m WARN[0;39m [35m21396[0;39m [2m---[0;39m [2m[on(2)-127.0.0.1][0;39m [36mo.a.c.loader.WebappClassLoaderBase      [0;39m [2m:[0;39m The web application [vue] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
