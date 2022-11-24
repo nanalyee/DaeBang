@@ -14,22 +14,25 @@
       >
         <ul class="breadcrumb justify-content-end px-5 m-5">
           <li class="breadcrumb-item">
-            <a href="#">소개</a>
+            <a href="#">매매검색</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="#">구해줘</a>
+            <a href="#">교통상황</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="#">게시판</a>
+            <a href="#">마이페이지</a>
           </li>
         </ul>
 
         <div class="copyright px-5 m-2">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">WhereIsMyHome</a>, All Right Reserved.
+              &copy; <a class="border-bottom" href="#">대방</a>, All Right Reserved.
             </div>
-            <div class="col-md-6 text-center text-md-end">Designed By <a class="border-bottom" href="#">team05</a></div>
+
+            <div class="col-md-6 text-center text-md-end">
+              Designed By <a class="border-bottom" href="#">team04 이현구, 서현경</a>
+            </div>
           </div>
         </div>
       </nav>
