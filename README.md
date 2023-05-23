@@ -256,6 +256,9 @@ CREATE TABLE IF NOT EXISTS `daebang`.`wishlist` (
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a7c80c93-6d33-4878-9cd6-ecbf30d55454/Untitled.png)
 
+# 📺 시연영상
+https://youtu.be/DrmTGF6a1N8
+
 # 📢기능 설명
 
 ## [ 0. 메인 ]
