@@ -6,8 +6,12 @@
 
 ### 대 방
 
-### ✔️ **프로젝트 설명**
+### ✔️ **프로젝트 개요**
+SSAFY 8기 1학기 관통 프로젝트
 
+2인 제작, 2022.11.14 ~ 2023.11.24 (11일)
+
+### ✔️ **프로젝트 목표**
  Backend는 SpringBoot , Frontend는 Vue로 구현하고 DB를 구축하여 데이터를 관리하는 프로젝트이다.
 
 MVC + MVVM 기반의 웹 프로젝트를 설계하고 구현하며, Kakao Map API와 공공 데이터 포털을 통해 대전지역의 전,월세 데이터를 가공하여 기능을 제공한다.
@@ -18,12 +22,6 @@ MVC + MVVM 기반의 웹 프로젝트를 설계하고 구현하며, Kakao Map AP
 
 편의 기능으로 교통, 날씨, 관광지 정보를 제공한다.
 
-### ✔️ **프로젝트 일정**
-
-### **2022-11-14 ~ 2022-11-24**
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37fc59c8-4cce-47c0-bcbb-a9849d9c3a4d/Untitled.png)
-
 ### ✔️ **팀원**
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c5c40988-bb5e-427e-b215-226af8c06f18/Untitled.png)
@@ -31,12 +29,12 @@ MVC + MVVM 기반의 웹 프로젝트를 설계하고 구현하며, Kakao Map AP
 - **[이현구](https://github.com/Leeh9)**
 - **[서현경](https://github.com/nanalyee)**
 
-## 📌 목표
+## 🏆 프로젝트 성과
 
-- Web Architecture를 이해하고 활용하여 Web Project를 설계하고 구현할 수 있다.
-- Spring & MyBatis Framework, Spring Boot, Vue.js를 이해하고 활용할 수 있다.
-- OAuth 로그인, REST API등의 기술을 활용하여 MSA를 도입해 본다.
-- 추가적으로 기능을 구현한다.
+- **SSAFY 프로젝트 경진대회 우수**
+- 1학기 과정에서 배웠던 Spring & MyBatis Framework, Spring Boot, Vue.js를 이해하고 활용해 볼 수 있었습니다.
+- Kakao Map API와 공공 데이터 포털의 총 12가지 API를 사용해 대전 지역의 데이터를 모아서 가공했습니다.
+- 사용자는 원하는 지역을 검색하고 관심 지역에 등록하여 추천하는 시스템을 제공하였습니다.
 
 ## ⭐ 프로젝트 기능
 
